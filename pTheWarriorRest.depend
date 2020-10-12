@@ -19,3 +19,23 @@
 	<SFML/Window.hpp>
 	<vector>
 
+1602520183 source:/home/joey/Bureau/pTheWarriorRest/main.cpp
+	"Game.h"
+
+1602521456 /home/joey/Bureau/pTheWarriorRest/include/Game.h
+	"GameState.h"
+
+1602521888 /home/joey/Bureau/pTheWarriorRest/include/States/GameState.h
+	"State.h"
+
+1602521448 /home/joey/Bureau/pTheWarriorRest/include/State.h
+	<SFML/Graphics.hpp>
+	<SFML/System.hpp>
+	<SFML/Window.hpp>
+	<stack>
+	<map>
+	<vector>
+
+1602521055 source:/home/joey/Bureau/pTheWarriorRest/src/State.cpp
+	"State.h"
+
