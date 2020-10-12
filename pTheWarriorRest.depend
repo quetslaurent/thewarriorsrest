@@ -1,0 +1,21 @@
+# depslib dependency file v1.0
+1602515673 source:/home/joey/Bureau/Projet/WarriorsRestTest/main.cpp
+	"Game.h"
+
+1602517042 /home/joey/Bureau/Projet/WarriorsRestTest/include/Game.h
+	<SFML/Graphics.hpp>
+	<SFML/System.hpp>
+	<SFML/Window.hpp>
+
+1602516198 source:/home/joey/Bureau/Projet/WarriorsRestTest/src/Game.cpp
+	"Game.h"
+
+1602517452 source:/home/joey/Bureau/Projet/WarriorsRestTest/src/State.cpp
+	"State.h"
+
+1602517695 /home/joey/Bureau/Projet/WarriorsRestTest/include/State.h
+	<SFML/Graphics.hpp>
+	<SFML/System.hpp>
+	<SFML/Window.hpp>
+	<vector>
+
