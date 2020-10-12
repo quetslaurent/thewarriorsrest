@@ -2,6 +2,9 @@
 
 int main()
 {
+
+    //JOEY IL SUCE
+
     // Create the main window
     sf::RenderWindow app(sf::VideoMode(800, 600), "SFML window");
 
