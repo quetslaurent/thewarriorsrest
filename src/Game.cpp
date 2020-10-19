@@ -1,9 +1,13 @@
 #include "Game.h"
 
+
+#include <iostream>
+using std::cout;
 Game::Game()
 {
     this->initWindow();     //call the function to set up the window
     this->initStates();
+    this->map.loadFromFile("./image/map3.png");
 }
 
 Game::~Game()
@@ -17,7 +21,6 @@ Game::~Game()
     }
 }
 
-//initialization
 //initialization
 void Game::initWindow(){
     // Create the main window
@@ -34,6 +37,7 @@ void Game::initWindow(){
     }
 
     this->wGame->setIcon(32,32,icon.getPixelsPtr());
+
 }
 
 void Game::initStates(){
@@ -55,9 +59,26 @@ void Game::updateSFMLEvents(){
 void Game::update(){
     this->updateSFMLEvents();
 
-    //update items
+    //update states
     if(!this->states.empty()){
         this->states.top()->update(this->dt);
+
+        //when we quit the game
+        if(this->states.top()->getQuit())
+        {
+            //when we press esc button
+            this->states.top()->endState();
+            delete this->states.top();
+            this->states.pop();
+        }
+    }
+    //en of the Application
+    else
+    {
+        //call the end function
+        this->endApplication();
+        //close the window if the states are empty
+        this->wGame->close();
     }
 }
 
@@ -68,6 +89,9 @@ void Game::render(){
 
     //render items
     if(!this->states.empty()){
+        //background image
+        sf::Sprite s(map);
+        this->wGame->draw(s);
         this->states.top()->render();
     }
 
@@ -77,6 +101,7 @@ void Game::render(){
 
 //run the game
 void Game::run(){
+
 	// Start the game loop
     while (this->wGame->isOpen())
     {
@@ -84,6 +109,7 @@ void Game::run(){
         this->update(); //update the window
         this->render();
     }
+
 }
 
 //update the delta time
@@ -91,5 +117,10 @@ void Game::updateDt()
 {
     //save the delta time
     this->dt= this->dtClock.restart().asSeconds();
+}
 
+//called a the end of the application
+void Game::endApplication()
+{
+     std::cout<<"End of the Application"<<"\n";
 }

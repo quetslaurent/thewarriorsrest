@@ -10,6 +10,7 @@ class Game
         sf::RenderWindow *wGame;     //main window
         sf::Event sfEvent;
 
+
         sf::Clock dtClock;
         float dt;   //delta time
 
@@ -19,17 +20,28 @@ class Game
         void initWindow();
         void initStates();
 
+
+        //map
+        sf::Texture map;
+
     public:
         Game();
         virtual ~Game();
 
         //fonctions
-        void updateSFMLEvents();
-        void update();
-        void render();
         void run();
 
+        //update
+        void updateSFMLEvents();
+        void update();
         void updateDt();
+
+        //render
+        void render();
+
+        //end
+        void endApplication();
+
 
 };
 

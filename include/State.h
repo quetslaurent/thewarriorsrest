@@ -1,26 +1,27 @@
 #ifndef STATE_H
 #define STATE_H
 
-#include <SFML/Graphics.hpp>
-#include <SFML/System.hpp>
-#include <SFML/Window.hpp>
-
-#include<stack>
-#include<map>
-
-#include<vector>
+#include "Entity.h"
 //manage the resources
 class State
 {
+    protected:
+    sf::RenderWindow* window;
     private:
-        sf::RenderWindow* window;
+
         std::vector<sf::Texture> textures;
+        bool quit;
 
     public:
         State(sf::RenderWindow* window);
         virtual ~State();
 
-        virtual void endState() =0;
+        const bool& getQuit()const;
+
+        virtual void checkForQuit();
+        virtual void endState()=0;
+
+        virtual void updateKeybinds(const float& dt)=0;
         virtual void update(const float& dt) = 0;
         virtual void render(sf::RenderTarget* target = nullptr)=0;
 
