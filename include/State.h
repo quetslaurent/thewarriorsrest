@@ -5,10 +5,8 @@
 //manage the resources
 class State
 {
-    protected:
-    sf::RenderWindow* window;
     private:
-
+        sf::RenderWindow* window;
         std::vector<sf::Texture> textures;
         bool quit;
 
@@ -17,17 +15,16 @@ class State
         virtual ~State();
 
         const bool& getQuit()const;
+        sf::RenderWindow* getWindow()const;
 
         virtual void checkForQuit();
         virtual void endState()=0;
 
-        virtual void updateKeybinds(const float& dt)=0;
+        virtual void updateKeybinds()=0;
         virtual void update(const float& dt) = 0;
         virtual void render(sf::RenderTarget* target = nullptr)=0;
 
         virtual Entity getPlayer()=0;
-
-        //virtual int getXPosPlayer();
 
 };
 

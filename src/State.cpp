@@ -13,15 +13,21 @@ State::~State()
 
 void State::checkForQuit()
 {
+    //if the user pressed the esc key
     if(sf::Keyboard::isKeyPressed(sf::Keyboard::Escape))
     {
-        this->quit=true;
+        this->quit=true;    //then set the quit boolean to true
     }
 }
 
 const bool & State::getQuit() const
 {
     return this->quit;
+}
+
+sf::RenderWindow* State::getWindow()const
+{
+    return this->window;
 }
 
 

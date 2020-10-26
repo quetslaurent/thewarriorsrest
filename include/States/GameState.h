@@ -16,20 +16,12 @@ class GameState :
 
         //functions
 
-        void updateKeybinds(const float& dt);
+        void updateKeybinds();
         void update(const float& dt);
-        void render(sf::RenderTarget* target= NULL);
+        void render(sf::RenderTarget* target= nullptr);
         void endState();
 
-        Entity getPlayer(){
-            return player;
-        }
-
-        int getXPosPlayer();
-
-        string str()const{
-            return "test";
-        }
+        Entity getPlayer();
 };
 
 #endif // GAMESTATE_H

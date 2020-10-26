@@ -21,7 +21,7 @@
 
 class Entity
 {
-    protected:
+    private:
         sf::RectangleShape hitbox;
 
         sf::RectangleShape player;
@@ -42,8 +42,6 @@ class Entity
 
     //texture
     void createTexture();
-
-
 
     sf::RectangleShape getHitbox(){
         return hitbox;

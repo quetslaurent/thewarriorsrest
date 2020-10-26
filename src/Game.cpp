@@ -51,14 +51,14 @@ void Game::updateSFMLEvents(){
     // Process events
     while (this->wGame->pollEvent(this->sfEvent))
     {
-        // Close window : exit
+        // Close window when we click the cross button
         if (this->sfEvent.type == sf::Event::Closed)
             this->wGame->close();
     }
 }
 
 void Game::update(){
-    this->updateSFMLEvents();
+    this->updateSFMLEvents();   //check if the window is closed
 
     //update states
     if(!this->states.empty()){
@@ -95,7 +95,7 @@ void Game::render(){
 
         sf::Vector2f position = (this->states.top())->getPlayer().getHitbox().getPosition();
         s.setPosition(position.x-START_X,position.y-START_Y);  //the 433 and 1274 numbers are for set the start position
-
+         //s.setPosition(position.x,position.y);
         this->wGame->draw(s);
         this->states.top()->render();
 

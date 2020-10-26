@@ -14,19 +14,25 @@ GameState::~GameState()
 
 void GameState::update(const float& dt)
 {
-   this->updateKeybinds(dt);
+   this->updateKeybinds();  //check if the player pressed a specific key
 
-   this->player.update(dt);
+   this->player.update(dt); //update and move the player
 }
 
 void GameState::render(sf::RenderTarget* target)
 {
-    this->player.render(this->window);
+    this->player.render(this->getWindow());
 }
 
-void GameState::updateKeybinds(const float& dt)
+void GameState::updateKeybinds()
 {
-    this->checkForQuit();
+    this->checkForQuit();   //check if the user pressed the "esc" key
+}
+
+
+Entity GameState::getPlayer()
+{
+    return player;
 }
 
 //end of gameState
