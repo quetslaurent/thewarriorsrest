@@ -22,27 +22,28 @@
 1603117489 source:/home/joey/Bureau/pTheWarriorRest/main.cpp
 	"Game.h"
 
-1603119767 /home/joey/Bureau/pTheWarriorRest/include/Game.h
+1603708706 /home/joey/Bureau/pTheWarriorRest/include/Game.h
 	"GameState.h"
 
-1603118418 /home/joey/Bureau/pTheWarriorRest/include/States/GameState.h
+1603707359 /home/joey/Bureau/pTheWarriorRest/include/States/GameState.h
 	"State.h"
+	<string>
 
-1603111447 /home/joey/Bureau/pTheWarriorRest/include/State.h
+1603707604 /home/joey/Bureau/pTheWarriorRest/include/State.h
 	"Entity.h"
 
-1603106998 source:/home/joey/Bureau/pTheWarriorRest/src/State.cpp
+1603706190 source:/home/joey/Bureau/pTheWarriorRest/src/State.cpp
 	"State.h"
 
-1603118695 source:/home/joey/Bureau/pTheWarriorRest/src/Game.cpp
+1603707643 source:/home/joey/Bureau/pTheWarriorRest/src/Game.cpp
 	"Game.h"
 	<iostream>
 
-1603118769 source:/home/joey/Bureau/pTheWarriorRest/src/States/GameState.cpp
+1603706758 source:/home/joey/Bureau/pTheWarriorRest/src/States/GameState.cpp
 	"GameState.h"
 	<iostream>
 
-1603116255 /home/joey/Bureau/pTheWarriorRest/include/Entities/Entity.h
+1603707936 /home/joey/Bureau/pTheWarriorRest/include/Entities/Entity.h
 	<SFML/Graphics.hpp>
 	<SFML/System.hpp>
 	<SFML/Window.hpp>
@@ -58,6 +59,8 @@
 	<stack>
 	<map>
 
-1603119211 source:/home/joey/Bureau/pTheWarriorRest/src/Entities/Entity.cpp
+1603708272 source:/home/joey/Bureau/pTheWarriorRest/src/Entities/Entity.cpp
 	"Entity.h"
+	<iostream>
+	<string>
 

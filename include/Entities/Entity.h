@@ -23,6 +23,9 @@ class Entity
 {
     protected:
         sf::RectangleShape hitbox;
+
+        sf::RectangleShape player;
+
         float movementSpeed;
 
         sf::Texture texture;
@@ -39,6 +42,12 @@ class Entity
 
     //texture
     void createTexture();
+
+
+
+    sf::RectangleShape getHitbox(){
+        return hitbox;
+    }
 
 };
 

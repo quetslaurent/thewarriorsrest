@@ -23,6 +23,8 @@ class Game
 
         //map
         sf::Texture map;
+        const int START_X=433;
+        const int START_Y=1274;
 
     public:
         Game();

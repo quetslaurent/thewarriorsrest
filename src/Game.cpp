@@ -1,8 +1,8 @@
 #include "Game.h"
 
-
 #include <iostream>
 using std::cout;
+
 Game::Game()
 {
     this->initWindow();     //call the function to set up the window
@@ -42,6 +42,7 @@ void Game::initWindow(){
 
 void Game::initStates(){
     this->states.push(new GameState(this->wGame));
+
 }
 
 //fonctions
@@ -91,8 +92,13 @@ void Game::render(){
     if(!this->states.empty()){
         //background image
         sf::Sprite s(map);
+
+        sf::Vector2f position = (this->states.top())->getPlayer().getHitbox().getPosition();
+        s.setPosition(position.x-START_X,position.y-START_Y);  //the 433 and 1274 numbers are for set the start position
+
         this->wGame->draw(s);
         this->states.top()->render();
+
     }
 
     // Update the window
@@ -122,5 +128,6 @@ void Game::updateDt()
 //called a the end of the application
 void Game::endApplication()
 {
+
      std::cout<<"End of the Application"<<"\n";
 }
