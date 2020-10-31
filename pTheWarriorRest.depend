@@ -35,15 +35,15 @@
 1603724775 source:/home/joey/Bureau/pTheWarriorRest/src/State.cpp
 	"State.h"
 
-1603723671 source:/home/joey/Bureau/pTheWarriorRest/src/Game.cpp
+1604152634 source:/home/joey/Bureau/pTheWarriorRest/src/Game.cpp
 	"Game.h"
 	<iostream>
 
-1603724739 source:/home/joey/Bureau/pTheWarriorRest/src/States/GameState.cpp
+1603724864 source:/home/joey/Bureau/pTheWarriorRest/src/States/GameState.cpp
 	"GameState.h"
 	<iostream>
 
-1603724050 /home/joey/Bureau/pTheWarriorRest/include/Entities/Entity.h
+1604160725 /home/joey/Bureau/pTheWarriorRest/include/Entities/Entity.h
 	<SFML/Graphics.hpp>
 	<SFML/System.hpp>
 	<SFML/Window.hpp>
@@ -55,12 +55,52 @@
 	<cstdlib>
 	<fstream>
 	<sstream>
-	<vector>
 	<stack>
 	<map>
+	<HitboxInitialiser.h>
 
-1603723683 source:/home/joey/Bureau/pTheWarriorRest/src/Entities/Entity.cpp
+1604161031 source:/home/joey/Bureau/pTheWarriorRest/src/Entities/Entity.cpp
 	"Entity.h"
 	<iostream>
 	<string>
+
+1604154472 source:/home/joey/Bureau/pTheWarriorRest/src/Hitbox.cpp
+	"Hitbox.h"
+
+1604154326 /home/joey/Bureau/pTheWarriorRest/include/Hitbox.h
+	<SFML/Graphics.hpp>
+	<vector>
+	<iostream>
+
+1604160488 source:/home/joey/Bureau/pTheWarriorRest/src/CollidableObject/Hitbox.cpp
+	"Hitbox.h"
+
+1604160602 source:/home/joey/Bureau/pTheWarriorRest/src/CollidableObject/Enemy.cpp
+	"Enemy.h"
+
+1604160501 /home/joey/Bureau/pTheWarriorRest/include/CollidableObject/Enemy.h
+	"Hitbox.h"
+
+1604160535 /home/joey/Bureau/pTheWarriorRest/include/CollidableObject/Hitbox.h
+	<SFML/Graphics.hpp>
+	<iostream>
+
+1604159422 /home/joey/Bureau/pTheWarriorRest/include/CollidableObject/Collision.h
+	<SFML/Graphics.hpp>
+	<iostream>
+
+1604160845 source:/home/joey/Bureau/pTheWarriorRest/src/CollidableObject/HitboxInitialiser.cpp
+	"HitboxInitialiser.h"
+
+1604160845 /home/joey/Bureau/pTheWarriorRest/include/CollidableObject/HitboxInitialiser.h
+	<vector>
+	"Hitbox.h"
+	"Enemy.h"
+	"Wall.h"
+
+1604160572 /home/joey/Bureau/pTheWarriorRest/include/CollidableObject/Wall.h
+	"Hitbox.h"
+
+1604160598 source:/home/joey/Bureau/pTheWarriorRest/src/CollidableObject/Wall.cpp
+	"Wall.h"
 

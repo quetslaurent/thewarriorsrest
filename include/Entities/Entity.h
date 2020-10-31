@@ -15,16 +15,18 @@
 #include<cstdlib>
 #include<fstream>
 #include<sstream>
-#include<vector>
 #include<stack>
 #include<map>
-
+#include<HitboxInitialiser.h>
 class Entity
 {
     private:
-        sf::RectangleShape hitbox;
+        sf::RectangleShape playerHitbox;
 
         sf::RectangleShape player;
+
+        HitboxInitialiser hitbox;
+
 
         float movementSpeed;
 
@@ -39,13 +41,12 @@ class Entity
     void render(sf::RenderTarget* target);
 
     void move(const float& dt,const float x,const float y);
+    sf::RectangleShape getHitbox();
 
     //texture
     void createTexture();
 
-    sf::RectangleShape getHitbox(){
-        return hitbox;
-    }
+
 
 };
 

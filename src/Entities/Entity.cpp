@@ -6,13 +6,13 @@ using std::cout;
 using std::to_string;
 Entity::Entity()
 {
-    this->hitbox.setSize(sf::Vector2f(120.f,120.f));//the player's hitbox
+    this->playerHitbox.setSize(sf::Vector2f(120.f,120.f));//the player's hitbox
 
     //this->hitbox.setPosition(-433,-1274);
     //this->hitbox.setPosition(540,470);
-    this->hitbox.setPosition(0,0);
+    this->playerHitbox.setPosition(0,0);
 
-    this->hitbox.setFillColor(sf::Color(100, 250, 50));
+    this->playerHitbox.setFillColor(sf::Color(100, 250, 50));
 
     this->player.setSize(sf::Vector2f(120.f,120.f));//the player's texture
     this->player.setPosition(540,470);//put the player in the center
@@ -75,13 +75,55 @@ void Entity::render(sf::RenderTarget* target)
 void Entity::move(const float& dt,const float x,const float y)
 {
     //the movement is calculated using the delta time and the movement speed
-    this->hitbox.move(x* this->movementSpeed*dt,y * this->movementSpeed*dt);
+    this->playerHitbox.move(x* this->movementSpeed*dt,y * this->movementSpeed*dt);
 
 
-    cout<<hitbox.getPosition().x<<" "<<hitbox.getPosition().y<<" "<<"\n";
-    if(this->hitbox.getPosition().x < 100 && this->hitbox.getPosition().x > -100 && this->hitbox.getPosition().y <100 && this->hitbox.getPosition().y > -100 ){
+    /*cout<<playerHitbox.getPosition().x<<" "<<playerHitbox.getPosition().y<<" "<<"\n";
+    if(this->playerHitbox.getPosition().x < 100 && this->playerHitbox.getPosition().x > -100 && this->playerHitbox.getPosition().y <100 && this->playerHitbox.getPosition().y > -100 ){
         cout<<"TOUCHE LE SPAWN"<<"\n";
+    }*/
+
+
+    //cout<<playerHitbox.getPosition().x<<" "<<playerHitbox.getPosition().y<<" "<<"\n";
+    //std::vector<sf::RectangleShape> listHitboxes= hitbox.getHitboxes();
+
+    //cout<<listHitboxes[0].getPosition().x<<"\n";
+    //cout<<listHitboxes[0].getSize().x<<"\n";
+
+    /*-//--------------------------------for(sf::RectangleShape &collision :listHitboxes){
+            //get the hitbox's player coordinates
+            sf::FloatRect playerBounds = playerHitbox.getGlobalBounds();
+            //get the hitbox coordinates from the lists
+            sf::FloatRect hitboxBounds = collision.getGlobalBounds();
+
+            //check if the hitboxes intersects
+            if(hitboxBounds.intersects(playerBounds))
+            {
+                hitbox.collide();
+            }
+    }*/
+
+    std::vector<Hitbox*> listHitboxes= hitbox.getHitboxes();
+
+    for(Hitbox* &collision :listHitboxes){
+            //get the hitbox's player coordinates
+            sf::FloatRect playerBounds = playerHitbox.getGlobalBounds();
+            //get the hitbox coordinates from the lists
+            sf::FloatRect hitboxBounds = collision->getHitbox().getGlobalBounds();
+
+            //check if the hitboxes intersects
+            if(hitboxBounds.intersects(playerBounds))
+            {
+                collision->collide();
+            }
     }
+
+
+
+    /*if(this->playerHitbox.getPosition().x < (listHitboxes[0].getPosition().x + listHitboxes[0].getSize().x )&& this->playerHitbox.getPosition().x > -(listHitboxes[0].getPosition().x + listHitboxes[0].getSize().x)
+       && this->playerHitbox.getPosition().y < (listHitboxes[0].getPosition().y + listHitboxes[0].getSize().y) && this->playerHitbox.getPosition().y > -(listHitboxes[0].getPosition().y + listHitboxes[0].getSize().y) ){
+        hitbox.collide();
+    }*/
 
 }
 
@@ -97,6 +139,10 @@ void Entity::createTexture()
 
     this->player.setTexture(&texture);
     this->player.setTextureRect(sf::IntRect(0,0,1100,1100));
+}
+
+sf::RectangleShape Entity::getHitbox(){
+    return playerHitbox;
 }
 
 

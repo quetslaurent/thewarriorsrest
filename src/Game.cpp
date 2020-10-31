@@ -92,7 +92,7 @@ void Game::render(){
     if(!this->states.empty()){
         //background image
         sf::Sprite s(map);
-
+        //get the player position
         sf::Vector2f position = (this->states.top())->getPlayer().getHitbox().getPosition();
         s.setPosition(position.x-START_X,position.y-START_Y);  //the 433 and 1274 numbers are for set the start position
          //s.setPosition(position.x,position.y);
