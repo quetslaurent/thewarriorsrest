@@ -2,8 +2,9 @@
 #define GAME_H
 
 #include "GameState.h"
+#include "IDimensions.h"
 
-class Game
+class Game : public IDimensions
 {
     private:
         //variables
@@ -23,8 +24,7 @@ class Game
 
         //map
         sf::Texture map;
-        const int START_X=433;
-        const int START_Y=1274;
+
 
     public:
         Game();

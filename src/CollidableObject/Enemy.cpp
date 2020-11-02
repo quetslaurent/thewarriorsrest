@@ -8,3 +8,7 @@ Enemy::~Enemy()
 {
     //dtor
 }
+
+void Enemy::collide(){
+    cout<<"ENEMY"<<"\n";
+}

@@ -8,3 +8,7 @@ Wall::~Wall()
 {
     //dtor
 }
+
+void Wall::collide(){
+    cout<<"WALL"<<"\n";
+}

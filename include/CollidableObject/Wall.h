@@ -10,6 +10,8 @@ class Wall : public Hitbox
         Wall(float posX,float posY,float width,float height);
         virtual ~Wall();
 
+        void collide();
+
 };
 
 #endif // WALL_H

@@ -17,6 +17,7 @@
 					<Add directory="include/States" />
 					<Add directory="include/Entities" />
 					<Add directory="include/CollidableObject" />
+					<Add directory="include/Commons" />
 				</Compiler>
 				<Linker>
 					<Add library="sfml-graphics" />
@@ -35,6 +36,7 @@
 					<Add directory="include/States" />
 					<Add directory="include/Entities" />
 					<Add directory="include/CollidableObject" />
+					<Add directory="include/Commons" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
@@ -52,6 +54,7 @@
 		<Unit filename="include/CollidableObject/Hitbox.h" />
 		<Unit filename="include/CollidableObject/HitboxInitialiser.h" />
 		<Unit filename="include/CollidableObject/Wall.h" />
+		<Unit filename="include/Commons/IDimensions.h" />
 		<Unit filename="include/Entities/Entity.h" />
 		<Unit filename="include/Game.h" />
 		<Unit filename="include/State.h" />
@@ -61,6 +64,7 @@
 		<Unit filename="src/CollidableObject/Hitbox.cpp" />
 		<Unit filename="src/CollidableObject/HitboxInitialiser.cpp" />
 		<Unit filename="src/CollidableObject/Wall.cpp" />
+		<Unit filename="src/Commons/IDimensions.cpp" />
 		<Unit filename="src/Entities/Entity.cpp" />
 		<Unit filename="src/Game.cpp" />
 		<Unit filename="src/State.cpp" />

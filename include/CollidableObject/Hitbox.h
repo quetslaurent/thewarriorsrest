@@ -14,7 +14,7 @@ class Hitbox
         Hitbox(const Hitbox& other);
         Hitbox& operator=(const Hitbox& other);
 
-        void collide();
+        virtual void collide();
 
         sf::RectangleShape getHitbox()const;
 };

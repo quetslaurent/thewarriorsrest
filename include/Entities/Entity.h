@@ -15,18 +15,17 @@
 #include<cstdlib>
 #include<fstream>
 #include<sstream>
-#include<stack>
-#include<map>
 #include<HitboxInitialiser.h>
-class Entity
+
+#include "IDimensions.h"
+class Entity : public IDimensions
 {
     private:
-        sf::RectangleShape playerHitbox;
+        sf::RectangleShape playerHitbox; //player hitbox
 
-        sf::RectangleShape player;
+        sf::RectangleShape player; //player texture
 
-        HitboxInitialiser hitbox;
-
+        HitboxInitialiser hitbox;   //all hitboxes on the map
 
         float movementSpeed;
 
@@ -40,13 +39,14 @@ class Entity
     void update(const float& dt);
     void render(sf::RenderTarget* target);
 
-    void move(const float& dt,const float x,const float y);
+    void move(const float& dt,const float x,const float y); //move the playerHitbox
     sf::RectangleShape getHitbox();
 
     //texture
-    void createTexture();
+    void createTexture(); //initialisation of the texture
 
-
+    //hitbox
+    void drawHitbox(sf::RenderTarget* target);
 
 };
 

@@ -24,7 +24,7 @@ Game::~Game()
 //initialization
 void Game::initWindow(){
     // Create the main window
-    this->wGame= new sf::RenderWindow(sf::VideoMode(1080, 920), "The Warrior's Rest");
+    this->wGame= new sf::RenderWindow(sf::VideoMode(WINDOW_WIDTH,WINDOW_HEIGHT), "The Warrior's Rest");
     this->wGame->setFramerateLimit(120);
     this->wGame->setVerticalSyncEnabled(false);
 
