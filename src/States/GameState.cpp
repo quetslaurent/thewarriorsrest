@@ -21,7 +21,7 @@ void GameState::update(const float& dt)
 
 void GameState::render(sf::RenderTarget* target)
 {
-    this->player.render(this->getWindow());
+    this->player.render(this->getWindow()); // draw the player
 }
 
 void GameState::updateKeybinds()

@@ -7,7 +7,8 @@ Game::Game()
 {
     this->initWindow();     //call the function to set up the window
     this->initStates();
-    this->map.loadFromFile("./image/map3.png");
+    this->mapTexture.loadFromFile("./image/map3.png");
+    this->s.setTexture(mapTexture);//set the map texture on the sprite for the background
 }
 
 Game::~Game()
@@ -91,11 +92,8 @@ void Game::render(){
     //render items
     if(!this->states.empty()){
         //background image
-        sf::Sprite s(map);
-        //get the player position
-        sf::Vector2f position = (this->states.top())->getPlayer().getHitbox().getPosition();
-        s.setPosition(position.x-START_X,position.y-START_Y);  //the 433 and 1274 numbers are for set the start position
-         //s.setPosition(position.x,position.y);
+        position = (this->states.top())->getPlayer().getHitboxPosition();//get the player position
+        s.setPosition(position.x-START_X,position.y-START_Y);  //move the background depending on the player position,the 490 and 1350 numbers are for set the start position
         this->wGame->draw(s);
         this->states.top()->render();
 

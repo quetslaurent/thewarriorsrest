@@ -10,7 +10,7 @@ class Enemy : public Hitbox
         Enemy(float posX,float posY,float width,float height);
         virtual ~Enemy();
 
-        void collide();
+        void collide(sf::RectangleShape& playerHitbox);
 
 };
 

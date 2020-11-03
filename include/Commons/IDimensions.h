@@ -10,7 +10,7 @@ class IDimensions
         const int WINDOW_HEIGHT =920;
         //player hitbox size
         const int PLAYERHITBOX_WIDTH = 60;
-        const int PLAYERHITBOX_HEIGHT = 80;
+        const int PLAYERHITBOX_HEIGHT = 60;
 
         //position where the player starts
         const int START_X=490;

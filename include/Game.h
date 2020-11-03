@@ -11,6 +11,7 @@ class Game : public IDimensions
         sf::RenderWindow *wGame;     //main window
         sf::Event sfEvent;
 
+        sf::Vector2f position;//player position
 
         sf::Clock dtClock;
         float dt;   //delta time
@@ -21,10 +22,9 @@ class Game : public IDimensions
         void initWindow();
         void initStates();
 
-
         //map
-        sf::Texture map;
-
+        sf::Texture mapTexture;
+        sf::Sprite s;
 
     public:
         Game();

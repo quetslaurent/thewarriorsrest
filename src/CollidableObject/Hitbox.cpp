@@ -23,10 +23,6 @@ Hitbox& Hitbox::operator=(const Hitbox& rhs)
     return *this;
 }
 
-void Hitbox::collide(){
-    cout<<"COLLISION"<<"\n";
-}
-
 sf::RectangleShape Hitbox::getHitbox()const{
     return hitbox;
 }

@@ -15,9 +15,10 @@
 #include<cstdlib>
 #include<fstream>
 #include<sstream>
-#include<HitboxInitialiser.h>
 
 #include "IDimensions.h"
+#include "HitboxCollider.h"
+
 class Entity : public IDimensions
 {
     private:
@@ -25,7 +26,7 @@ class Entity : public IDimensions
 
         sf::RectangleShape player; //player texture
 
-        HitboxInitialiser hitbox;   //all hitboxes on the map
+        HitboxCollider hitboxCollider;
 
         float movementSpeed;
 
@@ -40,7 +41,7 @@ class Entity : public IDimensions
     void render(sf::RenderTarget* target);
 
     void move(const float& dt,const float x,const float y); //move the playerHitbox
-    sf::RectangleShape getHitbox();
+    sf::Vector2f getHitboxPosition()const; //get the position of the hitbox
 
     //texture
     void createTexture(); //initialisation of the texture

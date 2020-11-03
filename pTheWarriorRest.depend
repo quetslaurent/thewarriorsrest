@@ -22,7 +22,7 @@
 1603723060 source:/home/joey/Bureau/pTheWarriorRest/main.cpp
 	"Game.h"
 
-1604318722 /home/joey/Bureau/pTheWarriorRest/include/Game.h
+1604404348 /home/joey/Bureau/pTheWarriorRest/include/Game.h
 	"GameState.h"
 	"IDimensions.h"
 
@@ -36,7 +36,7 @@
 1603724775 source:/home/joey/Bureau/pTheWarriorRest/src/State.cpp
 	"State.h"
 
-1604318025 source:/home/joey/Bureau/pTheWarriorRest/src/Game.cpp
+1604405143 source:/home/joey/Bureau/pTheWarriorRest/src/Game.cpp
 	"Game.h"
 	<iostream>
 
@@ -44,7 +44,7 @@
 	"GameState.h"
 	<iostream>
 
-1604318120 /home/joey/Bureau/pTheWarriorRest/include/Entities/Entity.h
+1604404497 /home/joey/Bureau/pTheWarriorRest/include/Entities/Entity.h
 	<SFML/Graphics.hpp>
 	<SFML/System.hpp>
 	<SFML/Window.hpp>
@@ -56,10 +56,10 @@
 	<cstdlib>
 	<fstream>
 	<sstream>
-	<HitboxInitialiser.h>
 	"IDimensions.h"
+	"HitboxCollider.h"
 
-1604339233 source:/home/joey/Bureau/pTheWarriorRest/src/Entities/Entity.cpp
+1604404855 source:/home/joey/Bureau/pTheWarriorRest/src/Entities/Entity.cpp
 	"Entity.h"
 	<iostream>
 	<string>
@@ -72,16 +72,16 @@
 	<vector>
 	<iostream>
 
-1604160488 source:/home/joey/Bureau/pTheWarriorRest/src/CollidableObject/Hitbox.cpp
+1604406038 source:/home/joey/Bureau/pTheWarriorRest/src/CollidableObject/Hitbox.cpp
 	"Hitbox.h"
 
-1604314366 source:/home/joey/Bureau/pTheWarriorRest/src/CollidableObject/Enemy.cpp
+1604406039 source:/home/joey/Bureau/pTheWarriorRest/src/CollidableObject/Enemy.cpp
 	"Enemy.h"
 
-1604314333 /home/joey/Bureau/pTheWarriorRest/include/CollidableObject/Enemy.h
+1604406039 /home/joey/Bureau/pTheWarriorRest/include/CollidableObject/Enemy.h
 	"Hitbox.h"
 
-1604314320 /home/joey/Bureau/pTheWarriorRest/include/CollidableObject/Hitbox.h
+1604406806 /home/joey/Bureau/pTheWarriorRest/include/CollidableObject/Hitbox.h
 	<SFML/Graphics.hpp>
 	<iostream>
 
@@ -89,7 +89,7 @@
 	<SFML/Graphics.hpp>
 	<iostream>
 
-1604339075 source:/home/joey/Bureau/pTheWarriorRest/src/CollidableObject/HitboxInitialiser.cpp
+1604339320 source:/home/joey/Bureau/pTheWarriorRest/src/CollidableObject/HitboxInitialiser.cpp
 	"HitboxInitialiser.h"
 
 1604160845 /home/joey/Bureau/pTheWarriorRest/include/CollidableObject/HitboxInitialiser.h
@@ -98,13 +98,22 @@
 	"Enemy.h"
 	"Wall.h"
 
-1604314328 /home/joey/Bureau/pTheWarriorRest/include/CollidableObject/Wall.h
+1604406039 /home/joey/Bureau/pTheWarriorRest/include/CollidableObject/Wall.h
 	"Hitbox.h"
+	<iostream>
 
-1604314352 source:/home/joey/Bureau/pTheWarriorRest/src/CollidableObject/Wall.cpp
+1604406484 source:/home/joey/Bureau/pTheWarriorRest/src/CollidableObject/Wall.cpp
 	"Wall.h"
 
-1604332571 /home/joey/Bureau/pTheWarriorRest/include/Commons/IDimensions.h
+1604399312 /home/joey/Bureau/pTheWarriorRest/include/Commons/IDimensions.h
 
 1604318033 source:/home/joey/Bureau/pTheWarriorRest/src/Commons/IDimensions.cpp
+
+1604403755 /home/joey/Bureau/pTheWarriorRest/include/CollidableObject/HitboxCollider.h
+	"HitboxInitialiser.h"
+	<SFML/Graphics.hpp>
+	"IDimensions.h"
+
+1604406614 source:/home/joey/Bureau/pTheWarriorRest/src/CollidableObject/HitboxCollider.cpp
+	"HitboxCollider.h"
 

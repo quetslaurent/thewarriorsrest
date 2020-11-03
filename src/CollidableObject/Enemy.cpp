@@ -9,6 +9,6 @@ Enemy::~Enemy()
     //dtor
 }
 
-void Enemy::collide(){
-    cout<<"ENEMY"<<"\n";
+void Enemy::collide(sf::RectangleShape& playerHitbox){
+    cout<<"ENEMY COLLISION"<<"\n";
 }

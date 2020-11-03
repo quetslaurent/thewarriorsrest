@@ -14,8 +14,10 @@ class Hitbox
         Hitbox(const Hitbox& other);
         Hitbox& operator=(const Hitbox& other);
 
-        virtual void collide();
+        //check if the player collide an hitbox from the map
+        virtual void collide(sf::RectangleShape& playerHitbox)=0;
 
+        //getter
         sf::RectangleShape getHitbox()const;
 };
 
