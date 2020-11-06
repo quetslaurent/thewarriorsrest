@@ -1,14 +1,10 @@
 #include "Game.h"
 
-#include <iostream>
-using std::cout;
-
 Game::Game()
 {
     this->initWindow();     //call the function to set up the window
     this->initStates();
-    this->mapTexture.loadFromFile("./image/map3.png");
-    this->s.setTexture(mapTexture);//set the map texture on the sprite for the background
+    this->stateId = GAME_STATE; //by default
 }
 
 Game::~Game()
@@ -16,16 +12,15 @@ Game::~Game()
     delete this->wGame;
 
     //remove all the states
-    while(!this->states.empty()){
-        delete this->states.top();
-        this->states.pop();
+    for(State* s : states){
+        delete s;
     }
 }
 
 //initialization
 void Game::initWindow(){
     // Create the main window
-    this->wGame= new sf::RenderWindow(sf::VideoMode(WINDOW_WIDTH,WINDOW_HEIGHT), "The Warrior's Rest");
+    this->wGame= new sf::RenderWindow(sf::VideoMode(WINDOW_WIDTH,WINDOW_HEIGHT), "The Warrior's Rest",sf::Style::Fullscreen);
     this->wGame->setFramerateLimit(120);
     this->wGame->setVerticalSyncEnabled(false);
 
@@ -42,8 +37,8 @@ void Game::initWindow(){
 }
 
 void Game::initStates(){
-    this->states.push(new GameState(this->wGame));
-
+    this->states.push_back(new GameState(this->wGame));
+    this->states.push_back(new BattleState(this->wGame));
 }
 
 //fonctions
@@ -62,16 +57,16 @@ void Game::update(){
     this->updateSFMLEvents();   //check if the window is closed
 
     //update states
-    if(!this->states.empty()){
-        this->states.top()->update(this->dt);
+    if(this->states.size() >0){
+
+        this->states[stateId]->update(this->dt);
 
         //when we quit the game
-        if(this->states.top()->getQuit())
+        if(this->states[stateId]->getQuit())
         {
             //when we press esc button
-            this->states.top()->endState();
-            delete this->states.top();
-            this->states.pop();
+            this->states[stateId]->endState();
+            delete this->states[1];
         }
     }
     //en of the Application
@@ -90,13 +85,8 @@ void Game::render(){
     this->wGame->clear();
 
     //render items
-    if(!this->states.empty()){
-        //background image
-        position = (this->states.top())->getPlayer().getHitboxPosition();//get the player position
-        s.setPosition(position.x-START_X,position.y-START_Y);  //move the background depending on the player position,the 490 and 1350 numbers are for set the start position
-        this->wGame->draw(s);
-        this->states.top()->render();
-
+    if(this->states.size() >0){
+        this->states[stateId]->render();
     }
 
     // Update the window
@@ -126,6 +116,10 @@ void Game::updateDt()
 //called a the end of the application
 void Game::endApplication()
 {
-
      std::cout<<"End of the Application"<<"\n";
+}
+
+void Game::setStateId(int id)
+{
+    this->stateId = id;
 }

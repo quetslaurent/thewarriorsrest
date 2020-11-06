@@ -2,8 +2,8 @@
 #define HITBOXINITIALISER_H
 #include <vector>
 #include "Hitbox.h"
-#include "Enemy.h"
 #include "Wall.h"
+#include "Enemy.h"
 
 class HitboxInitialiser
 {

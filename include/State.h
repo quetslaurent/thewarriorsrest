@@ -1,9 +1,13 @@
 #ifndef STATE_H
 #define STATE_H
 
-#include "Entity.h"
+#include <SFML/Graphics.hpp>
+#include "IDimensions.h"
+
+#include <iostream>
+using std::cout;
 //manage the resources
-class State
+class State : public IDimensions
 {
     private:
         sf::RenderWindow* window;
@@ -22,9 +26,8 @@ class State
 
         virtual void updateKeybinds()=0;
         virtual void update(const float& dt) = 0;
-        virtual void render(sf::RenderTarget* target = nullptr)=0;
+        virtual void render()=0;
 
-        virtual Entity getPlayer()=0;
 
 };
 

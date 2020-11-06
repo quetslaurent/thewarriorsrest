@@ -5,6 +5,12 @@ using std::cout;
 GameState::GameState(sf::RenderWindow* window):State(window)
 {
 
+    //background image
+    if(!this->mapTexture.loadFromFile("./image/map.png")){
+     EXIT_FAILURE;
+    }
+
+    this->s.setTexture(mapTexture);//set the map texture on the sprite for the background
 }
 
 GameState::~GameState()
@@ -19,9 +25,16 @@ void GameState::update(const float& dt)
    this->player.update(dt); //update and move the player
 }
 
-void GameState::render(sf::RenderTarget* target)
+void GameState::render()
 {
+    //draw the background
+    position = player.getHitboxPosition();//get the player position
+    s.setPosition(position.x-START_X,position.y-START_Y);  //move the background depending on the player position,the 490 and 1350 numbers are for set the start position
+
+    this->getWindow()->draw(s); // draw the background
+
     this->player.render(this->getWindow()); // draw the player
+
 }
 
 void GameState::updateKeybinds()
@@ -29,11 +42,6 @@ void GameState::updateKeybinds()
     this->checkForQuit();   //check if the user pressed the "esc" key
 }
 
-
-Entity GameState::getPlayer()
-{
-    return player;
-}
 
 //end of gameState
 void GameState::endState()

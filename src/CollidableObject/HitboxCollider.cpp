@@ -2,7 +2,7 @@
 
 HitboxCollider::HitboxCollider()
 {
-    this->hitboxInitialiser= HitboxInitialiser();
+        this->hitboxInitialiser= HitboxInitialiser();
 }
 
 HitboxCollider::~HitboxCollider()
@@ -69,7 +69,7 @@ void HitboxCollider::drawHitbox(sf::RenderTarget* target,sf::RectangleShape& pla
                  target->draw(hitboxdisplay);
 
     }
-    //draw the player hitbox
+        //draw the player hitbox
         sf::RectangleShape player = playerHitbox;
         player.setPosition( (WINDOW_WIDTH/2)-PLAYERHITBOX_WIDTH/2 , (WINDOW_HEIGHT/2)-PLAYERHITBOX_HEIGHT/2 );
         target->draw(player);

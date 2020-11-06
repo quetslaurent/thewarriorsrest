@@ -16,6 +16,7 @@ Entity::Entity()
     this->player.setPosition((WINDOW_WIDTH/2)-PLAYERHITBOX_WIDTH, (WINDOW_HEIGHT/2)-PLAYERHITBOX_HEIGHT);//put the player in the center of the screen
     this->movementSpeed=150.F;
 
+
     //set a texture
     createTexture();
 
@@ -63,7 +64,7 @@ void Entity::render(sf::RenderTarget* target)
 {
     target->draw(this->player);
 
-    //drawHitbox(target);//show the hitboxes on the map
+    drawHitbox(target);//show the hitboxes on the map
 }
 
 //move the entity

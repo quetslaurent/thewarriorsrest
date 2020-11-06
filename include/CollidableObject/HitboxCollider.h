@@ -3,6 +3,7 @@
 #include "HitboxInitialiser.h"
 #include <SFML/Graphics.hpp>
 #include "IDimensions.h"
+
 class HitboxCollider : public IDimensions
 {
     private:

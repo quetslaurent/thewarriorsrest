@@ -2,11 +2,9 @@
 #define GAMESTATE_H
 
 #include "State.h"
-using std::string;
-#include <string>
+#include "Entity.h"
 
-class GameState :
-    public State
+class GameState :public State
 {
     private:
         Entity player;
@@ -14,14 +12,18 @@ class GameState :
         GameState(sf::RenderWindow* window);
         virtual ~GameState();
 
+        //map
+        sf::Texture mapTexture;
+        sf::Sprite s;
+        sf::Vector2f position;//player position
+
         //functions
 
         void updateKeybinds();
         void update(const float& dt);
-        void render(sf::RenderTarget* target= nullptr);
+        void render();
         void endState();
 
-        Entity getPlayer();
 };
 
 #endif // GAMESTATE_H

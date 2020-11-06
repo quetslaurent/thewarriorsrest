@@ -2,29 +2,30 @@
 #define GAME_H
 
 #include "GameState.h"
+#include "BattleState.h"
 #include "IDimensions.h"
+#include "IStateId.h"
 
-class Game : public IDimensions
+#include <iostream>
+using std::cout;
+
+class Game : public IDimensions,IStateId
 {
     private:
         //variables
         sf::RenderWindow *wGame;     //main window
         sf::Event sfEvent;
 
-        sf::Vector2f position;//player position
-
         sf::Clock dtClock;
         float dt;   //delta time
 
-        std::stack<State*> states;
+        //views
+        std::vector<State*> states;
+        int stateId; //th id of the state, referenced in IStateId
 
         //initialization
         void initWindow();
         void initStates();
-
-        //map
-        sf::Texture mapTexture;
-        sf::Sprite s;
 
     public:
         Game();
@@ -44,6 +45,8 @@ class Game : public IDimensions
         //end
         void endApplication();
 
+        //change the state (view)
+        void setStateId(int id);
 
 };
 

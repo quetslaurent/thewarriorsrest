@@ -3,6 +3,7 @@
 HitboxInitialiser::HitboxInitialiser()
 {
     initHitboxes();
+
 }
 
 HitboxInitialiser::~HitboxInitialiser()

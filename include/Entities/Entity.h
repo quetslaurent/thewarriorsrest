@@ -2,19 +2,8 @@
 #define ENTITY_H
 
 #include <SFML/Graphics.hpp>
-#include <SFML/System.hpp>
-#include <SFML/Window.hpp>
-
-#include<stack>
-#include<map>
-
-#include<vector>
 
 #include<iostream>
-#include<ctime>
-#include<cstdlib>
-#include<fstream>
-#include<sstream>
 
 #include "IDimensions.h"
 #include "HitboxCollider.h"
