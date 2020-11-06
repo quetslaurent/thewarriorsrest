@@ -11,4 +11,6 @@ Enemy::~Enemy()
 
 void Enemy::collide(sf::RectangleShape& playerHitbox){
     cout<<"ENEMY COLLISION"<<"\n";
+    StateManager::stateId = 1;
+
 }

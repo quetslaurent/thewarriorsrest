@@ -1,10 +1,11 @@
 #ifndef GAME_H
 #define GAME_H
 
-#include "GameState.h"
 #include "BattleState.h"
+#include "GameState.h"
 #include "IDimensions.h"
 #include "IStateId.h"
+#include "StateManager.h"
 
 #include <iostream>
 using std::cout;
@@ -44,9 +45,6 @@ class Game : public IDimensions,IStateId
 
         //end
         void endApplication();
-
-        //change the state (view)
-        void setStateId(int id);
 
 };
 

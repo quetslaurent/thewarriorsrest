@@ -128,3 +128,110 @@
 1604663664 source:/home/joey/Bureau/pTheWarriorRest/src/Observer/ObserverEnemy.cpp
 	"ObserverEnemy.h"
 
+1604675999 source:/home/quetsl/Bureau/pTheWarriorRest/src/CollidableObject/Enemy.cpp
+	"Enemy.h"
+
+1604675941 /home/quetsl/Bureau/pTheWarriorRest/include/CollidableObject/Enemy.h
+	"Hitbox.h"
+	"IStateId.h"
+	"StateManager.h"
+
+1604411061 /home/quetsl/Bureau/pTheWarriorRest/include/CollidableObject/Hitbox.h
+	<SFML/Graphics.hpp>
+	<iostream>
+
+1604672993 /home/quetsl/Bureau/pTheWarriorRest/include/Commons/IStateId.h
+
+1604411061 source:/home/quetsl/Bureau/pTheWarriorRest/src/CollidableObject/Hitbox.cpp
+	"Hitbox.h"
+
+1604672993 source:/home/quetsl/Bureau/pTheWarriorRest/src/CollidableObject/HitboxCollider.cpp
+	"HitboxCollider.h"
+
+1604672993 /home/quetsl/Bureau/pTheWarriorRest/include/CollidableObject/HitboxCollider.h
+	"HitboxInitialiser.h"
+	<SFML/Graphics.hpp>
+	"IDimensions.h"
+
+1604672993 /home/quetsl/Bureau/pTheWarriorRest/include/CollidableObject/HitboxInitialiser.h
+	<vector>
+	"Hitbox.h"
+	"Wall.h"
+	"Enemy.h"
+
+1604411061 /home/quetsl/Bureau/pTheWarriorRest/include/CollidableObject/Wall.h
+	"Hitbox.h"
+	<iostream>
+
+1604672993 /home/quetsl/Bureau/pTheWarriorRest/include/Commons/IDimensions.h
+
+1604675341 source:/home/quetsl/Bureau/pTheWarriorRest/src/CollidableObject/HitboxInitialiser.cpp
+	"HitboxInitialiser.h"
+
+1604411061 source:/home/quetsl/Bureau/pTheWarriorRest/src/CollidableObject/Wall.cpp
+	"Wall.h"
+
+1604411061 source:/home/quetsl/Bureau/pTheWarriorRest/src/Commons/IDimensions.cpp
+
+1604672993 source:/home/quetsl/Bureau/pTheWarriorRest/src/Commons/IStateId.cpp
+
+1604672993 source:/home/quetsl/Bureau/pTheWarriorRest/src/Entities/Entity.cpp
+	"Entity.h"
+	<iostream>
+	<string>
+
+1604672993 /home/quetsl/Bureau/pTheWarriorRest/include/Entities/Entity.h
+	<SFML/Graphics.hpp>
+	<iostream>
+	"IDimensions.h"
+	"HitboxCollider.h"
+
+1603833478 source:/home/quetsl/Bureau/pTheWarriorRest/src/State.cpp
+	"State.h"
+
+1604672993 /home/quetsl/Bureau/pTheWarriorRest/include/State.h
+	<SFML/Graphics.hpp>
+	"IDimensions.h"
+	<iostream>
+
+1604672993 source:/home/quetsl/Bureau/pTheWarriorRest/src/States/BattleState.cpp
+	"BattleState.h"
+
+1604672993 /home/quetsl/Bureau/pTheWarriorRest/include/States/BattleState.h
+	"State.h"
+
+1604672993 source:/home/quetsl/Bureau/pTheWarriorRest/src/States/GameState.cpp
+	"GameState.h"
+	<iostream>
+
+1604672993 /home/quetsl/Bureau/pTheWarriorRest/include/States/GameState.h
+	"State.h"
+	"Entity.h"
+
+1604675698 source:/home/quetsl/Bureau/pTheWarriorRest/src/Game.cpp
+	"Game.h"
+
+1604676058 /home/quetsl/Bureau/pTheWarriorRest/include/Game.h
+	"BattleState.h"
+	"GameState.h"
+	"IDimensions.h"
+	"IStateId.h"
+	"StateManager.h"
+	<iostream>
+
+1604675868 source:/home/quetsl/Bureau/pTheWarriorRest/main.cpp
+	"Game.h"
+	"StateManager.h"
+
+1604675566 /home/quetsl/Bureau/pTheWarriorRest/include/BattleLauncher.h
+	"Game.h"
+	"Enemy.h"
+
+1604675709 source:/home/quetsl/Bureau/pTheWarriorRest/src/BattleLauncher.cpp
+	"BattleLauncher.h"
+
+1604675819 /home/quetsl/Bureau/pTheWarriorRest/include/StateManager.h
+
+1604675802 source:/home/quetsl/Bureau/pTheWarriorRest/src/StateManager.cpp
+	"StateManager.h"
+

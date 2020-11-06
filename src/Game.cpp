@@ -4,7 +4,7 @@ Game::Game()
 {
     this->initWindow();     //call the function to set up the window
     this->initStates();
-    this->stateId = GAME_STATE; //by default
+    stateId = StateManager::stateId; //by default
 }
 
 Game::~Game()
@@ -66,7 +66,7 @@ void Game::update(){
         {
             //when we press esc button
             this->states[stateId]->endState();
-            delete this->states[1];
+            delete this->states[stateId];
         }
     }
     //en of the Application
@@ -81,6 +81,9 @@ void Game::update(){
 
 //render the window
 void Game::render(){
+    //Update state id
+    this->stateId = StateManager::stateId;
+
     // Clear screen
     this->wGame->clear();
 
@@ -119,7 +122,4 @@ void Game::endApplication()
      std::cout<<"End of the Application"<<"\n";
 }
 
-void Game::setStateId(int id)
-{
-    this->stateId = id;
-}
+

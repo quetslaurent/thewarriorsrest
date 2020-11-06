@@ -28,6 +28,8 @@ void HitboxInitialiser::initHitboxes(){
     Wall* west_fence = new Wall(1035,510,100,890);
     Wall* est_fence = new Wall(-650,510,100,890);
 
+    Enemy* enemy = new Enemy(100,1000,80,80);
+
 
     hitboxes.push_back(wall_bottom_left);
     hitboxes.push_back(house_bottom_left);
@@ -42,6 +44,7 @@ void HitboxInitialiser::initHitboxes(){
     hitboxes.push_back(north_houses);
     hitboxes.push_back(west_fence);
     hitboxes.push_back(est_fence);
+    hitboxes.push_back(enemy);
 }
 
 std::vector<Hitbox*> HitboxInitialiser::getHitboxes()const {
