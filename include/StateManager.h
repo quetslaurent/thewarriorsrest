@@ -7,11 +7,7 @@ class StateManager
     public:
         StateManager();
         virtual ~StateManager();
-        static int stateId;
-
-    protected:
-
-    private:
+        static int stateId; //the id of the actual state
 };
 
 #endif // STATEMANAGER_H

@@ -62,6 +62,7 @@
 		<Unit filename="include/Entities/Entity.h" />
 		<Unit filename="include/Game.h" />
 		<Unit filename="include/State.h" />
+		<Unit filename="include/StateManager.h" />
 		<Unit filename="include/States/BattleState.h" />
 		<Unit filename="include/States/GameState.h" />
 		<Unit filename="main.cpp" />
@@ -75,6 +76,7 @@
 		<Unit filename="src/Entities/Entity.cpp" />
 		<Unit filename="src/Game.cpp" />
 		<Unit filename="src/State.cpp" />
+		<Unit filename="src/StateManager.cpp" />
 		<Unit filename="src/States/BattleState.cpp" />
 		<Unit filename="src/States/GameState.cpp" />
 		<Extensions />

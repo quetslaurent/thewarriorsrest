@@ -4,7 +4,6 @@ Game::Game()
 {
     this->initWindow();     //call the function to set up the window
     this->initStates();
-    stateId = StateManager::stateId; //by default
 }
 
 Game::~Game()
@@ -20,7 +19,8 @@ Game::~Game()
 //initialization
 void Game::initWindow(){
     // Create the main window
-    this->wGame= new sf::RenderWindow(sf::VideoMode(WINDOW_WIDTH,WINDOW_HEIGHT), "The Warrior's Rest",sf::Style::Fullscreen);
+    //this->wGame= new sf::RenderWindow(sf::VideoMode(WINDOW_WIDTH,WINDOW_HEIGHT), "The Warrior's Rest",sf::Style::Fullscreen);
+    this->wGame= new sf::RenderWindow(sf::VideoMode(WINDOW_WIDTH,WINDOW_HEIGHT), "The Warrior's Rest");
     this->wGame->setFramerateLimit(120);
     this->wGame->setVerticalSyncEnabled(false);
 
@@ -59,14 +59,14 @@ void Game::update(){
     //update states
     if(this->states.size() >0){
 
-        this->states[stateId]->update(this->dt);
+        this->states[StateManager::stateId]->update(this->dt);
 
         //when we quit the game
-        if(this->states[stateId]->getQuit())
+        if(this->states[StateManager::stateId]->getQuit())
         {
             //when we press esc button
-            this->states[stateId]->endState();
-            delete this->states[stateId];
+            this->states[StateManager::stateId]->endState();
+            delete this->states[StateManager::stateId];
         }
     }
     //en of the Application
@@ -81,15 +81,14 @@ void Game::update(){
 
 //render the window
 void Game::render(){
-    //Update state id
-    this->stateId = StateManager::stateId;
+
 
     // Clear screen
     this->wGame->clear();
 
     //render items
     if(this->states.size() >0){
-        this->states[stateId]->render();
+        this->states[StateManager::stateId]->render();
     }
 
     // Update the window

@@ -53,20 +53,20 @@ void HitboxCollider::drawHitbox(sf::RenderTarget* target,sf::RectangleShape& pla
 
     for(Hitbox* &collision :listHitboxes){
 
-                 //get the RectangleShape from the Hitbox class
-                 sf::RectangleShape hitboxdisplay = collision->getHitbox();
+             //get the RectangleShape from the Hitbox class
+             sf::RectangleShape hitboxdisplay = collision->getHitbox();
 
-                 //modify the position , so the hitbox is at the good place on the screen
-                 hitboxdisplay.setPosition(hitboxdisplay.getPosition().x- (hitboxdisplay.getPosition().x*2),hitboxdisplay.getPosition().y- (hitboxdisplay.getPosition().y*2));
+             //modify the position , so the hitbox is at the good place on the screen
+             hitboxdisplay.setPosition(hitboxdisplay.getPosition().x- (hitboxdisplay.getPosition().x*2),hitboxdisplay.getPosition().y- (hitboxdisplay.getPosition().y*2));
 
-                 hitboxdisplay.move((WINDOW_WIDTH/2)-PLAYERHITBOX_WIDTH/2 +playerHitbox.getPosition().x +PLAYERHITBOX_WIDTH, (WINDOW_HEIGHT/2)-PLAYERHITBOX_HEIGHT/2+playerHitbox.getPosition().y +PLAYERHITBOX_HEIGHT);
+             hitboxdisplay.move((WINDOW_WIDTH/2)-PLAYERHITBOX_WIDTH/2 +playerHitbox.getPosition().x +PLAYERHITBOX_WIDTH, (WINDOW_HEIGHT/2)-PLAYERHITBOX_HEIGHT/2+playerHitbox.getPosition().y +PLAYERHITBOX_HEIGHT);
 
-                 hitboxdisplay.rotate(180);
+             hitboxdisplay.rotate(180);
 
-                 //set a "random" color
-                 hitboxdisplay.setFillColor(sf::Color(100, hitboxdisplay.getPosition().x, 50));
-                 //draw the hitbox
-                 target->draw(hitboxdisplay);
+             //set a "random" color
+             hitboxdisplay.setFillColor(sf::Color(100, hitboxdisplay.getPosition().x, 50));
+             //draw the hitbox
+             target->draw(hitboxdisplay);
 
     }
         //draw the player hitbox

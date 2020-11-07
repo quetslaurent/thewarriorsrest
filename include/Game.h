@@ -22,7 +22,6 @@ class Game : public IDimensions,IStateId
 
         //views
         std::vector<State*> states;
-        int stateId; //th id of the state, referenced in IStateId
 
         //initialization
         void initWindow();

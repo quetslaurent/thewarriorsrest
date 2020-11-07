@@ -8,6 +8,7 @@ BattleState::BattleState(sf::RenderWindow* window):State(window)
     }
 
     this->s.setTexture(mapTexture);//set the map texture on the sprite for the background
+    this->ableToFight = true;
 }
 
 BattleState::~BattleState()
@@ -18,20 +19,41 @@ BattleState::~BattleState()
 
 void BattleState::render()
 {
-    //draw the background
     this->getWindow()->draw(s); // draw the background
 }
 
 void BattleState::update(const float& dt)
 {
    this->updateKeybinds();  //check if the player pressed a specific key
+
+   if(ableToFight){
+       //first attack
+       if(sf::Keyboard::isKeyPressed(sf::Keyboard::A)){
+            std::cout<<"FIRST ATTACK  : A "<<"\n";
+            ableToFight = false;
+       }
+       //second attack
+       if(sf::Keyboard::isKeyPressed(sf::Keyboard::Z)){
+            std::cout<<"SECOND ATTACK  : Z "<<"\n";
+            ableToFight = false;
+       }
+       //heal
+       if(sf::Keyboard::isKeyPressed(sf::Keyboard::E)){
+            std::cout<<"HEAL  : E "<<"\n";
+            ableToFight = false;
+       }
+       //ultimate
+       if(sf::Keyboard::isKeyPressed(sf::Keyboard::R)){
+            std::cout<<"ULTIMATE : R "<<"\n";
+            ableToFight = false;
+       }
+   }
 }
 
 void BattleState::updateKeybinds()
 {
     this->checkForQuit();   //check if the user pressed the "esc" key
 }
-
 
 //end of BattleState
 void BattleState::endState()

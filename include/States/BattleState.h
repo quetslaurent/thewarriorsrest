@@ -10,6 +10,8 @@ class BattleState:public State
         sf::Texture mapTexture;
         sf::Sprite s;
 
+        bool ableToFight; //check if the player can choose an attack
+
     public:
         BattleState(sf::RenderWindow* window);
         virtual ~BattleState();

@@ -19,17 +19,19 @@
 	<SFML/Window.hpp>
 	<vector>
 
-1604661603 source:/home/joey/Bureau/pTheWarriorRest/main.cpp
+1604676868 source:/home/joey/Bureau/pTheWarriorRest/main.cpp
 	"Game.h"
+	"StateManager.h"
 
-1604664147 /home/joey/Bureau/pTheWarriorRest/include/Game.h
-	"GameState.h"
+1604741909 /home/joey/Bureau/pTheWarriorRest/include/Game.h
 	"BattleState.h"
+	"GameState.h"
 	"IDimensions.h"
 	"IStateId.h"
+	"StateManager.h"
 	<iostream>
 
-1604671578 /home/joey/Bureau/pTheWarriorRest/include/States/GameState.h
+1604743457 /home/joey/Bureau/pTheWarriorRest/include/States/GameState.h
 	"State.h"
 	"Entity.h"
 
@@ -41,20 +43,20 @@
 1603724775 source:/home/joey/Bureau/pTheWarriorRest/src/State.cpp
 	"State.h"
 
-1604671574 source:/home/joey/Bureau/pTheWarriorRest/src/Game.cpp
+1604742787 source:/home/joey/Bureau/pTheWarriorRest/src/Game.cpp
 	"Game.h"
 
 1604671585 source:/home/joey/Bureau/pTheWarriorRest/src/States/GameState.cpp
 	"GameState.h"
 	<iostream>
 
-1604671607 /home/joey/Bureau/pTheWarriorRest/include/Entities/Entity.h
+1604675004 /home/joey/Bureau/pTheWarriorRest/include/Entities/Entity.h
 	<SFML/Graphics.hpp>
 	<iostream>
 	"IDimensions.h"
 	"HitboxCollider.h"
 
-1604671598 source:/home/joey/Bureau/pTheWarriorRest/src/Entities/Entity.cpp
+1604743591 source:/home/joey/Bureau/pTheWarriorRest/src/Entities/Entity.cpp
 	"Entity.h"
 	<iostream>
 	<string>
@@ -70,12 +72,13 @@
 1604406788 source:/home/joey/Bureau/pTheWarriorRest/src/CollidableObject/Hitbox.cpp
 	"Hitbox.h"
 
-1604671701 source:/home/joey/Bureau/pTheWarriorRest/src/CollidableObject/Enemy.cpp
+1604676733 source:/home/joey/Bureau/pTheWarriorRest/src/CollidableObject/Enemy.cpp
 	"Enemy.h"
 
-1604671709 /home/joey/Bureau/pTheWarriorRest/include/CollidableObject/Enemy.h
+1604676733 /home/joey/Bureau/pTheWarriorRest/include/CollidableObject/Enemy.h
 	"Hitbox.h"
 	"IStateId.h"
+	"StateManager.h"
 
 1604406806 /home/joey/Bureau/pTheWarriorRest/include/CollidableObject/Hitbox.h
 	<SFML/Graphics.hpp>
@@ -85,7 +88,7 @@
 	<SFML/Graphics.hpp>
 	<iostream>
 
-1604671625 source:/home/joey/Bureau/pTheWarriorRest/src/CollidableObject/HitboxInitialiser.cpp
+1604676733 source:/home/joey/Bureau/pTheWarriorRest/src/CollidableObject/HitboxInitialiser.cpp
 	"HitboxInitialiser.h"
 
 1604671681 /home/joey/Bureau/pTheWarriorRest/include/CollidableObject/HitboxInitialiser.h
@@ -110,13 +113,13 @@
 	<SFML/Graphics.hpp>
 	"IDimensions.h"
 
-1604671927 source:/home/joey/Bureau/pTheWarriorRest/src/CollidableObject/HitboxCollider.cpp
+1604676822 source:/home/joey/Bureau/pTheWarriorRest/src/CollidableObject/HitboxCollider.cpp
 	"HitboxCollider.h"
 
-1604659355 source:/home/joey/Bureau/pTheWarriorRest/src/States/BattleState.cpp
+1604743447 source:/home/joey/Bureau/pTheWarriorRest/src/States/BattleState.cpp
 	"BattleState.h"
 
-1604658039 /home/joey/Bureau/pTheWarriorRest/include/States/BattleState.h
+1604743465 /home/joey/Bureau/pTheWarriorRest/include/States/BattleState.h
 	"State.h"
 
 1604660475 /home/joey/Bureau/pTheWarriorRest/include/Commons/IStateId.h
@@ -233,5 +236,10 @@
 1604675819 /home/quetsl/Bureau/pTheWarriorRest/include/StateManager.h
 
 1604675802 source:/home/quetsl/Bureau/pTheWarriorRest/src/StateManager.cpp
+	"StateManager.h"
+
+1604741816 /home/joey/Bureau/pTheWarriorRest/include/StateManager.h
+
+1604676733 source:/home/joey/Bureau/pTheWarriorRest/src/StateManager.cpp
 	"StateManager.h"
 

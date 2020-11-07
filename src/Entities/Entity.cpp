@@ -64,7 +64,7 @@ void Entity::render(sf::RenderTarget* target)
 {
     target->draw(this->player);
 
-    drawHitbox(target);//show the hitboxes on the map
+    //drawHitbox(target);//show the hitboxes on the map
 }
 
 //move the entity
