@@ -131,7 +131,7 @@
 1604663664 source:/home/joey/Bureau/pTheWarriorRest/src/Observer/ObserverEnemy.cpp
 	"ObserverEnemy.h"
 
-1604675999 source:/home/quetsl/Bureau/pTheWarriorRest/src/CollidableObject/Enemy.cpp
+1604676070 source:/home/quetsl/Bureau/pTheWarriorRest/src/CollidableObject/Enemy.cpp
 	"Enemy.h"
 
 1604675941 /home/quetsl/Bureau/pTheWarriorRest/include/CollidableObject/Enemy.h
@@ -148,7 +148,7 @@
 1604411061 source:/home/quetsl/Bureau/pTheWarriorRest/src/CollidableObject/Hitbox.cpp
 	"Hitbox.h"
 
-1604672993 source:/home/quetsl/Bureau/pTheWarriorRest/src/CollidableObject/HitboxCollider.cpp
+1604745041 source:/home/quetsl/Bureau/pTheWarriorRest/src/CollidableObject/HitboxCollider.cpp
 	"HitboxCollider.h"
 
 1604672993 /home/quetsl/Bureau/pTheWarriorRest/include/CollidableObject/HitboxCollider.h
@@ -178,7 +178,7 @@
 
 1604672993 source:/home/quetsl/Bureau/pTheWarriorRest/src/Commons/IStateId.cpp
 
-1604672993 source:/home/quetsl/Bureau/pTheWarriorRest/src/Entities/Entity.cpp
+1604745041 source:/home/quetsl/Bureau/pTheWarriorRest/src/Entities/Entity.cpp
 	"Entity.h"
 	<iostream>
 	<string>
@@ -197,11 +197,14 @@
 	"IDimensions.h"
 	<iostream>
 
-1604672993 source:/home/quetsl/Bureau/pTheWarriorRest/src/States/BattleState.cpp
+1604752305 source:/home/quetsl/Bureau/pTheWarriorRest/src/States/BattleState.cpp
 	"BattleState.h"
 
-1604672993 /home/quetsl/Bureau/pTheWarriorRest/include/States/BattleState.h
+1604749995 /home/quetsl/Bureau/pTheWarriorRest/include/States/BattleState.h
 	"State.h"
+	"TurnState.h"
+	"PlayerTurn.h"
+	"EnemyTurn.h"
 
 1604672993 source:/home/quetsl/Bureau/pTheWarriorRest/src/States/GameState.cpp
 	"GameState.h"
@@ -211,10 +214,10 @@
 	"State.h"
 	"Entity.h"
 
-1604675698 source:/home/quetsl/Bureau/pTheWarriorRest/src/Game.cpp
+1604745041 source:/home/quetsl/Bureau/pTheWarriorRest/src/Game.cpp
 	"Game.h"
 
-1604676058 /home/quetsl/Bureau/pTheWarriorRest/include/Game.h
+1604745041 /home/quetsl/Bureau/pTheWarriorRest/include/Game.h
 	"BattleState.h"
 	"GameState.h"
 	"IDimensions.h"
@@ -222,7 +225,7 @@
 	"StateManager.h"
 	<iostream>
 
-1604675868 source:/home/quetsl/Bureau/pTheWarriorRest/main.cpp
+1604745041 source:/home/quetsl/Bureau/pTheWarriorRest/main.cpp
 	"Game.h"
 	"StateManager.h"
 
@@ -233,7 +236,7 @@
 1604675709 source:/home/quetsl/Bureau/pTheWarriorRest/src/BattleLauncher.cpp
 	"BattleLauncher.h"
 
-1604675819 /home/quetsl/Bureau/pTheWarriorRest/include/StateManager.h
+1604745041 /home/quetsl/Bureau/pTheWarriorRest/include/StateManager.h
 
 1604675802 source:/home/quetsl/Bureau/pTheWarriorRest/src/StateManager.cpp
 	"StateManager.h"
@@ -242,4 +245,107 @@
 
 1604676733 source:/home/joey/Bureau/pTheWarriorRest/src/StateManager.cpp
 	"StateManager.h"
+
+1604751841 source:/home/quetsl/Bureau/pTheWarriorRest/src/Battle/AttackStrategy/AttackStrategy.cpp
+	"AttackStrategy.h"
+
+1604751789 /home/quetsl/Bureau/pTheWarriorRest/include/Battle/AttackStrategy/AttackStrategy.h
+	<iostream>
+	<cstdlib>
+	<ctime>
+
+1604752379 source:/home/quetsl/Bureau/pTheWarriorRest/src/Battle/AttackStrategy/AttackType/CriticalAttack.cpp
+	"CriticalAttack.h"
+
+1604751755 /home/quetsl/Bureau/pTheWarriorRest/include/Battle/AttackStrategy/AttackType/CriticalAttack.h
+	"AttackStrategy.h"
+
+1604749043 source:/home/quetsl/Bureau/pTheWarriorRest/src/Battle/AttackStrategy/AttackType/DefaultAttack.cpp
+	"DefaultAttack.h"
+
+1604749174 /home/quetsl/Bureau/pTheWarriorRest/include/Battle/AttackStrategy/AttackType/DefaultAttack.h
+	"AttackStrategy.h"
+
+1604746893 source:/home/quetsl/Bureau/pTheWarriorRest/src/Battle/AttackStrategy/AttackType/DefensiveAttack.cpp
+	"DefensiveAttack.h"
+
+1604746893 /home/quetsl/Bureau/pTheWarriorRest/include/Battle/AttackStrategy/AttackType/DefensiveAttack.h
+
+1604749138 source:/home/quetsl/Bureau/pTheWarriorRest/src/Battle/AttackStrategy/AttackType/UltimateAttack.cpp
+	"UltimateAttack.h"
+
+1604749122 /home/quetsl/Bureau/pTheWarriorRest/include/Battle/AttackStrategy/AttackType/UltimateAttack.h
+	"AttackStrategy.h"
+
+1604748688 source:/home/quetsl/Bureau/pTheWarriorRest/src/Battle/AttackStrategy/Character.cpp
+	"Character.h"
+
+1604748595 /home/quetsl/Bureau/pTheWarriorRest/include/Battle/AttackStrategy/Character.h
+	"AttackStrategy.h"
+	"DefaultAttack.h"
+	"UltimateAttack.h"
+	"CriticalAttack.h"
+	"Health.h"
+
+1604751605 /home/quetsl/Bureau/pTheWarriorRest/include/Battle/TurnState/TurnState.h
+	"Player.h"
+	"EnemyBattle.h"
+
+1604749398 source:/home/quetsl/Bureau/pTheWarriorRest/src/Battle/AttackStrategy/EnemyBattle.cpp
+	"EnemyBattle.h"
+
+1604748930 /home/quetsl/Bureau/pTheWarriorRest/include/Battle/AttackStrategy/EnemyBattle.h
+	"Character.h"
+	<cstdlib>
+	<ctime>
+
+1604748774 source:/home/quetsl/Bureau/pTheWarriorRest/src/Battle/AttackStrategy/Health.cpp
+	"Health.h"
+
+1604748758 /home/quetsl/Bureau/pTheWarriorRest/include/Battle/AttackStrategy/Health.h
+	<iostream>
+	<string>
+
+1604751998 source:/home/quetsl/Bureau/pTheWarriorRest/src/Battle/AttackStrategy/Player.cpp
+	"Player.h"
+
+1604752007 /home/quetsl/Bureau/pTheWarriorRest/include/Battle/AttackStrategy/Player.h
+	"Character.h"
+
+1604746029 source:/home/quetsl/Bureau/pTheWarriorRest/src/Battle/TurnState/EnemyTurn.cpp
+	"EnemyTurn.h"
+
+1604745973 /home/quetsl/Bureau/pTheWarriorRest/include/Battle/TurnState/EnemyTurn.h
+
+1604746091 source:/home/quetsl/Bureau/pTheWarriorRest/src/Battle/TurnState/Loose.cpp
+	"Loose.h"
+
+1604746059 /home/quetsl/Bureau/pTheWarriorRest/include/Battle/TurnState/Loose.h
+
+1604752111 source:/home/quetsl/Bureau/pTheWarriorRest/src/Battle/TurnState/PlayerTurn.cpp
+	"PlayerTurn.h"
+
+1604749965 /home/quetsl/Bureau/pTheWarriorRest/include/Battle/TurnState/PlayerTurn.h
+	"TurnState.h"
+	<SFML/Graphics.hpp>
+
+1604751619 source:/home/quetsl/Bureau/pTheWarriorRest/src/Battle/TurnState/TurnState.cpp
+	"TurnState.h"
+
+1604746147 source:/home/quetsl/Bureau/pTheWarriorRest/src/Battle/TurnState/Win.cpp
+	"Win.h"
+
+1604746120 /home/quetsl/Bureau/pTheWarriorRest/include/Battle/TurnState/Win.h
+
+1604745041 source:/home/quetsl/Bureau/pTheWarriorRest/src/CollidableObject/Collide.cpp
+	"Collide.h"
+
+1604745041 /home/quetsl/Bureau/pTheWarriorRest/include/CollidableObject/Collide.h
+	"GameState.h"
+	"BattleState.h"
+	"IDimensions.h"
+	"IStateId.h"
+	<iostream>
+	"Hitbox.h"
+	"IStateId.h"
 

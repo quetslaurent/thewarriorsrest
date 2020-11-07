@@ -8,12 +8,16 @@ BattleState::BattleState(sf::RenderWindow* window):State(window)
     }
 
     this->s.setTexture(mapTexture);//set the map texture on the sprite for the background
-    this->ableToFight = true;
+
+    PlayerTurn* playerTurn = new PlayerTurn();
+
+    setTurnState(playerTurn);
 }
 
 BattleState::~BattleState()
 {
     //dtor
+//    delete playerTurn;
 }
 
 
@@ -24,8 +28,11 @@ void BattleState::render()
 
 void BattleState::update(const float& dt)
 {
-   this->updateKeybinds();  //check if the player pressed a specific key
+    this->updateKeybinds();  //check if the player pressed a specific key
 
+    this->turnState->attack();
+
+    /*
    if(ableToFight){
        //first attack
        if(sf::Keyboard::isKeyPressed(sf::Keyboard::A)){
@@ -47,7 +54,7 @@ void BattleState::update(const float& dt)
             std::cout<<"ULTIMATE : R "<<"\n";
             ableToFight = false;
        }
-   }
+   }*/
 }
 
 void BattleState::updateKeybinds()
@@ -59,4 +66,9 @@ void BattleState::updateKeybinds()
 void BattleState::endState()
 {
     std::cout<<"END of BattleState"<<"\n";
+}
+
+void BattleState::setTurnState(TurnState* turnState)
+{
+    this->turnState = turnState;
 }
