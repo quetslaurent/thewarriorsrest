@@ -3,9 +3,7 @@
 HitboxInitialiser::HitboxInitialiser()
 {
     initHitboxes();
-
-    cout<<"Construction HitboInitialiser"<<"\n";
-
+    //this->enemyTexture.loadFromFile("./image/enemyAnimation.png");
 }
 
 HitboxInitialiser::~HitboxInitialiser()
@@ -32,8 +30,8 @@ void HitboxInitialiser::initHitboxes(){
 
     Enemy* enemy = new Enemy(100,1000,80,80);
 
-    cout<<"init Hitbox"<<"\n";
-
+    /*enemy->getHitbox().setTexture(&enemyTexture);
+    enemy->getHitbox().setTextureRect(sf::IntRect(0,0,1100,1100));*/
 
     hitboxes.push_back(wall_bottom_left);
     hitboxes.push_back(house_bottom_left);

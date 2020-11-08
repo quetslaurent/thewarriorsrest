@@ -8,6 +8,7 @@ class HitboxCollider : public IDimensions
 {
     private:
         HitboxInitialiser hitboxInitialiser;   //all hitboxes on the map
+        sf::Texture enemyTexture;
     public:
         HitboxCollider();
         virtual ~HitboxCollider();

@@ -9,6 +9,7 @@ class HitboxInitialiser
 {
     private:
         std::vector<Hitbox*> hitboxes;
+        //sf::Texture enemyTexture;
     public:
         HitboxInitialiser();
         virtual ~HitboxInitialiser();

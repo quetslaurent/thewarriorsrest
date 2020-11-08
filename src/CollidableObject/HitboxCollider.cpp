@@ -3,6 +3,7 @@
 HitboxCollider::HitboxCollider()
 {
         this->hitboxInitialiser= HitboxInitialiser();
+        this->enemyTexture.loadFromFile("./image/enemyAnimation.png");
 }
 
 HitboxCollider::~HitboxCollider()
@@ -84,6 +85,10 @@ void HitboxCollider::drawEnemies(sf::RenderWindow* target,sf::RectangleShape& pl
 
                  //get the RectangleShape from the Hitbox class
                  sf::RectangleShape hitboxdisplay = collision->getHitbox();
+
+                 hitboxdisplay.setTexture(&enemyTexture);
+                 hitboxdisplay.setTextureRect(sf::IntRect(0,0,1100,1100));
+                 hitboxdisplay.setSize(sf::Vector2f(120.f,120.f));//the enemy texture
 
                  //modify the position , so the hitbox is at the good place on the screen
                  hitboxdisplay.setPosition(hitboxdisplay.getPosition().x- (hitboxdisplay.getPosition().x*2),hitboxdisplay.getPosition().y- (hitboxdisplay.getPosition().y*2));

@@ -92,7 +92,8 @@ sf::Vector2f Entity::getHitboxPosition()const{
     return playerHitbox.getPosition();
 }
 
-HitboxCollider Entity::getHitboxCollider(){
+HitboxCollider& Entity::getHitboxCollider(){
+
     return hitboxCollider;
 }
 

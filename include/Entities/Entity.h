@@ -35,7 +35,7 @@ class Entity : public IDimensions
     //texture
     void createTexture(); //initialisation of the texture
 
-    HitboxCollider getHitboxCollider();
+    HitboxCollider& getHitboxCollider();
     sf::RectangleShape& getPlayerHitbox();
 
 };
