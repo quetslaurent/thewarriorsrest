@@ -2,9 +2,8 @@
 #define BATTLESTATE_H
 
 #include "State.h"
-#include "TurnState.h"
-#include "PlayerTurn.h"
-#include "EnemyTurn.h"
+#include "Player.h"
+#include "EnemyBattle.h"
 
 class BattleState:public State
 {
@@ -13,7 +12,10 @@ class BattleState:public State
         sf::Texture mapTexture;
         sf::Sprite s;
 
-        TurnState* turnState;//DP that checks who has to attack
+        bool ableToFight;
+
+        Player* player;
+        EnemyBattle* enemy;
 
     public:
         BattleState(sf::RenderWindow* window);
@@ -24,7 +26,6 @@ class BattleState:public State
         void update(const float& dt);
         void render();
         void endState();
-        void setTurnState(TurnState* turnState);
 
 };
 

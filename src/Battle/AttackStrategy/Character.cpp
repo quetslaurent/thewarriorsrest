@@ -19,13 +19,14 @@ void Character::setStrategie(AttackStrategy* strategy){
     m_strategie=strategy;
 }
 
-void Character::attack(Character& p){
+void Character::attack(Character* p){
     double damage = m_strategie->giveDamage();
-     p.receiveDamage(damage);
+     p->receiveDamage(damage);
 }
 
 void Character::receiveDamage(double damage){
     this->health.receiveDamage(damage);
+    cout<<"Vie : "<<health.str()<<"\n";
 }
 
 Health Character::getHealth()const{

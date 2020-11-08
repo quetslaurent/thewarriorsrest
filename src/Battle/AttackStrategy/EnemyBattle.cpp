@@ -15,7 +15,7 @@ EnemyBattle::EnemyBattle(Health health):Character(health)
 
 }
 
-void EnemyBattle::attack(Character& p){
+void EnemyBattle::attack(Character* p){
     setStrategie();
      Character::attack(p);
 }
@@ -29,12 +29,15 @@ void EnemyBattle::setStrategie(){
     int numOfAttack =  rand()% (3)+1;
     if(numOfAttack==1){
         Character::setStrategie(new DefaultAttack());
+        cout<<"Ennemy launched a default attack !"<<"\n";
     }
     else if (numOfAttack==2){
         Character::setStrategie(new CriticalAttack());
+          cout<<"Ennemy launched a critical attack !"<<"\n";
     }
     else{
         Character::setStrategie(new UltimateAttack());
+          cout<<"Ennemy launched an ultimate attack !"<<"\n";
     }
 
 }

@@ -11,7 +11,7 @@ class Player : public Character
         Player();
         Player(Health health);
         virtual ~Player();
-        void attack(Character& p);
+        void attack(Character* p);
         void receiveDamage(double damage);
         void setStrategie(AttackStrategy* strategie);
 };

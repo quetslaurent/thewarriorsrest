@@ -9,9 +9,10 @@ BattleState::BattleState(sf::RenderWindow* window):State(window)
 
     this->s.setTexture(mapTexture);//set the map texture on the sprite for the background
 
-    PlayerTurn* playerTurn = new PlayerTurn();
+    this->ableToFight = true;
 
-    setTurnState(playerTurn);
+    this->player = new Player(200);
+    this->enemy = new EnemyBattle(100);
 }
 
 BattleState::~BattleState()
@@ -30,31 +31,32 @@ void BattleState::update(const float& dt)
 {
     this->updateKeybinds();  //check if the player pressed a specific key
 
-    this->turnState->attack();
 
-    /*
    if(ableToFight){
        //first attack
-       if(sf::Keyboard::isKeyPressed(sf::Keyboard::A)){
+       if(sf::Keyboard::isKeyPressed(sf::Keyboard::E)){
             std::cout<<"FIRST ATTACK  : A "<<"\n";
+            //this->player->setStrategie(new DefaultAttack);
             ableToFight = false;
        }
        //second attack
-       if(sf::Keyboard::isKeyPressed(sf::Keyboard::Z)){
+       if(sf::Keyboard::isKeyPressed(sf::Keyboard::R)){
             std::cout<<"SECOND ATTACK  : Z "<<"\n";
-            ableToFight = false;
-       }
-       //heal
-       if(sf::Keyboard::isKeyPressed(sf::Keyboard::E)){
-            std::cout<<"HEAL  : E "<<"\n";
+            //this->player->setStrategie(new CriticalAttack);
             ableToFight = false;
        }
        //ultimate
-       if(sf::Keyboard::isKeyPressed(sf::Keyboard::R)){
+       if(sf::Keyboard::isKeyPressed(sf::Keyboard::T)){
             std::cout<<"ULTIMATE : R "<<"\n";
+            //this->player->setStrategie(new UltimateAttack);
             ableToFight = false;
        }
-   }*/
+//       if(!ableToFight) {
+//        this->player->attack(this->enemy);
+//        this->enemy->attack(this->player);
+//       }
+        ableToFight=true;
+   }
 }
 
 void BattleState::updateKeybinds()
@@ -66,9 +68,4 @@ void BattleState::updateKeybinds()
 void BattleState::endState()
 {
     std::cout<<"END of BattleState"<<"\n";
-}
-
-void BattleState::setTurnState(TurnState* turnState)
-{
-    this->turnState = turnState;
 }

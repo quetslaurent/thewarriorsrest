@@ -197,14 +197,13 @@
 	"IDimensions.h"
 	<iostream>
 
-1604752305 source:/home/quetsl/Bureau/pTheWarriorRest/src/States/BattleState.cpp
+1604763402 source:/home/quetsl/Bureau/pTheWarriorRest/src/States/BattleState.cpp
 	"BattleState.h"
 
-1604749995 /home/quetsl/Bureau/pTheWarriorRest/include/States/BattleState.h
+1604762560 /home/quetsl/Bureau/pTheWarriorRest/include/States/BattleState.h
 	"State.h"
-	"TurnState.h"
-	"PlayerTurn.h"
-	"EnemyTurn.h"
+	"Player.h"
+	"EnemyBattle.h"
 
 1604672993 source:/home/quetsl/Bureau/pTheWarriorRest/src/States/GameState.cpp
 	"GameState.h"
@@ -277,10 +276,10 @@
 1604749122 /home/quetsl/Bureau/pTheWarriorRest/include/Battle/AttackStrategy/AttackType/UltimateAttack.h
 	"AttackStrategy.h"
 
-1604748688 source:/home/quetsl/Bureau/pTheWarriorRest/src/Battle/AttackStrategy/Character.cpp
+1604763081 source:/home/quetsl/Bureau/pTheWarriorRest/src/Battle/AttackStrategy/Character.cpp
 	"Character.h"
 
-1604748595 /home/quetsl/Bureau/pTheWarriorRest/include/Battle/AttackStrategy/Character.h
+1604762878 /home/quetsl/Bureau/pTheWarriorRest/include/Battle/AttackStrategy/Character.h
 	"AttackStrategy.h"
 	"DefaultAttack.h"
 	"UltimateAttack.h"
@@ -291,10 +290,10 @@
 	"Player.h"
 	"EnemyBattle.h"
 
-1604749398 source:/home/quetsl/Bureau/pTheWarriorRest/src/Battle/AttackStrategy/EnemyBattle.cpp
+1604763560 source:/home/quetsl/Bureau/pTheWarriorRest/src/Battle/AttackStrategy/EnemyBattle.cpp
 	"EnemyBattle.h"
 
-1604748930 /home/quetsl/Bureau/pTheWarriorRest/include/Battle/AttackStrategy/EnemyBattle.h
+1604762884 /home/quetsl/Bureau/pTheWarriorRest/include/Battle/AttackStrategy/EnemyBattle.h
 	"Character.h"
 	<cstdlib>
 	<ctime>
@@ -306,10 +305,10 @@
 	<iostream>
 	<string>
 
-1604751998 source:/home/quetsl/Bureau/pTheWarriorRest/src/Battle/AttackStrategy/Player.cpp
+1604762850 source:/home/quetsl/Bureau/pTheWarriorRest/src/Battle/AttackStrategy/Player.cpp
 	"Player.h"
 
-1604752007 /home/quetsl/Bureau/pTheWarriorRest/include/Battle/AttackStrategy/Player.h
+1604762873 /home/quetsl/Bureau/pTheWarriorRest/include/Battle/AttackStrategy/Player.h
 	"Character.h"
 
 1604746029 source:/home/quetsl/Bureau/pTheWarriorRest/src/Battle/TurnState/EnemyTurn.cpp

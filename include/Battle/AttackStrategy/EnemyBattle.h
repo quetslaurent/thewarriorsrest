@@ -12,7 +12,7 @@ class EnemyBattle : public Character
         EnemyBattle();
         EnemyBattle(Health health);
         virtual ~EnemyBattle();
-        void attack(Character& p);
+        void attack(Character* p);
         void receiveDamage(double damage);
         void setStrategie();
 

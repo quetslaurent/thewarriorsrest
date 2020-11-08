@@ -17,7 +17,7 @@ class Character
         Character();
         Character(Health health);
         virtual ~Character();
-        void attack(Character& p);
+        void attack(Character* p);
         void receiveDamage(double damage);
         void setStrategie(AttackStrategy* strategie);
         Health getHealth()const;

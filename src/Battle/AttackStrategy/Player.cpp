@@ -15,7 +15,7 @@ Player::~Player()
 
 }
 
-void Player::attack(Character& p){
+void Player::attack(Character* p){
      Character::attack(p);
 }
 
