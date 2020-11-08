@@ -6,6 +6,8 @@
 class Player : public Character
 {
     private:
+        sf::Texture playerTexture;
+        sf::Sprite playerSprite;
 
     public:
         Player();
@@ -14,6 +16,10 @@ class Player : public Character
         void attack(Character* p);
         void receiveDamage(double damage);
         void setStrategie(AttackStrategy* strategie);
+
+        void render(sf::RenderWindow* window);
+
+        sf::Sprite getSprite();
 };
 
 #endif // PLAYER_H

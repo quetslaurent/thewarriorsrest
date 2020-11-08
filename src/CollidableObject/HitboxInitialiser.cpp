@@ -4,6 +4,8 @@ HitboxInitialiser::HitboxInitialiser()
 {
     initHitboxes();
 
+    cout<<"Construction HitboInitialiser"<<"\n";
+
 }
 
 HitboxInitialiser::~HitboxInitialiser()
@@ -29,6 +31,8 @@ void HitboxInitialiser::initHitboxes(){
     Wall* est_fence = new Wall(-650,510,100,890);
 
     Enemy* enemy = new Enemy(100,1000,80,80);
+
+    cout<<"init Hitbox"<<"\n";
 
 
     hitboxes.push_back(wall_bottom_left);

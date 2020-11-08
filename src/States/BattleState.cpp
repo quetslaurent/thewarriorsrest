@@ -18,13 +18,16 @@ BattleState::BattleState(sf::RenderWindow* window):State(window)
 BattleState::~BattleState()
 {
     //dtor
-//    delete playerTurn;
+    delete player;
+    delete enemy;
 }
 
 
 void BattleState::render()
 {
     this->getWindow()->draw(s); // draw the background
+    this->player->render(getWindow()); //draw the player
+    this->enemy->render(getWindow()); //draw the enemy
 }
 
 void BattleState::update(const float& dt)
@@ -35,27 +38,30 @@ void BattleState::update(const float& dt)
    if(ableToFight){
        //first attack
        if(sf::Keyboard::isKeyPressed(sf::Keyboard::E)){
-            std::cout<<"FIRST ATTACK  : A "<<"\n";
-            //this->player->setStrategie(new DefaultAttack);
+            std::cout<<"FIRST ATTACK  : E "<<"\n";
+            this->player->setStrategie(new DefaultAttack);
             ableToFight = false;
        }
        //second attack
        if(sf::Keyboard::isKeyPressed(sf::Keyboard::R)){
-            std::cout<<"SECOND ATTACK  : Z "<<"\n";
-            //this->player->setStrategie(new CriticalAttack);
+            std::cout<<"SECOND ATTACK  : R "<<"\n";
+            this->player->setStrategie(new CriticalAttack);
             ableToFight = false;
        }
        //ultimate
        if(sf::Keyboard::isKeyPressed(sf::Keyboard::T)){
-            std::cout<<"ULTIMATE : R "<<"\n";
-            //this->player->setStrategie(new UltimateAttack);
+            std::cout<<"ULTIMATE : T "<<"\n";
+            this->player->setStrategie(new UltimateAttack);
             ableToFight = false;
        }
-//       if(!ableToFight) {
-//        this->player->attack(this->enemy);
-//        this->enemy->attack(this->player);
-//       }
-        ableToFight=true;
+       if(!ableToFight) {
+        this->player->attack(this->enemy);
+
+        std::this_thread::sleep_for(3s);
+
+        this->enemy->attack(this->player);
+       }
+       ableToFight=true;
    }
 }
 

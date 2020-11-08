@@ -14,8 +14,7 @@ Entity::Entity()
 
     this->player.setSize(sf::Vector2f(120.f,120.f));//the player's texture
     this->player.setPosition((WINDOW_WIDTH/2)-PLAYERHITBOX_WIDTH, (WINDOW_HEIGHT/2)-PLAYERHITBOX_HEIGHT);//put the player in the center of the screen
-    this->movementSpeed=150.F;
-
+    this->movementSpeed=250.F;
 
     //set a texture
     createTexture();
@@ -63,8 +62,6 @@ void Entity::update(const float& dt)
 void Entity::render(sf::RenderTarget* target)
 {
     target->draw(this->player);
-
-    //drawHitbox(target);//show the hitboxes on the map
 }
 
 //move the entity
@@ -95,10 +92,12 @@ sf::Vector2f Entity::getHitboxPosition()const{
     return playerHitbox.getPosition();
 }
 
-// show all the hitboxes, so we can debug
-void Entity::drawHitbox(sf::RenderTarget* target){
-  hitboxCollider.drawHitbox(target, playerHitbox);
+HitboxCollider Entity::getHitboxCollider(){
+    return hitboxCollider;
 }
 
+sf::RectangleShape&  Entity::getPlayerHitbox(){
+    return playerHitbox;
+}
 
 

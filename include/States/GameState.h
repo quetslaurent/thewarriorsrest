@@ -8,6 +8,7 @@ class GameState :public State
 {
     private:
         Entity player;
+        bool debug; // set to know if we show the hitboxes or not
     public:
         GameState(sf::RenderWindow* window);
         virtual ~GameState();

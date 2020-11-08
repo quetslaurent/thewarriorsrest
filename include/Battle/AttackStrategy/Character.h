@@ -7,6 +7,9 @@
 #include "CriticalAttack.h"
 #include "Health.h"
 
+#include <SFML/Graphics.hpp>
+using namespace std;
+
 class Character
 {
     private:

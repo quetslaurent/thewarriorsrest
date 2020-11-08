@@ -4,6 +4,8 @@
 #include "State.h"
 #include "Player.h"
 #include "EnemyBattle.h"
+#include <chrono>
+#include <thread>
 
 class BattleState:public State
 {

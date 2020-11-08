@@ -3,13 +3,12 @@
 #include "Hitbox.h"
 #include "IStateId.h"
 #include "StateManager.h"
-//#include "BattleLauncher.h"
-
 
 class Enemy : public Hitbox,IStateId
 {
     private:
-
+        sf::Texture enemyTexture;
+        sf::Sprite enemySprite;
     public:
         Enemy(float posX,float posY,float width,float height);
         virtual ~Enemy();

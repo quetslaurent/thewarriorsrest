@@ -11,6 +11,10 @@ GameState::GameState(sf::RenderWindow* window):State(window)
     }
 
     this->s.setTexture(mapTexture);//set the map texture on the sprite for the background
+
+    //debug = false -> dont show the hitbox on the map
+    //debug = true -> show the hitbox on the map
+    this->debug=false;
 }
 
 GameState::~GameState()
@@ -34,6 +38,12 @@ void GameState::render()
     this->getWindow()->draw(s); // draw the background
 
     this->player.render(this->getWindow()); // draw the player
+
+    this->player.getHitboxCollider().drawEnemies(this->getWindow(),this->player.getPlayerHitbox());
+
+    if(debug){
+       this->player.getHitboxCollider().drawHitbox(this->getWindow(),this->player.getPlayerHitbox());  // show all the hitboxes, so we can debug
+    }
 
 }
 

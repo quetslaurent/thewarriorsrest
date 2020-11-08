@@ -2,7 +2,13 @@
 
 EnemyBattle::EnemyBattle():Character()
 {
-    //ctor
+    this->enemyTexture.loadFromFile("./image/enemyAnimation.png");
+    this->enemySprite.setTexture(enemyTexture);//set the enemy texture on the sprite
+    this->enemySprite.setTextureRect(sf::IntRect(2200,0,1100,1100));
+    this->enemySprite.setPosition(1200,450);
+    this->enemySprite.setScale(
+    250 / enemySprite.getLocalBounds().width,
+    250 / enemySprite.getLocalBounds().height);
 }
 
 EnemyBattle::~EnemyBattle()
@@ -12,7 +18,13 @@ EnemyBattle::~EnemyBattle()
 
 EnemyBattle::EnemyBattle(Health health):Character(health)
 {
-
+    this->enemyTexture.loadFromFile("./image/enemyAnimation.png");
+    this->enemySprite.setTexture(enemyTexture);//set the enemy texture on the sprite
+    this->enemySprite.setTextureRect(sf::IntRect(2200,0,1100,1100));
+    this->enemySprite.setPosition(1200,450);
+    this->enemySprite.setScale(
+    250 / enemySprite.getLocalBounds().width,
+    250 / enemySprite.getLocalBounds().height);
 }
 
 void EnemyBattle::attack(Character* p){
@@ -40,4 +52,8 @@ void EnemyBattle::setStrategie(){
           cout<<"Ennemy launched an ultimate attack !"<<"\n";
     }
 
+}
+
+void EnemyBattle::render(sf::RenderWindow* window){
+    window->draw(this->enemySprite);
 }

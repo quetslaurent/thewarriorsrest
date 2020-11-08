@@ -8,6 +8,11 @@
 
 class EnemyBattle : public Character
 {
+    private:
+        sf::Texture enemyTexture;
+        sf::Sprite enemySprite;
+
+
     public:
         EnemyBattle();
         EnemyBattle(Health health);
@@ -15,6 +20,8 @@ class EnemyBattle : public Character
         void attack(Character* p);
         void receiveDamage(double damage);
         void setStrategie();
+
+        void render(sf::RenderWindow* window);
 
 };
 

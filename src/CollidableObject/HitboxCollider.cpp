@@ -46,7 +46,7 @@ void HitboxCollider::collide(sf::RectangleShape& playerHitbox){
 }
 
 //draw the hitbox on the screen, so we can debug
-void HitboxCollider::drawHitbox(sf::RenderTarget* target,sf::RectangleShape& playerHitbox){
+void HitboxCollider::drawHitbox(sf::RenderWindow* target,sf::RectangleShape& playerHitbox){
 
     //pick all the hitboxes of the map
     std::vector<Hitbox*> listHitboxes= hitboxInitialiser.getHitboxes();
@@ -73,5 +73,29 @@ void HitboxCollider::drawHitbox(sf::RenderTarget* target,sf::RectangleShape& pla
         sf::RectangleShape player = playerHitbox;
         player.setPosition( (WINDOW_WIDTH/2)-PLAYERHITBOX_WIDTH/2 , (WINDOW_HEIGHT/2)-PLAYERHITBOX_HEIGHT/2 );
         target->draw(player);
+}
+
+void HitboxCollider::drawEnemies(sf::RenderWindow* target,sf::RectangleShape& playerHitbox){
+
+    std::vector<Hitbox*> listHitboxes= hitboxInitialiser.getHitboxes();
+
+    for(Hitbox* &collision :listHitboxes){
+            if( dynamic_cast<Enemy*>(collision) != nullptr){
+
+                 //get the RectangleShape from the Hitbox class
+                 sf::RectangleShape hitboxdisplay = collision->getHitbox();
+
+                 //modify the position , so the hitbox is at the good place on the screen
+                 hitboxdisplay.setPosition(hitboxdisplay.getPosition().x- (hitboxdisplay.getPosition().x*2),hitboxdisplay.getPosition().y- (hitboxdisplay.getPosition().y*2));
+
+                 hitboxdisplay.move((WINDOW_WIDTH/2)-PLAYERHITBOX_WIDTH/2 +playerHitbox.getPosition().x +PLAYERHITBOX_WIDTH, (WINDOW_HEIGHT/2)-PLAYERHITBOX_HEIGHT/2+playerHitbox.getPosition().y +PLAYERHITBOX_HEIGHT);
+
+                 hitboxdisplay.rotate(180);
+
+                 //draw the hitbox
+                 target->draw(hitboxdisplay);
+            }
+    }
+
 }
 

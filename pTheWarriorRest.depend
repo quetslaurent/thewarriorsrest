@@ -19,11 +19,11 @@
 	<SFML/Window.hpp>
 	<vector>
 
-1604676868 source:/home/joey/Bureau/pTheWarriorRest/main.cpp
+1604829893 source:/home/joey/Bureau/pTheWarriorRest/main.cpp
 	"Game.h"
 	"StateManager.h"
 
-1604741909 /home/joey/Bureau/pTheWarriorRest/include/Game.h
+1604829893 /home/joey/Bureau/pTheWarriorRest/include/Game.h
 	"BattleState.h"
 	"GameState.h"
 	"IDimensions.h"
@@ -31,32 +31,32 @@
 	"StateManager.h"
 	<iostream>
 
-1604743457 /home/joey/Bureau/pTheWarriorRest/include/States/GameState.h
+1604835126 /home/joey/Bureau/pTheWarriorRest/include/States/GameState.h
 	"State.h"
 	"Entity.h"
 
-1604664272 /home/joey/Bureau/pTheWarriorRest/include/State.h
+1604829893 /home/joey/Bureau/pTheWarriorRest/include/State.h
 	<SFML/Graphics.hpp>
 	"IDimensions.h"
 	<iostream>
 
-1603724775 source:/home/joey/Bureau/pTheWarriorRest/src/State.cpp
+1604829893 source:/home/joey/Bureau/pTheWarriorRest/src/State.cpp
 	"State.h"
 
-1604742787 source:/home/joey/Bureau/pTheWarriorRest/src/Game.cpp
+1604836663 source:/home/joey/Bureau/pTheWarriorRest/src/Game.cpp
 	"Game.h"
 
-1604671585 source:/home/joey/Bureau/pTheWarriorRest/src/States/GameState.cpp
+1604835382 source:/home/joey/Bureau/pTheWarriorRest/src/States/GameState.cpp
 	"GameState.h"
 	<iostream>
 
-1604675004 /home/joey/Bureau/pTheWarriorRest/include/Entities/Entity.h
+1604835067 /home/joey/Bureau/pTheWarriorRest/include/Entities/Entity.h
 	<SFML/Graphics.hpp>
 	<iostream>
 	"IDimensions.h"
 	"HitboxCollider.h"
 
-1604743591 source:/home/joey/Bureau/pTheWarriorRest/src/Entities/Entity.cpp
+1604836263 source:/home/joey/Bureau/pTheWarriorRest/src/Entities/Entity.cpp
 	"Entity.h"
 	<iostream>
 	<string>
@@ -69,18 +69,18 @@
 	<vector>
 	<iostream>
 
-1604406788 source:/home/joey/Bureau/pTheWarriorRest/src/CollidableObject/Hitbox.cpp
+1604829893 source:/home/joey/Bureau/pTheWarriorRest/src/CollidableObject/Hitbox.cpp
 	"Hitbox.h"
 
-1604676733 source:/home/joey/Bureau/pTheWarriorRest/src/CollidableObject/Enemy.cpp
+1604836332 source:/home/joey/Bureau/pTheWarriorRest/src/CollidableObject/Enemy.cpp
 	"Enemy.h"
 
-1604676733 /home/joey/Bureau/pTheWarriorRest/include/CollidableObject/Enemy.h
+1604836043 /home/joey/Bureau/pTheWarriorRest/include/CollidableObject/Enemy.h
 	"Hitbox.h"
 	"IStateId.h"
 	"StateManager.h"
 
-1604406806 /home/joey/Bureau/pTheWarriorRest/include/CollidableObject/Hitbox.h
+1604829893 /home/joey/Bureau/pTheWarriorRest/include/CollidableObject/Hitbox.h
 	<SFML/Graphics.hpp>
 	<iostream>
 
@@ -88,43 +88,47 @@
 	<SFML/Graphics.hpp>
 	<iostream>
 
-1604676733 source:/home/joey/Bureau/pTheWarriorRest/src/CollidableObject/HitboxInitialiser.cpp
+1604836610 source:/home/joey/Bureau/pTheWarriorRest/src/CollidableObject/HitboxInitialiser.cpp
 	"HitboxInitialiser.h"
 
-1604671681 /home/joey/Bureau/pTheWarriorRest/include/CollidableObject/HitboxInitialiser.h
+1604829893 /home/joey/Bureau/pTheWarriorRest/include/CollidableObject/HitboxInitialiser.h
 	<vector>
 	"Hitbox.h"
 	"Wall.h"
 	"Enemy.h"
 
-1604406039 /home/joey/Bureau/pTheWarriorRest/include/CollidableObject/Wall.h
+1604829893 /home/joey/Bureau/pTheWarriorRest/include/CollidableObject/Wall.h
 	"Hitbox.h"
 	<iostream>
 
-1604406484 source:/home/joey/Bureau/pTheWarriorRest/src/CollidableObject/Wall.cpp
+1604829893 source:/home/joey/Bureau/pTheWarriorRest/src/CollidableObject/Wall.cpp
 	"Wall.h"
 
-1604655816 /home/joey/Bureau/pTheWarriorRest/include/Commons/IDimensions.h
+1604829893 /home/joey/Bureau/pTheWarriorRest/include/Commons/IDimensions.h
 
-1604318033 source:/home/joey/Bureau/pTheWarriorRest/src/Commons/IDimensions.cpp
+1604829893 source:/home/joey/Bureau/pTheWarriorRest/src/Commons/IDimensions.cpp
 
-1604671525 /home/joey/Bureau/pTheWarriorRest/include/CollidableObject/HitboxCollider.h
+1604835371 /home/joey/Bureau/pTheWarriorRest/include/CollidableObject/HitboxCollider.h
 	"HitboxInitialiser.h"
 	<SFML/Graphics.hpp>
 	"IDimensions.h"
 
-1604676822 source:/home/joey/Bureau/pTheWarriorRest/src/CollidableObject/HitboxCollider.cpp
+1604835880 source:/home/joey/Bureau/pTheWarriorRest/src/CollidableObject/HitboxCollider.cpp
 	"HitboxCollider.h"
 
-1604743447 source:/home/joey/Bureau/pTheWarriorRest/src/States/BattleState.cpp
+1604833842 source:/home/joey/Bureau/pTheWarriorRest/src/States/BattleState.cpp
 	"BattleState.h"
 
-1604743465 /home/joey/Bureau/pTheWarriorRest/include/States/BattleState.h
+1604830852 /home/joey/Bureau/pTheWarriorRest/include/States/BattleState.h
 	"State.h"
+	"Player.h"
+	"EnemyBattle.h"
+	<chrono>
+	<thread>
 
-1604660475 /home/joey/Bureau/pTheWarriorRest/include/Commons/IStateId.h
+1604829893 /home/joey/Bureau/pTheWarriorRest/include/Commons/IStateId.h
 
-1604660449 source:/home/joey/Bureau/pTheWarriorRest/src/Commons/IStateId.cpp
+1604829893 source:/home/joey/Bureau/pTheWarriorRest/src/Commons/IStateId.cpp
 
 1604663596 /home/joey/Bureau/pTheWarriorRest/include/Observer/ObserverEnemy.h
 
@@ -240,9 +244,9 @@
 1604675802 source:/home/quetsl/Bureau/pTheWarriorRest/src/StateManager.cpp
 	"StateManager.h"
 
-1604741816 /home/joey/Bureau/pTheWarriorRest/include/StateManager.h
+1604829893 /home/joey/Bureau/pTheWarriorRest/include/StateManager.h
 
-1604676733 source:/home/joey/Bureau/pTheWarriorRest/src/StateManager.cpp
+1604829893 source:/home/joey/Bureau/pTheWarriorRest/src/StateManager.cpp
 	"StateManager.h"
 
 1604751841 source:/home/quetsl/Bureau/pTheWarriorRest/src/Battle/AttackStrategy/AttackStrategy.cpp
@@ -340,6 +344,112 @@
 	"Collide.h"
 
 1604745041 /home/quetsl/Bureau/pTheWarriorRest/include/CollidableObject/Collide.h
+	"GameState.h"
+	"BattleState.h"
+	"IDimensions.h"
+	"IStateId.h"
+	<iostream>
+	"Hitbox.h"
+	"IStateId.h"
+
+1604833248 /home/joey/Bureau/pTheWarriorRest/include/Battle/AttackStrategy/Player.h
+	"Character.h"
+
+1604831939 /home/joey/Bureau/pTheWarriorRest/include/Battle/AttackStrategy/Character.h
+	"AttackStrategy.h"
+	"DefaultAttack.h"
+	"UltimateAttack.h"
+	"CriticalAttack.h"
+	"Health.h"
+	<SFML/Graphics.hpp>
+
+1604829893 /home/joey/Bureau/pTheWarriorRest/include/Battle/AttackStrategy/AttackStrategy.h
+	<iostream>
+	<cstdlib>
+	<ctime>
+
+1604829893 /home/joey/Bureau/pTheWarriorRest/include/Battle/AttackStrategy/AttackType/DefaultAttack.h
+	"AttackStrategy.h"
+
+1604829893 /home/joey/Bureau/pTheWarriorRest/include/Battle/AttackStrategy/AttackType/UltimateAttack.h
+	"AttackStrategy.h"
+
+1604829893 /home/joey/Bureau/pTheWarriorRest/include/Battle/AttackStrategy/AttackType/CriticalAttack.h
+	"AttackStrategy.h"
+
+1604829893 /home/joey/Bureau/pTheWarriorRest/include/Battle/AttackStrategy/Health.h
+	<iostream>
+	<string>
+
+1604833907 /home/joey/Bureau/pTheWarriorRest/include/Battle/AttackStrategy/EnemyBattle.h
+	"Character.h"
+	<cstdlib>
+	<ctime>
+
+1604829893 source:/home/joey/Bureau/pTheWarriorRest/src/Battle/AttackStrategy/AttackStrategy.cpp
+	"AttackStrategy.h"
+
+1604829893 source:/home/joey/Bureau/pTheWarriorRest/src/Battle/AttackStrategy/AttackType/CriticalAttack.cpp
+	"CriticalAttack.h"
+
+1604829893 source:/home/joey/Bureau/pTheWarriorRest/src/Battle/AttackStrategy/AttackType/DefaultAttack.cpp
+	"DefaultAttack.h"
+
+1604829893 source:/home/joey/Bureau/pTheWarriorRest/src/Battle/AttackStrategy/AttackType/UltimateAttack.cpp
+	"UltimateAttack.h"
+
+1604830541 source:/home/joey/Bureau/pTheWarriorRest/src/Battle/AttackStrategy/Character.cpp
+	"Character.h"
+
+1604833998 source:/home/joey/Bureau/pTheWarriorRest/src/Battle/AttackStrategy/EnemyBattle.cpp
+	"EnemyBattle.h"
+
+1604829893 source:/home/joey/Bureau/pTheWarriorRest/src/Battle/AttackStrategy/Health.cpp
+	"Health.h"
+
+1604833802 source:/home/joey/Bureau/pTheWarriorRest/src/Battle/AttackStrategy/Player.cpp
+	"Player.h"
+
+1604829893 source:/home/joey/Bureau/pTheWarriorRest/src/Battle/TurnState/EnemyTurn.cpp
+	"EnemyTurn.h"
+
+1604829893 /home/joey/Bureau/pTheWarriorRest/include/Battle/TurnState/EnemyTurn.h
+
+1604829893 source:/home/joey/Bureau/pTheWarriorRest/src/Battle/TurnState/Loose.cpp
+	"Loose.h"
+
+1604829893 /home/joey/Bureau/pTheWarriorRest/include/Battle/TurnState/Loose.h
+
+1604829893 source:/home/joey/Bureau/pTheWarriorRest/src/Battle/TurnState/PlayerTurn.cpp
+	"PlayerTurn.h"
+
+1604829893 /home/joey/Bureau/pTheWarriorRest/include/Battle/TurnState/PlayerTurn.h
+	"TurnState.h"
+	<SFML/Graphics.hpp>
+
+1604829893 /home/joey/Bureau/pTheWarriorRest/include/Battle/TurnState/TurnState.h
+	"Player.h"
+	"EnemyBattle.h"
+
+1604829893 source:/home/joey/Bureau/pTheWarriorRest/src/Battle/TurnState/TurnState.cpp
+	"TurnState.h"
+
+1604829893 source:/home/joey/Bureau/pTheWarriorRest/src/Battle/TurnState/Win.cpp
+	"Win.h"
+
+1604829893 /home/joey/Bureau/pTheWarriorRest/include/Battle/TurnState/Win.h
+
+1604829893 source:/home/joey/Bureau/pTheWarriorRest/src/BattleLauncher.cpp
+	"BattleLauncher.h"
+
+1604829893 /home/joey/Bureau/pTheWarriorRest/include/BattleLauncher.h
+	"Game.h"
+	"Enemy.h"
+
+1604829893 source:/home/joey/Bureau/pTheWarriorRest/src/CollidableObject/Collide.cpp
+	"Collide.h"
+
+1604829893 /home/joey/Bureau/pTheWarriorRest/include/CollidableObject/Collide.h
 	"GameState.h"
 	"BattleState.h"
 	"IDimensions.h"
