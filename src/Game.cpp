@@ -84,7 +84,10 @@ void Game::render(){
 
 
     // Clear screen
-    this->wGame->clear();
+    if(StateManager::stateId == 0){
+        this->wGame->clear();
+    }
+
 
     //render items
     if(this->states.size() >0){

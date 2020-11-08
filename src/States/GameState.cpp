@@ -39,10 +39,11 @@ void GameState::render()
 
     this->player.render(this->getWindow()); // draw the player
 
-    this->player.getHitboxCollider().drawEnemies(this->getWindow(),this->player.getPlayerHitbox());
+    this->player.getHitboxCollider().drawEnemies(this->getWindow(),this->player.getPlayerHitbox()); // draw the enemies
 
+// show all the hitboxes, so we can debug
     if(debug){
-       this->player.getHitboxCollider().drawHitbox(this->getWindow(),this->player.getPlayerHitbox());  // show all the hitboxes, so we can debug
+       this->player.getHitboxCollider().drawHitbox(this->getWindow(),this->player.getPlayerHitbox());
     }
 
 }

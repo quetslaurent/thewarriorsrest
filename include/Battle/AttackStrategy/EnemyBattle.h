@@ -22,6 +22,8 @@ class EnemyBattle : public Character
         void setStrategie();
 
         void render(sf::RenderWindow* window);
+        sf::Sprite& getSprite();
+
 
 };
 

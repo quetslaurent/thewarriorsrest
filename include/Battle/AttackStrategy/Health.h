@@ -16,8 +16,9 @@ class Health
         Health();
         virtual ~Health();
         void receiveDamage(double damage);
-        bool isAlive()const;
+        bool isAlive();
         string str()const;
+        double getHpCurrent();
 
 };
 

@@ -24,12 +24,18 @@ void Health::receiveDamage(double damage){
     }
 }
 
-bool Health::isAlive()const{
+bool Health::isAlive(){
     if(hp_current<=0){
+        hp_current=0;
         return false;
     }
     return true;
 }
+
+double Health::getHpCurrent(){
+    return hp_current;
+}
+
 string Health::str()const{
     return to_string(hp) + " hp_current "+ to_string(hp_current);
 }

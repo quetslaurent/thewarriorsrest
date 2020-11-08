@@ -66,11 +66,6 @@
 		<Unit filename="include/Battle/AttackStrategy/EnemyBattle.h" />
 		<Unit filename="include/Battle/AttackStrategy/Health.h" />
 		<Unit filename="include/Battle/AttackStrategy/Player.h" />
-		<Unit filename="include/Battle/TurnState/EnemyTurn.h" />
-		<Unit filename="include/Battle/TurnState/Loose.h" />
-		<Unit filename="include/Battle/TurnState/PlayerTurn.h" />
-		<Unit filename="include/Battle/TurnState/TurnState.h" />
-		<Unit filename="include/Battle/TurnState/Win.h" />
 		<Unit filename="include/BattleLauncher.h" />
 		<Unit filename="include/CollidableObject/Collide.h" />
 		<Unit filename="include/CollidableObject/Enemy.h" />
@@ -95,11 +90,6 @@
 		<Unit filename="src/Battle/AttackStrategy/EnemyBattle.cpp" />
 		<Unit filename="src/Battle/AttackStrategy/Health.cpp" />
 		<Unit filename="src/Battle/AttackStrategy/Player.cpp" />
-		<Unit filename="src/Battle/TurnState/EnemyTurn.cpp" />
-		<Unit filename="src/Battle/TurnState/Loose.cpp" />
-		<Unit filename="src/Battle/TurnState/PlayerTurn.cpp" />
-		<Unit filename="src/Battle/TurnState/TurnState.cpp" />
-		<Unit filename="src/Battle/TurnState/Win.cpp" />
 		<Unit filename="src/BattleLauncher.cpp" />
 		<Unit filename="src/CollidableObject/Collide.cpp" />
 		<Unit filename="src/CollidableObject/Enemy.cpp" />

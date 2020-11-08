@@ -76,6 +76,7 @@ void HitboxCollider::drawHitbox(sf::RenderWindow* target,sf::RectangleShape& pla
         target->draw(player);
 }
 
+//draw all the enemies on the map
 void HitboxCollider::drawEnemies(sf::RenderWindow* target,sf::RectangleShape& playerHitbox){
 
     std::vector<Hitbox*> listHitboxes= hitboxInitialiser.getHitboxes();
@@ -93,7 +94,7 @@ void HitboxCollider::drawEnemies(sf::RenderWindow* target,sf::RectangleShape& pl
                  //modify the position , so the hitbox is at the good place on the screen
                  hitboxdisplay.setPosition(hitboxdisplay.getPosition().x- (hitboxdisplay.getPosition().x*2),hitboxdisplay.getPosition().y- (hitboxdisplay.getPosition().y*2));
 
-                 hitboxdisplay.move((WINDOW_WIDTH/2)-PLAYERHITBOX_WIDTH/2 +playerHitbox.getPosition().x +PLAYERHITBOX_WIDTH, (WINDOW_HEIGHT/2)-PLAYERHITBOX_HEIGHT/2+playerHitbox.getPosition().y +PLAYERHITBOX_HEIGHT);
+                 hitboxdisplay.move((WINDOW_WIDTH/2)-PLAYERHITBOX_WIDTH/2 +playerHitbox.getPosition().x +PLAYERHITBOX_WIDTH+40, (WINDOW_HEIGHT/2)-PLAYERHITBOX_HEIGHT/2+playerHitbox.getPosition().y +PLAYERHITBOX_HEIGHT+30);
 
                  hitboxdisplay.rotate(180);
 

@@ -6,6 +6,7 @@
 #include "EnemyBattle.h"
 #include <chrono>
 #include <thread>
+#include "StateManager.h"
 
 class BattleState:public State
 {
@@ -14,10 +15,15 @@ class BattleState:public State
         sf::Texture mapTexture;
         sf::Sprite s;
 
-        bool ableToFight;
+        bool ableToFight; //if the player can attack
 
         Player* player;
         EnemyBattle* enemy;
+
+        //healthbar
+        sf::RectangleShape playerHealth;
+        sf::RectangleShape enemyHealth;
+
 
     public:
         BattleState(sf::RenderWindow* window);
@@ -28,6 +34,15 @@ class BattleState:public State
         void update(const float& dt);
         void render();
         void endState();
+
+        //battle
+        void makeRound();
+        void enemyTurn();
+
+        //draw health bars
+        void drawHealthPlayer();
+        void drawHealthEnemy();
+        void sleep();
 
 };
 

@@ -9,9 +9,6 @@ class BattleLauncher
         BattleLauncher();
         virtual ~BattleLauncher();
         static void launch();
-
-    protected:
-
     private:
 };
 

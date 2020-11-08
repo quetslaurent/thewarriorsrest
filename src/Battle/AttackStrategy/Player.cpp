@@ -42,3 +42,8 @@ void Player::setStrategie(AttackStrategy* strategy){
 void Player::render(sf::RenderWindow* window){
     window->draw(this->playerSprite);
 }
+
+sf::Sprite& Player::getSprite(){
+    return playerSprite;
+}
+

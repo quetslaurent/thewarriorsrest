@@ -2,7 +2,7 @@
 
 EnemyBattle::EnemyBattle():Character()
 {
-    this->enemyTexture.loadFromFile("./image/enemyAnimation.png");
+    this->enemyTexture.loadFromFile("./image/enemyBattle.png");
     this->enemySprite.setTexture(enemyTexture);//set the enemy texture on the sprite
     this->enemySprite.setTextureRect(sf::IntRect(2200,0,1100,1100));
     this->enemySprite.setPosition(1200,450);
@@ -18,7 +18,7 @@ EnemyBattle::~EnemyBattle()
 
 EnemyBattle::EnemyBattle(Health health):Character(health)
 {
-    this->enemyTexture.loadFromFile("./image/enemyAnimation.png");
+    this->enemyTexture.loadFromFile("./image/enemyBattle.png");
     this->enemySprite.setTexture(enemyTexture);//set the enemy texture on the sprite
     this->enemySprite.setTextureRect(sf::IntRect(2200,0,1100,1100));
     this->enemySprite.setPosition(1200,450);
@@ -57,3 +57,8 @@ void EnemyBattle::setStrategie(){
 void EnemyBattle::render(sf::RenderWindow* window){
     window->draw(this->enemySprite);
 }
+
+sf::Sprite& EnemyBattle::getSprite(){
+    return enemySprite;
+}
+
