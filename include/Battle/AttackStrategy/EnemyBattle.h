@@ -4,13 +4,9 @@
 #include <cstdlib>
 #include <ctime>
 
-
-
 class EnemyBattle : public Character
 {
     private:
-        sf::Texture enemyTexture;
-        sf::Sprite enemySprite;
 
 
     public:
@@ -18,13 +14,7 @@ class EnemyBattle : public Character
         EnemyBattle(Health health);
         virtual ~EnemyBattle();
         void attack(Character* p);
-        void receiveDamage(double damage);
-        void setStrategie();
-
-        void render(sf::RenderWindow* window);
-        sf::Sprite& getSprite();
-
-
+        void setStrategy();
 };
 
 #endif // ENEMYBATTLE_H

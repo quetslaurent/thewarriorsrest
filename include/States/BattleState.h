@@ -2,28 +2,19 @@
 #define BATTLESTATE_H
 
 #include "State.h"
-#include "Player.h"
-#include "EnemyBattle.h"
 #include <chrono>
 #include <thread>
 #include "StateManager.h"
+#include "BattleView.h"
+#include "BattleModel.h"
 
 class BattleState:public State
 {
     private:
-        //map
-        sf::Texture mapTexture;
-        sf::Sprite s;
+        BattleView* battleView;
+        BattleModel* battleModel;
 
         bool ableToFight; //if the player can attack
-
-        Player* player;
-        EnemyBattle* enemy;
-
-        //healthbar
-        sf::RectangleShape playerHealth;
-        sf::RectangleShape enemyHealth;
-
 
     public:
         BattleState(sf::RenderWindow* window);
@@ -37,11 +28,8 @@ class BattleState:public State
 
         //battle
         void makeRound();
-        void enemyTurn();
 
-        //draw health bars
-        void drawHealthPlayer();
-        void drawHealthEnemy();
+        //waiting
         void sleep();
 
 };

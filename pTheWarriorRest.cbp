@@ -22,6 +22,7 @@
 					<Add directory="include/Battle/AttackStrategy" />
 					<Add directory="include/Battle/TurnState" />
 					<Add directory="include/Battle/AttackStrategy/AttackType" />
+					<Add directory="include/Battle" />
 				</Compiler>
 				<Linker>
 					<Add library="sfml-graphics" />
@@ -45,6 +46,7 @@
 					<Add directory="include/Battle/AttackStrategy" />
 					<Add directory="include/Battle/TurnState" />
 					<Add directory="include/Battle/AttackStrategy/AttackType" />
+					<Add directory="include/Battle" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
@@ -66,6 +68,9 @@
 		<Unit filename="include/Battle/AttackStrategy/EnemyBattle.h" />
 		<Unit filename="include/Battle/AttackStrategy/Health.h" />
 		<Unit filename="include/Battle/AttackStrategy/Player.h" />
+		<Unit filename="include/Battle/Battle.h" />
+		<Unit filename="include/Battle/BattleModel.h" />
+		<Unit filename="include/Battle/BattleView.h" />
 		<Unit filename="include/BattleLauncher.h" />
 		<Unit filename="include/CollidableObject/Collide.h" />
 		<Unit filename="include/CollidableObject/Enemy.h" />
@@ -90,6 +95,8 @@
 		<Unit filename="src/Battle/AttackStrategy/EnemyBattle.cpp" />
 		<Unit filename="src/Battle/AttackStrategy/Health.cpp" />
 		<Unit filename="src/Battle/AttackStrategy/Player.cpp" />
+		<Unit filename="src/Battle/BattleModel.cpp" />
+		<Unit filename="src/Battle/BattleView.cpp" />
 		<Unit filename="src/BattleLauncher.cpp" />
 		<Unit filename="src/CollidableObject/Collide.cpp" />
 		<Unit filename="src/CollidableObject/Enemy.cpp" />

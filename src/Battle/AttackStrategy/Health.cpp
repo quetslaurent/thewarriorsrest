@@ -18,15 +18,19 @@ Health::~Health()
 {
     //dtor
 }
+//remove hp from current life
 void Health::receiveDamage(double damage){
     if(isAlive()){
         hp_current -= damage;
+        if(hp_current<=0){
+            hp_current=0;
+        }
     }
 }
 
+//return true if the character is alive
 bool Health::isAlive(){
     if(hp_current<=0){
-        hp_current=0;
         return false;
     }
     return true;
