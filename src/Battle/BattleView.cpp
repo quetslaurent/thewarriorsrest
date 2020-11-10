@@ -23,9 +23,13 @@ BattleView::BattleView(sf::RenderWindow* window)
 
     }
     this->battleText.setFont(font);
-    this->battleText.setCharacterSize(50);
+    this->battleText.setCharacterSize(30);
     this->battleText.setString("Start Battle !");
-    this->battleText.setPosition(700,300);
+    //put the text in the center
+    this->battleText.setPosition(sf::Vector2f(WINDOW_WIDTH/2.0f,WINDOW_HEIGHT/2.0f));
+    sf::FloatRect textRect = battleText.getLocalBounds();
+    this->battleText.setOrigin(textRect.left + textRect.width/2.0f,
+               textRect.top  + textRect.height/2.0f);
 
 
     //enemy texture
@@ -58,9 +62,8 @@ void BattleView::drawHealthPlayer(int hp){
 
     this->playerHealth.setSize(sf::Vector2f(hp,20));
 
-    this->window->draw(enemyHealth);
     this->window->draw(playerHealth);
-    this->window->display();
+
 }
 
 //draw the enemy health bar on the screen
@@ -68,19 +71,19 @@ void BattleView::drawHealthEnemy(int hp){
 
     this->enemyHealth.setSize(sf::Vector2f(hp,20));
 
-    this->window->draw(mapSprite); // draw the background
-    drawPlayerTexture();
-    drawEnemyTexture();
-
-    this->window->draw(playerHealth);
     this->window->draw(enemyHealth);
-    this->window->display();
+
 }
 
 //draw text during the battle
 void BattleView::drawBattleText(){
+    //put the text in the center
+    this->battleText.setPosition(sf::Vector2f(WINDOW_WIDTH/2.0f,WINDOW_HEIGHT/2.0f));
+    sf::FloatRect textRect = battleText.getLocalBounds();
+    this->battleText.setOrigin(textRect.left + textRect.width/2.0f,
+               textRect.top  + textRect.height/2.0f);
+
     this->window->draw(battleText);
-    this->window->display();
 }
 
 //set the battle text
@@ -100,9 +103,9 @@ void BattleView::drawEnemyTexture(){
 
 //animation of the player
 void BattleView::playerAttackAnimation(){
-        //change the texture for the animation
-        playerSprite.setTextureRect(sf::IntRect(0,2200,1100,1100));
-        enemySprite.setTextureRect(sf::IntRect(2200,0,1100,1100));
+    //change the texture for the animation
+    playerSprite.setTextureRect(sf::IntRect(0,2200,1100,1100));
+    enemySprite.setTextureRect(sf::IntRect(2200,0,1100,1100));
 }
 //animation of the enemy
 void BattleView::enemyAttackAnimation(){
@@ -119,4 +122,21 @@ void BattleView::resetEnemyTexture(){
 //draw background
 void BattleView::drawBackground(){
     this->window->draw(mapSprite); // draw the background
+}
+
+//draw all
+void BattleView::drawAll(const double enemy_hp,const double player_hp){
+
+    drawBackground();//draw the background
+    //draw the health bars
+    drawHealthEnemy(enemy_hp);
+    drawHealthPlayer(player_hp);
+
+    //draw the text
+    drawBattleText();
+
+    drawPlayerTexture();//draw the player
+    drawEnemyTexture();//draw the enemy
+    this->window->display();
+
 }

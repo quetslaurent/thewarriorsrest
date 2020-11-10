@@ -16,47 +16,39 @@ BattleState::~BattleState()
 
 void BattleState::render()
 {
-}
-
-void BattleState::update(const float& dt)
-{
-    this->updateKeybinds();  //check if the player pressed a specific key
-
-   if(ableToFight){
-        //draw the health bars
-        battleView->drawHealthEnemy(battleModel->getEnemyHp());
-        battleView->drawHealthPlayer(battleModel->getPlayerHp());
-
-        //draw the text
-        battleView->drawBattleText();
+    if(ableToFight){
+        //draw the background, the health bars,the text,the player, the enemy
+        battleView->drawAll(battleModel->getEnemyHp(),battleModel->getPlayerHp());
 
        //first attack
        if(sf::Keyboard::isKeyPressed(sf::Keyboard::E)){
             battleModel->setPlayerStrategy(new DefaultAttack);
-            battleView->setBattleText("Player launch QUICK ATTACK");
+            battleView->setBattleText("player   launch   quick-attack  !");
             ableToFight = false;
        }
        //second attack
        if(sf::Keyboard::isKeyPressed(sf::Keyboard::R)){
             battleModel->setPlayerStrategy(new CriticalAttack);
-            battleView->setBattleText("Player launch DIZZY PUNCH");
+            battleView->setBattleText("player   launch   dizzy-punch  !");
             ableToFight = false;
        }
        //ultimate
        if(sf::Keyboard::isKeyPressed(sf::Keyboard::T)){
             battleModel->setPlayerStrategy(new UltimateAttack);
-            battleView->setBattleText("Player launch DOUBLE-EDGE");
+            battleView->setBattleText("player   launch   double-edge  !!");
             ableToFight = false;
        }
 
        if(!ableToFight) {
-            battleView->drawBackground();//draw the background
-            battleView->drawPlayerTexture();//draw the player
-            battleView->drawEnemyTexture();//draw the enemy
             //the player and the enemy fights
             makeRound();
        }
    }
+}
+
+void BattleState::update(const float& dt)
+{
+    this->updateKeybinds();  //check if the player pressed a specific key
 }
 
 void BattleState::updateKeybinds()
@@ -73,32 +65,49 @@ void BattleState::makeRound(){
 
         battleView->playerAttackAnimation();
 
-        battleView->drawHealthEnemy(battleModel->getEnemyHp());
-        battleView->drawHealthPlayer(battleModel->getPlayerHp());
+        //draw the background, the health bars,the text,the player, the enemy
+        battleView->drawAll(battleModel->getEnemyHp(),battleModel->getPlayerHp());
         //wait Xs
         sleep();
-        //the enemy attacks the player
-        battleModel->enemyAttacksPlayer();
 
-        battleView->enemyAttackAnimation();
+        //if the player win
+        if(!battleModel->isEnemyAlive()){
+            StateManager::stateId = 0;//change view to BattleState
+        }else{
+            //the enemy attacks the player
+            AttackStrategy* strategy = battleModel->enemyAttacksPlayer();
 
-        battleView->drawHealthEnemy(battleModel->getEnemyHp());
-        battleView->drawHealthPlayer(battleModel->getPlayerHp());
+            if(dynamic_cast<DefaultAttack*>(strategy) != nullptr){
+            battleView->setBattleText("enemy   launch   quick-attack  !");
+            ableToFight = false;
+            }
+           //second attack
+           if(dynamic_cast<CriticalAttack*>(strategy) != nullptr){
+                battleView->setBattleText("enemy   launch   dizzy-punch  !");
+                ableToFight = false;
+           }
+           //ultimate
+           if(dynamic_cast<UltimateAttack*>(strategy) != nullptr){
+                battleView->setBattleText("enemy   launch   double-edge  !!");
+                ableToFight = false;
+           }
 
-        //set the initial texture for the enemy
-        sleep();
-        battleView->resetEnemyTexture();
+            battleView->enemyAttackAnimation();//enemy animation
 
-        battleView->drawHealthEnemy(battleModel->getEnemyHp());
-        battleView->drawHealthPlayer(battleModel->getPlayerHp());
+            //draw the background, the health bars,the text,the player, the enemy
+            battleView->drawAll(battleModel->getEnemyHp(),battleModel->getPlayerHp());
+
+            //set the initial texture for the enemy
+            sleep();
+            battleView->resetEnemyTexture();//reset the enemy texture
+
+            //draw the background, the health bars,the text,the player, the enemy
+            battleView->drawAll(battleModel->getEnemyHp(),battleModel->getPlayerHp());
+        }
 
         //if the player is dead
         if(!battleModel->isPlayerAlive()){
             StateManager::stateId = 0; //change view to BattleState
-        }
-        //if the player win
-        if(!battleModel->isEnemyAlive()){
-            StateManager::stateId = 0;//change view to BattleState
         }
 
        //set the possibility to choose a new attack to 'true'

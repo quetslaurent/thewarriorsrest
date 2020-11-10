@@ -3,8 +3,9 @@
 #include <SFML/Graphics.hpp>
 using namespace std;
 #include <cstring>
+#include "IDimensions.h"
 
-class BattleView
+class BattleView : public IDimensions
 {
     private:
         //the window
@@ -53,6 +54,9 @@ class BattleView
 
     //background
     void drawBackground();
+
+    //draw all
+    void drawAll(const double enemy_hp,const double player_hp);
 
 
 };

@@ -18,7 +18,7 @@ class BattleModel
 
     //attacks
     void playerAttacksEnemy();
-    void enemyAttacksPlayer();
+    AttackStrategy* enemyAttacksPlayer();
 
     //getHp
     double getPlayerHp();

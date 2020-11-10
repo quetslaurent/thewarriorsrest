@@ -24,9 +24,10 @@ void BattleModel::playerAttacksEnemy(){
     this->player->attack(this->enemy);
 }
 
-void BattleModel::enemyAttacksPlayer(){
+AttackStrategy* BattleModel::enemyAttacksPlayer(){
     //the enemy attacks the player
     this->enemy->attack(this->player);
+    return this->enemy->getStrategy();
 }
 
 double BattleModel::getPlayerHp(){

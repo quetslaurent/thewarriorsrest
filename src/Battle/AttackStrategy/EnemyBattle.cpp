@@ -37,7 +37,7 @@ void EnemyBattle::setStrategy(){
         Character::setStrategie(new UltimateAttack());
           cout<<"Ennemy launched an ultimate attack !"<<"\n";
     }
-
 }
+
 
 

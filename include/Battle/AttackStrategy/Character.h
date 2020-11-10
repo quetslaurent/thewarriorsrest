@@ -24,6 +24,7 @@ class Character
         void receiveDamage(double damage);
         void setStrategie(AttackStrategy* strategie);
         Health getHealth()const;
+        AttackStrategy* getStrategy()const;
 
 };
 

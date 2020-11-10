@@ -32,3 +32,7 @@ void Character::receiveDamage(double damage){
 Health Character::getHealth()const{
     return health;
 }
+
+AttackStrategy* Character::getStrategy()const{
+    return m_strategie;
+}

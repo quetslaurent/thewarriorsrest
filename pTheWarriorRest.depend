@@ -44,7 +44,7 @@
 1604829893 source:/home/joey/Bureau/pTheWarriorRest/src/State.cpp
 	"State.h"
 
-1604856036 source:/home/joey/Bureau/pTheWarriorRest/src/Game.cpp
+1605018994 source:/home/joey/Bureau/pTheWarriorRest/src/Game.cpp
 	"Game.h"
 
 1604857980 source:/home/joey/Bureau/pTheWarriorRest/src/States/GameState.cpp
@@ -117,7 +117,7 @@
 1604849842 source:/home/joey/Bureau/pTheWarriorRest/src/CollidableObject/HitboxCollider.cpp
 	"HitboxCollider.h"
 
-1604937820 source:/home/joey/Bureau/pTheWarriorRest/src/States/BattleState.cpp
+1605020661 source:/home/joey/Bureau/pTheWarriorRest/src/States/BattleState.cpp
 	"BattleState.h"
 
 1604937126 /home/joey/Bureau/pTheWarriorRest/include/States/BattleState.h
@@ -357,7 +357,7 @@
 1604936049 /home/joey/Bureau/pTheWarriorRest/include/Battle/AttackStrategy/Player.h
 	"Character.h"
 
-1604931737 /home/joey/Bureau/pTheWarriorRest/include/Battle/AttackStrategy/Character.h
+1605021466 /home/joey/Bureau/pTheWarriorRest/include/Battle/AttackStrategy/Character.h
 	"AttackStrategy.h"
 	"DefaultAttack.h"
 	"UltimateAttack.h"
@@ -383,7 +383,7 @@
 	<iostream>
 	<string>
 
-1604936178 /home/joey/Bureau/pTheWarriorRest/include/Battle/AttackStrategy/EnemyBattle.h
+1605021330 /home/joey/Bureau/pTheWarriorRest/include/Battle/AttackStrategy/EnemyBattle.h
 	"Character.h"
 	<cstdlib>
 	<ctime>
@@ -400,13 +400,13 @@
 1604829893 source:/home/joey/Bureau/pTheWarriorRest/src/Battle/AttackStrategy/AttackType/UltimateAttack.cpp
 	"UltimateAttack.h"
 
-1604830541 source:/home/joey/Bureau/pTheWarriorRest/src/Battle/AttackStrategy/Character.cpp
+1605021463 source:/home/joey/Bureau/pTheWarriorRest/src/Battle/AttackStrategy/Character.cpp
 	"Character.h"
 
-1604936161 source:/home/joey/Bureau/pTheWarriorRest/src/Battle/AttackStrategy/EnemyBattle.cpp
+1605021292 source:/home/joey/Bureau/pTheWarriorRest/src/Battle/AttackStrategy/EnemyBattle.cpp
 	"EnemyBattle.h"
 
-1604850422 source:/home/joey/Bureau/pTheWarriorRest/src/Battle/AttackStrategy/Health.cpp
+1604938964 source:/home/joey/Bureau/pTheWarriorRest/src/Battle/AttackStrategy/Health.cpp
 	"Health.h"
 
 1604936130 source:/home/joey/Bureau/pTheWarriorRest/src/Battle/AttackStrategy/Player.cpp
@@ -460,17 +460,18 @@
 	"Hitbox.h"
 	"IStateId.h"
 
-1604937204 /home/joey/Bureau/pTheWarriorRest/include/Battle/BattleView.h
+1605020445 /home/joey/Bureau/pTheWarriorRest/include/Battle/BattleView.h
 	<SFML/Graphics.hpp>
 	<cstring>
+	"IDimensions.h"
 
-1604937791 /home/joey/Bureau/pTheWarriorRest/include/Battle/BattleModel.h
+1605021265 /home/joey/Bureau/pTheWarriorRest/include/Battle/BattleModel.h
 	"Player.h"
 	"EnemyBattle.h"
 
-1604937807 source:/home/joey/Bureau/pTheWarriorRest/src/Battle/BattleModel.cpp
+1605021357 source:/home/joey/Bureau/pTheWarriorRest/src/Battle/BattleModel.cpp
 	"BattleModel.h"
 
-1604938251 source:/home/joey/Bureau/pTheWarriorRest/src/Battle/BattleView.cpp
+1605020555 source:/home/joey/Bureau/pTheWarriorRest/src/Battle/BattleView.cpp
 	"BattleView.h"
 
