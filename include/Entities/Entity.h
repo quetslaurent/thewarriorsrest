@@ -34,7 +34,7 @@ class Entity : public IDimensions
         //hitbox
         HitboxCollider& getHitboxCollider();
         sf::RectangleShape& getPlayerHitbox();
-        std::vector<Hitbox*> getAllHitboxes();
+        std::vector<Hitbox*>* getAllHitboxes();
 
         //direction
         EnumDirection getDirection();

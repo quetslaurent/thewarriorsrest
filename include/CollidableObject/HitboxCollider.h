@@ -7,7 +7,7 @@
 class HitboxCollider : public IDimensions
 {
     private:
-        HitboxInitialiser hitboxInitialiser;   //all hitboxes on the map
+        HitboxInitialiser *hitboxInitialiser;   //all hitboxes on the map
     public:
         HitboxCollider();
         virtual ~HitboxCollider();
@@ -17,8 +17,8 @@ class HitboxCollider : public IDimensions
         void collide(sf::RectangleShape& playerHitbox);
 
         //getters
-        HitboxInitialiser getHitboxInitialiser();
-        std::vector<Hitbox*> getAllHitboxes();
+        HitboxInitialiser* getHitboxInitialiser();
+        std::vector<Hitbox*>* getAllHitboxes();
 
 };
 

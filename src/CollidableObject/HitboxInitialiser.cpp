@@ -3,12 +3,15 @@
 HitboxInitialiser::HitboxInitialiser()
 {
     initHitboxes();
-    //this->enemyTexture.loadFromFile("./image/enemyAnimation.png");
 }
 
 HitboxInitialiser::~HitboxInitialiser()
 {
-    //dtor
+
+    for(int i=0;i<(int)hitboxes.size();i++){
+        delete hitboxes[i];
+    }
+    hitboxes.clear();
 }
 
 
@@ -48,6 +51,6 @@ void HitboxInitialiser::initHitboxes(){
     hitboxes.push_back(enemyTop);
 }
 
-std::vector<Hitbox*> HitboxInitialiser::getHitboxes()const {
-        return hitboxes;
+std::vector<Hitbox*>* HitboxInitialiser::getHitboxes() {
+        return &this->hitboxes;
 }

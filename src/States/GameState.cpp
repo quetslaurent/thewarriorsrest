@@ -32,11 +32,11 @@ void GameState::render()
     this->gameView->drawPlayer(this->player.getDirection());
 
     //draw enemies
-    this->gameView->drawEnemies(this->player.getAllHitboxes(),this->player.getPlayerHitbox());
+    this->gameView->drawEnemies(*this->player.getAllHitboxes(),this->player.getPlayerHitbox());
 
     // show all the hitboxes, so we can debug
     if(debug){
-       this->gameView->drawHitboxes(this->player.getAllHitboxes(),this->player.getPlayerHitbox());
+       this->gameView->drawHitboxes(*this->player.getAllHitboxes(),this->player.getPlayerHitbox());
     }
 }
 

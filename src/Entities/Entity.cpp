@@ -89,7 +89,7 @@ EnumDirection Entity::getDirection()
     return playerDirection;
 }
 
-std::vector<Hitbox*> Entity::getAllHitboxes()
+std::vector<Hitbox*>* Entity::getAllHitboxes()
 {
     return hitboxCollider.getAllHitboxes();
 }

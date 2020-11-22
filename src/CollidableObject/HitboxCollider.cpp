@@ -2,12 +2,12 @@
 
 HitboxCollider::HitboxCollider()
 {
-        this->hitboxInitialiser= HitboxInitialiser();
-        //this->enemyTexture.loadFromFile("./image/enemyAnimation.png");
+        this->hitboxInitialiser= new HitboxInitialiser();
 }
 
 HitboxCollider::~HitboxCollider()
 {
+    delete hitboxInitialiser;
 }
 
 HitboxCollider::HitboxCollider(const HitboxCollider& other)
@@ -26,14 +26,16 @@ HitboxCollider& HitboxCollider::operator=(const HitboxCollider& rhs)
 void HitboxCollider::collide(sf::RectangleShape& playerHitbox){
 
     //get all the hitboxes of the map
-    std::vector<Hitbox*> listHitboxes= hitboxInitialiser.getHitboxes();
+    std::vector<Hitbox*> *listHitboxes= hitboxInitialiser->getHitboxes();
 
     //get the hitbox's player coordinates
     sf::FloatRect playerBounds = playerHitbox.getGlobalBounds();
 
     sf::FloatRect hitboxBounds;
 
-    for(Hitbox* &collision :listHitboxes){
+    int counter=0;
+
+    for(Hitbox* &collision :*listHitboxes){
 
             //get the hitbox coordinates from the lists
             hitboxBounds = collision->getHitbox().getGlobalBounds();
@@ -42,20 +44,27 @@ void HitboxCollider::collide(sf::RectangleShape& playerHitbox){
             if(hitboxBounds.intersects(playerBounds))
             {
                 collision->collide(playerHitbox);
+                //remove enemy from the map when collide
+                if(dynamic_cast<Enemy*>(collision) != nullptr){
+                        Hitbox* tmp=*(listHitboxes->begin()+counter);
+                        hitboxInitialiser->getHitboxes()->erase(listHitboxes->begin() +counter);
+                        delete tmp;
+                }
             }
+            counter++;
         }
 }
 
 
 //-----------------getters
 
-HitboxInitialiser HitboxCollider::getHitboxInitialiser()
+HitboxInitialiser* HitboxCollider::getHitboxInitialiser()
 {
     return hitboxInitialiser;
 }
 
-std::vector<Hitbox*> HitboxCollider::getAllHitboxes()
+std::vector<Hitbox*>* HitboxCollider::getAllHitboxes()
 {
-    return getHitboxInitialiser().getHitboxes();
+    return getHitboxInitialiser()->getHitboxes();
 }
 
