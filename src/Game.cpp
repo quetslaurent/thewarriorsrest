@@ -25,7 +25,7 @@ void Game::initWindow(){
     this->wGame->setVerticalSyncEnabled(false);
 
     //set the position of the window
-    this->wGame->setPosition(sf::Vector2i(400,0));
+    this->wGame->setPosition(sf::Vector2i(100,0));
 
     sf::Image icon;
     if(!icon.loadFromFile("./image/logo.png")){

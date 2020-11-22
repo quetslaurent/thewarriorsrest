@@ -17,6 +17,9 @@ BattleView::BattleView(sf::RenderWindow* window)
 
     //player texture
     initPlayerTexture();
+
+    //choice texture
+    initChoiceTexture();
 }
 
 BattleView::~BattleView()
@@ -85,9 +88,19 @@ void BattleView::resetEnemyTexture(){
     enemySprite.setTextureRect(sf::IntRect(2200,0,1100,1100));
 }
 
+//reset player texture
+void BattleView::resetPlayerTexture()
+{
+    playerSprite.setTextureRect(sf::IntRect(2200,0,1100,1100));
+}
+
 //draw background
 void BattleView::drawBackground(){
     this->window->draw(mapSprite); // draw the background
+}
+//draw battlechoice
+void BattleView::drawBattleChoice(){
+    this->window->draw(choiceSprite); // draw the battle choice
 }
 
 //draw all
@@ -100,6 +113,8 @@ void BattleView::drawAll(const double enemy_hp,const double player_hp){
 
     //draw the text
     drawBattleText();
+    //draw battleChoice
+    drawBattleChoice();
 
     drawPlayerTexture();//draw the player
     drawEnemyTexture();//draw the enemy
@@ -111,9 +126,10 @@ void BattleView::drawAll(const double enemy_hp,const double player_hp){
 //background image
 void BattleView::initMapTexture()
 {
-    if(!this->mapTexture.loadFromFile("./image/battleground.png")){
+    if(!this->mapTexture.loadFromFile("./image/battleground1.png")){
      EXIT_FAILURE;
     }
+
     this->mapSprite.setTexture(mapTexture);//set the map texture on the sprite for the background
 }
 
@@ -166,4 +182,14 @@ void BattleView::initPlayerTexture()
     this->playerSprite.setScale(
     250 / playerSprite.getLocalBounds().width,
     250 / playerSprite.getLocalBounds().height);
+}
+
+//choice texture
+void BattleView::initChoiceTexture()
+{
+    if(!this->choiceTexture.loadFromFile("./image/battlechoice.png")){
+     EXIT_FAILURE;
+    }
+    this->choiceSprite.setPosition(sf::Vector2f(250,WINDOW_HEIGHT-200));
+    this->choiceSprite.setTexture(choiceTexture);//set the choice texture on the sprite
 }

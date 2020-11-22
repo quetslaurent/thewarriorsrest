@@ -72,6 +72,10 @@ void BattleState::makeRound(){
 
         //if the player win
         if(!battleModel->isEnemyAlive()){
+            battleModel->initFighters();
+            battleView->setBattleText("Start Battle !");
+            battleView->resetEnemyTexture();
+            battleView->resetPlayerTexture();
             StateManager::stateId = 0;//change view to BattleState
         }else{
             //the enemy attacks the player
@@ -107,6 +111,10 @@ void BattleState::makeRound(){
 
         //if the player is dead
         if(!battleModel->isPlayerAlive()){
+            battleModel->initFighters();
+            battleView->setBattleText("Start Battle !");
+            battleView->resetEnemyTexture();
+            battleView->resetPlayerTexture();
             StateManager::stateId = 0; //change view to BattleState
         }
 

@@ -27,6 +27,9 @@ class BattleModel
     //is alive ?
     bool isEnemyAlive();
     bool isPlayerAlive();
+
+    //init
+    void initFighters();
 };
 
 #endif // BATTLEMODEL_H

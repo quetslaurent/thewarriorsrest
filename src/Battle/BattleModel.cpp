@@ -2,9 +2,7 @@
 
 BattleModel::BattleModel()
 {
-    //creation of the player and the enemy
-    this->player = new Player(100);
-    this->enemy = new EnemyBattle(100);
+   initFighters();
 }
 
 BattleModel::~BattleModel()
@@ -46,6 +44,15 @@ bool BattleModel::isPlayerAlive(){
 bool BattleModel::isEnemyAlive(){
     return this->enemy->getHealth().isAlive();
 }
+
+//init player and enemy
+void BattleModel::initFighters()
+{
+     //creation of the player and the enemy
+    this->player = new Player(100);
+    this->enemy = new EnemyBattle(100);
+}
+
 
 
 

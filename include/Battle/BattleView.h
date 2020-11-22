@@ -31,6 +31,10 @@ class BattleView : public IDimensions
         sf::Texture enemyTexture;
         sf::Sprite enemySprite;
 
+        //battle choice
+        sf::Texture choiceTexture;
+        sf::Sprite choiceSprite;
+
     public:
         BattleView(sf::RenderWindow* window);
         virtual ~BattleView();
@@ -41,6 +45,7 @@ class BattleView : public IDimensions
         void initTextBattle();
         void initEnemyTexture();
         void initPlayerTexture();
+        void initChoiceTexture();
 
 
 
@@ -52,6 +57,9 @@ class BattleView : public IDimensions
         void drawBattleText();
         void setBattleText(string text);
 
+        //choice
+        void drawBattleChoice();
+
         //draw player and enemy
         void drawPlayerTexture();
         void drawEnemyTexture();
@@ -60,6 +68,7 @@ class BattleView : public IDimensions
         void playerAttackAnimation();
         void enemyAttackAnimation();
         void resetEnemyTexture();
+        void resetPlayerTexture();
 
         //background
         void drawBackground();

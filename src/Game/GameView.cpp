@@ -63,7 +63,7 @@ void GameView::drawEnemies(std::vector<Hitbox*> listHitboxes,sf::RectangleShape&
              sf::RectangleShape hitboxdisplay = collision->getHitbox();
 
              hitboxdisplay.setTexture(&enemyTexture);
-             hitboxdisplay.setTextureRect(sf::IntRect(0,0,1100,1100));
+             hitboxdisplay.setTextureRect(sf::IntRect(1100,1100,1100,1100));
              hitboxdisplay.setSize(sf::Vector2f(120.f,120.f));//the enemy texture
 
              //modify the position , so the hitbox is at the good place on the screen

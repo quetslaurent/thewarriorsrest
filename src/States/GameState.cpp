@@ -26,7 +26,6 @@ void GameState::update(const float& dt)
 
 void GameState::render()
 {
-
     //draw the background
     this->gameView->drawBackground(this->player.getHitboxPosition());
     //draw the player
