@@ -4,53 +4,19 @@ BattleView::BattleView(sf::RenderWindow* window)
 {
     this->window=window;
 
-    //background image
-    if(!this->mapTexture.loadFromFile("./image/battleground.png")){
-     EXIT_FAILURE;
-    }
-    this->mapSprite.setTexture(mapTexture);//set the map texture on the sprite for the background
+    initMapTexture();//init map texture
 
     //health bars
-    this->playerHealth.setPosition(475,450);
-    this->playerHealth.setFillColor(sf::Color(179, 47, 11));
-
-    this->enemyHealth.setPosition(1270,450);
-    this->enemyHealth.setFillColor(sf::Color(179, 47, 11));
+    initHealthBars();
 
     //text during the battle
-
-    if(!font.loadFromFile("./image/HunDIN1451.ttf")){
-
-    }
-    this->battleText.setFont(font);
-    this->battleText.setCharacterSize(30);
-    this->battleText.setString("Start Battle !");
-    //put the text in the center
-    this->battleText.setPosition(sf::Vector2f(WINDOW_WIDTH/2.0f,WINDOW_HEIGHT/2.0f));
-    sf::FloatRect textRect = battleText.getLocalBounds();
-    this->battleText.setOrigin(textRect.left + textRect.width/2.0f,
-               textRect.top  + textRect.height/2.0f);
-
+    initTextBattle();
 
     //enemy texture
-    this->enemyTexture.loadFromFile("./image/enemyBattle.png");
-    this->enemySprite.setTexture(enemyTexture);//set the enemy texture on the sprite
-    this->enemySprite.setTextureRect(sf::IntRect(2200,0,1100,1100));
-    this->enemySprite.setPosition(1200,450);
-    this->enemySprite.setScale(
-    250 / enemySprite.getLocalBounds().width,
-    250 / enemySprite.getLocalBounds().height);
+    initEnemyTexture();
 
     //player texture
-
-    this->playerTexture.loadFromFile("./image/playerAnimation.png");
-    this->playerSprite.setTexture(playerTexture);//set the player texture on the sprite
-    this->playerSprite.setTextureRect(sf::IntRect(2200,0,1100,1100));
-    this->playerSprite.setPosition(400,450);
-    this->playerSprite.setScale(
-    250 / playerSprite.getLocalBounds().width,
-    250 / playerSprite.getLocalBounds().height);
-
+    initPlayerTexture();
 }
 
 BattleView::~BattleView()
@@ -138,5 +104,66 @@ void BattleView::drawAll(const double enemy_hp,const double player_hp){
     drawPlayerTexture();//draw the player
     drawEnemyTexture();//draw the enemy
     this->window->display();
+}
 
+//----------TEXTURES INITIALIZATION ------
+
+//background image
+void BattleView::initMapTexture()
+{
+    if(!this->mapTexture.loadFromFile("./image/battleground.png")){
+     EXIT_FAILURE;
+    }
+    this->mapSprite.setTexture(mapTexture);//set the map texture on the sprite for the background
+}
+
+//health bars
+void BattleView::initHealthBars()
+{
+    this->playerHealth.setPosition(475,450);
+    this->playerHealth.setFillColor(sf::Color(179, 47, 11));
+
+    this->enemyHealth.setPosition(1270,450);
+    this->enemyHealth.setFillColor(sf::Color(179, 47, 11));
+}
+
+//text during the battle
+void BattleView::initTextBattle()
+{
+    if(!font.loadFromFile("./image/HunDIN1451.ttf")){
+
+    }
+    this->battleText.setFont(font);
+    this->battleText.setCharacterSize(30);
+    this->battleText.setString("Start Battle !");
+    //put the text in the center
+    this->battleText.setPosition(sf::Vector2f(WINDOW_WIDTH/2.0f,WINDOW_HEIGHT/2.0f));
+    sf::FloatRect textRect = battleText.getLocalBounds();
+    this->battleText.setOrigin(textRect.left + textRect.width/2.0f,
+               textRect.top  + textRect.height/2.0f);
+}
+
+//enemy texture
+void BattleView::initEnemyTexture()
+{
+
+    this->enemyTexture.loadFromFile("./image/enemyBattle.png");
+    this->enemySprite.setTexture(enemyTexture);//set the enemy texture on the sprite
+    this->enemySprite.setTextureRect(sf::IntRect(2200,0,1100,1100));
+    this->enemySprite.setPosition(1200,450);
+    this->enemySprite.setScale(
+    250 / enemySprite.getLocalBounds().width,
+    250 / enemySprite.getLocalBounds().height);
+}
+
+//player texture
+void BattleView::initPlayerTexture()
+{
+    this->playerTexture.loadFromFile("./image/playerAnimation.png");
+    this->playerSprite.setTexture(playerTexture);//set the player texture on the sprite
+    this->playerSprite.setTextureRect(sf::IntRect(2200,0,1100,1100));
+    this->playerSprite.setPosition(400,450);
+    this->playerSprite.setScale(
+    250 / playerSprite.getLocalBounds().width,
+    250 / playerSprite.getLocalBounds().height);
 }

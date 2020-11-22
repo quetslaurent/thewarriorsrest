@@ -4,13 +4,8 @@
 using std::cout;
 GameState::GameState(sf::RenderWindow* window):State(window)
 {
-
-    //background image
-    if(!this->mapTexture.loadFromFile("./image/map.png")){
-     EXIT_FAILURE;
-    }
-
-    this->s.setTexture(mapTexture);//set the map texture on the sprite for the background
+    gameModel = new GameModel();
+    gameView = new GameView(window);
 
     //debug = false -> dont show the hitbox on the map
     //debug = true -> show the hitbox on the map
@@ -31,21 +26,19 @@ void GameState::update(const float& dt)
 
 void GameState::render()
 {
+
     //draw the background
-    position = player.getHitboxPosition();//get the player position
-    s.setPosition(position.x-START_X,position.y-START_Y);  //move the background depending on the player position,the 490 and 1350 numbers are for set the start position
+    this->gameView->drawBackground(this->player.getHitboxPosition());
+    //draw the player
+    this->gameView->drawPlayer(this->player.getDirection());
 
-    this->getWindow()->draw(s); // draw the background
+    //draw enemies
+    this->gameView->drawEnemies(this->player.getAllHitboxes(),this->player.getPlayerHitbox());
 
-    this->player.render(this->getWindow()); // draw the player
-
-    this->player.getHitboxCollider().drawEnemies(this->getWindow(),this->player.getPlayerHitbox()); // draw the enemies
-
-// show all the hitboxes, so we can debug
+    // show all the hitboxes, so we can debug
     if(debug){
-       this->player.getHitboxCollider().drawHitbox(this->getWindow(),this->player.getPlayerHitbox());
+       this->gameView->drawHitboxes(this->player.getAllHitboxes(),this->player.getPlayerHitbox());
     }
-
 }
 
 void GameState::updateKeybinds()

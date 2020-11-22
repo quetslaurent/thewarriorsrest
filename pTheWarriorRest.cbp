@@ -23,6 +23,7 @@
 					<Add directory="include/Battle/TurnState" />
 					<Add directory="include/Battle/AttackStrategy/AttackType" />
 					<Add directory="include/Battle" />
+					<Add directory="include/Game" />
 				</Compiler>
 				<Linker>
 					<Add library="sfml-graphics" />
@@ -47,6 +48,7 @@
 					<Add directory="include/Battle/TurnState" />
 					<Add directory="include/Battle/AttackStrategy/AttackType" />
 					<Add directory="include/Battle" />
+					<Add directory="include/Game" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
@@ -81,7 +83,10 @@
 		<Unit filename="include/Commons/IDimensions.h" />
 		<Unit filename="include/Commons/IStateId.h" />
 		<Unit filename="include/Entities/Entity.h" />
+		<Unit filename="include/Entities/EnumDirection.h" />
 		<Unit filename="include/Game.h" />
+		<Unit filename="include/Game/GameModel.h" />
+		<Unit filename="include/Game/GameView.h" />
 		<Unit filename="include/State.h" />
 		<Unit filename="include/StateManager.h" />
 		<Unit filename="include/States/BattleState.h" />
@@ -107,7 +112,10 @@
 		<Unit filename="src/Commons/IDimensions.cpp" />
 		<Unit filename="src/Commons/IStateId.cpp" />
 		<Unit filename="src/Entities/Entity.cpp" />
+		<Unit filename="src/Entities/EnumDirection.cpp" />
 		<Unit filename="src/Game.cpp" />
+		<Unit filename="src/Game/GameModel.cpp" />
+		<Unit filename="src/Game/GameView.cpp" />
 		<Unit filename="src/State.cpp" />
 		<Unit filename="src/StateManager.cpp" />
 		<Unit filename="src/States/BattleState.cpp" />

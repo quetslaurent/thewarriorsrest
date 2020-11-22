@@ -32,9 +32,11 @@
 	"StateManager.h"
 	<iostream>
 
-1604835126 /home/joey/Bureau/pTheWarriorRest/include/States/GameState.h
+1606045745 /home/joey/Bureau/pTheWarriorRest/include/States/GameState.h
 	"State.h"
 	"Entity.h"
+	"GameView.h"
+	"GameModel.h"
 
 1604829893 /home/joey/Bureau/pTheWarriorRest/include/State.h
 	<SFML/Graphics.hpp>
@@ -47,17 +49,18 @@
 1605018994 source:/home/joey/Bureau/pTheWarriorRest/src/Game.cpp
 	"Game.h"
 
-1604857980 source:/home/joey/Bureau/pTheWarriorRest/src/States/GameState.cpp
+1606047444 source:/home/joey/Bureau/pTheWarriorRest/src/States/GameState.cpp
 	"GameState.h"
 	<iostream>
 
-1604837321 /home/joey/Bureau/pTheWarriorRest/include/Entities/Entity.h
+1606046652 /home/joey/Bureau/pTheWarriorRest/include/Entities/Entity.h
 	<SFML/Graphics.hpp>
 	<iostream>
 	"IDimensions.h"
 	"HitboxCollider.h"
+	"EnumDirection.h"
 
-1604837318 source:/home/joey/Bureau/pTheWarriorRest/src/Entities/Entity.cpp
+1606046785 source:/home/joey/Bureau/pTheWarriorRest/src/Entities/Entity.cpp
 	"Entity.h"
 	<iostream>
 	<string>
@@ -109,15 +112,15 @@
 
 1604829893 source:/home/joey/Bureau/pTheWarriorRest/src/Commons/IDimensions.cpp
 
-1604837928 /home/joey/Bureau/pTheWarriorRest/include/CollidableObject/HitboxCollider.h
+1606047478 /home/joey/Bureau/pTheWarriorRest/include/CollidableObject/HitboxCollider.h
 	"HitboxInitialiser.h"
 	<SFML/Graphics.hpp>
 	"IDimensions.h"
 
-1604849842 source:/home/joey/Bureau/pTheWarriorRest/src/CollidableObject/HitboxCollider.cpp
+1606047564 source:/home/joey/Bureau/pTheWarriorRest/src/CollidableObject/HitboxCollider.cpp
 	"HitboxCollider.h"
 
-1605020661 source:/home/joey/Bureau/pTheWarriorRest/src/States/BattleState.cpp
+1605022002 source:/home/joey/Bureau/pTheWarriorRest/src/States/BattleState.cpp
 	"BattleState.h"
 
 1604937126 /home/joey/Bureau/pTheWarriorRest/include/States/BattleState.h
@@ -460,7 +463,7 @@
 	"Hitbox.h"
 	"IStateId.h"
 
-1605020445 /home/joey/Bureau/pTheWarriorRest/include/Battle/BattleView.h
+1606047955 /home/joey/Bureau/pTheWarriorRest/include/Battle/BattleView.h
 	<SFML/Graphics.hpp>
 	<cstring>
 	"IDimensions.h"
@@ -472,6 +475,25 @@
 1605021357 source:/home/joey/Bureau/pTheWarriorRest/src/Battle/BattleModel.cpp
 	"BattleModel.h"
 
-1605020555 source:/home/joey/Bureau/pTheWarriorRest/src/Battle/BattleView.cpp
+1606047725 source:/home/joey/Bureau/pTheWarriorRest/src/Battle/BattleView.cpp
 	"BattleView.h"
+
+1606047864 /home/joey/Bureau/pTheWarriorRest/include/Game/GameView.h
+	<SFML/Graphics.hpp>
+	"IDimensions.h"
+	"EnumDirection.h"
+	"Hitbox.h"
+	"Enemy.h"
+
+1606042978 /home/joey/Bureau/pTheWarriorRest/include/Game/GameModel.h
+
+1606042978 source:/home/joey/Bureau/pTheWarriorRest/src/Game/GameModel.cpp
+	"GameModel.h"
+
+1606047893 source:/home/joey/Bureau/pTheWarriorRest/src/Game/GameView.cpp
+	"GameView.h"
+
+1606045113 /home/joey/Bureau/pTheWarriorRest/include/Entities/EnumDirection.h
+
+1606045115 source:/home/joey/Bureau/pTheWarriorRest/src/Entities/EnumDirection.cpp
 

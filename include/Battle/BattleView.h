@@ -35,28 +35,37 @@ class BattleView : public IDimensions
         BattleView(sf::RenderWindow* window);
         virtual ~BattleView();
 
-    //draw health bars
-    void drawHealthPlayer(int hp);
-    void drawHealthEnemy(int hp);
+        //init textures
+        void initMapTexture();
+        void initHealthBars();
+        void initTextBattle();
+        void initEnemyTexture();
+        void initPlayerTexture();
 
-    //text
-    void drawBattleText();
-    void setBattleText(string text);
 
-    //draw player and enemy
-    void drawPlayerTexture();
-    void drawEnemyTexture();
 
-    //animations
-    void playerAttackAnimation();
-    void enemyAttackAnimation();
-    void resetEnemyTexture();
+        //draw health bars
+        void drawHealthPlayer(int hp);
+        void drawHealthEnemy(int hp);
 
-    //background
-    void drawBackground();
+        //text
+        void drawBattleText();
+        void setBattleText(string text);
 
-    //draw all
-    void drawAll(const double enemy_hp,const double player_hp);
+        //draw player and enemy
+        void drawPlayerTexture();
+        void drawEnemyTexture();
+
+        //animations
+        void playerAttackAnimation();
+        void enemyAttackAnimation();
+        void resetEnemyTexture();
+
+        //background
+        void drawBackground();
+
+        //draw all
+        void drawAll(const double enemy_hp,const double player_hp);
 
 
 };

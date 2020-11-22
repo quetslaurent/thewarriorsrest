@@ -8,7 +8,6 @@ class HitboxCollider : public IDimensions
 {
     private:
         HitboxInitialiser hitboxInitialiser;   //all hitboxes on the map
-        sf::Texture enemyTexture;
     public:
         HitboxCollider();
         virtual ~HitboxCollider();
@@ -16,8 +15,10 @@ class HitboxCollider : public IDimensions
         HitboxCollider& operator=(const HitboxCollider& other);
 
         void collide(sf::RectangleShape& playerHitbox);
-        void drawHitbox(sf::RenderWindow* target,sf::RectangleShape& playerHitbox);
-        void drawEnemies(sf::RenderWindow* target,sf::RectangleShape& playerHitbox);
+
+        //getters
+        HitboxInitialiser getHitboxInitialiser();
+        std::vector<Hitbox*> getAllHitboxes();
 
 };
 

@@ -7,36 +7,37 @@
 
 #include "IDimensions.h"
 #include "HitboxCollider.h"
+#include "EnumDirection.h"
 
 class Entity : public IDimensions
 {
     private:
         sf::RectangleShape playerHitbox; //player hitbox
 
-        sf::RectangleShape player; //player texture
-
         HitboxCollider hitboxCollider;
 
         float movementSpeed;
 
-        sf::Texture texture;
+        EnumDirection playerDirection;
 
     public:
         Entity();
         virtual ~Entity();
 
-    //functions
-    void update(const float& dt);
-    void render(sf::RenderTarget* target);
+        //functions
+        void update(const float& dt);
 
-    void move(const float& dt,const float x,const float y); //move the playerHitbox
-    sf::Vector2f getHitboxPosition()const; //get the position of the hitbox
+        void move(const float& dt,const float x,const float y); //move the playerHitbox
+        sf::Vector2f getHitboxPosition()const; //get the position of the hitbox
 
-    //texture
-    void createTexture(); //initialisation of the texture
 
-    HitboxCollider& getHitboxCollider();
-    sf::RectangleShape& getPlayerHitbox();
+        //hitbox
+        HitboxCollider& getHitboxCollider();
+        sf::RectangleShape& getPlayerHitbox();
+        std::vector<Hitbox*> getAllHitboxes();
+
+        //direction
+        EnumDirection getDirection();
 
 };
 

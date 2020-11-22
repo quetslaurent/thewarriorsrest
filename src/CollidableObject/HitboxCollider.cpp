@@ -3,7 +3,7 @@
 HitboxCollider::HitboxCollider()
 {
         this->hitboxInitialiser= HitboxInitialiser();
-        this->enemyTexture.loadFromFile("./image/enemyAnimation.png");
+        //this->enemyTexture.loadFromFile("./image/enemyAnimation.png");
 }
 
 HitboxCollider::~HitboxCollider()
@@ -46,62 +46,16 @@ void HitboxCollider::collide(sf::RectangleShape& playerHitbox){
         }
 }
 
-//draw the hitbox on the screen, so we can debug
-void HitboxCollider::drawHitbox(sf::RenderWindow* target,sf::RectangleShape& playerHitbox){
 
-    //pick all the hitboxes of the map
-    std::vector<Hitbox*> listHitboxes= hitboxInitialiser.getHitboxes();
+//-----------------getters
 
-    for(Hitbox* &collision :listHitboxes){
-
-             //get the RectangleShape from the Hitbox class
-             sf::RectangleShape hitboxdisplay = collision->getHitbox();
-
-             //modify the position , so the hitbox is at the good place on the screen
-             hitboxdisplay.setPosition(hitboxdisplay.getPosition().x- (hitboxdisplay.getPosition().x*2),hitboxdisplay.getPosition().y- (hitboxdisplay.getPosition().y*2));
-
-             hitboxdisplay.move((WINDOW_WIDTH/2)-PLAYERHITBOX_WIDTH/2 +playerHitbox.getPosition().x +PLAYERHITBOX_WIDTH, (WINDOW_HEIGHT/2)-PLAYERHITBOX_HEIGHT/2+playerHitbox.getPosition().y +PLAYERHITBOX_HEIGHT);
-
-             hitboxdisplay.rotate(180);
-
-             //set a "random" color
-             hitboxdisplay.setFillColor(sf::Color(100, hitboxdisplay.getPosition().x, 50));
-             //draw the hitbox
-             target->draw(hitboxdisplay);
-
-    }
-        //draw the player hitbox
-        sf::RectangleShape player = playerHitbox;
-        player.setPosition( (WINDOW_WIDTH/2)-PLAYERHITBOX_WIDTH/2 , (WINDOW_HEIGHT/2)-PLAYERHITBOX_HEIGHT/2 );
-        target->draw(player);
+HitboxInitialiser HitboxCollider::getHitboxInitialiser()
+{
+    return hitboxInitialiser;
 }
 
-//draw all the enemies on the map
-void HitboxCollider::drawEnemies(sf::RenderWindow* target,sf::RectangleShape& playerHitbox){
-
-    std::vector<Hitbox*> listHitboxes= hitboxInitialiser.getHitboxes();
-
-    for(Hitbox* &collision :listHitboxes){
-            if( dynamic_cast<Enemy*>(collision) != nullptr){
-
-                 //get the RectangleShape from the Hitbox class
-                 sf::RectangleShape hitboxdisplay = collision->getHitbox();
-
-                 hitboxdisplay.setTexture(&enemyTexture);
-                 hitboxdisplay.setTextureRect(sf::IntRect(0,0,1100,1100));
-                 hitboxdisplay.setSize(sf::Vector2f(120.f,120.f));//the enemy texture
-
-                 //modify the position , so the hitbox is at the good place on the screen
-                 hitboxdisplay.setPosition(hitboxdisplay.getPosition().x- (hitboxdisplay.getPosition().x*2),hitboxdisplay.getPosition().y- (hitboxdisplay.getPosition().y*2));
-
-                 hitboxdisplay.move((WINDOW_WIDTH/2)-PLAYERHITBOX_WIDTH/2 +playerHitbox.getPosition().x +PLAYERHITBOX_WIDTH+40, (WINDOW_HEIGHT/2)-PLAYERHITBOX_HEIGHT/2+playerHitbox.getPosition().y +PLAYERHITBOX_HEIGHT+30);
-
-                 hitboxdisplay.rotate(180);
-
-                 //draw the hitbox
-                 target->draw(hitboxdisplay);
-            }
-    }
-
+std::vector<Hitbox*> HitboxCollider::getAllHitboxes()
+{
+    return getHitboxInitialiser().getHitboxes();
 }
 

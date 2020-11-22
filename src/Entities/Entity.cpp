@@ -12,12 +12,7 @@ Entity::Entity()
 
     this->playerHitbox.setFillColor(sf::Color(100, 250, 50));
 
-    this->player.setSize(sf::Vector2f(120.f,120.f));//the player's texture
-    this->player.setPosition((WINDOW_WIDTH/2)-PLAYERHITBOX_WIDTH, (WINDOW_HEIGHT/2)-PLAYERHITBOX_HEIGHT);//put the player in the center of the screen
     this->movementSpeed=250.F;
-
-    //set a texture
-    createTexture();
 
 }
 
@@ -32,37 +27,32 @@ void Entity::update(const float& dt)
     if(sf::Keyboard::isKeyPressed(sf::Keyboard::D))
     {
         this->move(dt,-1.f,0.f);
-        this->player.setTextureRect(sf::IntRect(2200,0,1100,1100));
-
+        playerDirection=EnumDirection::E;
     }
     //left
     if(sf::Keyboard::isKeyPressed(sf::Keyboard::Q))
     {
         this->move(dt,1.f,0.f);
-        this->player.setTextureRect(sf::IntRect(1100,0,1100,1100));
+        playerDirection=EnumDirection::W;
     }
 
     //down
     if(sf::Keyboard::isKeyPressed(sf::Keyboard::S))
     {
         this->move(dt,0.f,-1.f);
-        this->player.setTextureRect(sf::IntRect(0,0,1100,1100));
+        playerDirection=EnumDirection::S;
     }
 
     //up
     if(sf::Keyboard::isKeyPressed(sf::Keyboard::Z))
     {
         this->move(dt,0.f,1.f);
-
-        this->player.setTextureRect(sf::IntRect(0,1100,1100,1100));
+        playerDirection=EnumDirection::N;
     }
 
 }
 
-void Entity::render(sf::RenderTarget* target)
-{
-    target->draw(this->player);
-}
+
 
 //move the entity
 void Entity::move(const float& dt,const float x,const float y)
@@ -77,20 +67,13 @@ void Entity::move(const float& dt,const float x,const float y)
     hitboxCollider.collide(playerHitbox);
 }
 
-//set the texture to the player
-void Entity::createTexture()
-{
- if(!this->texture.loadFromFile("./image/playerAnimation.png")){
-     EXIT_FAILURE;
-    }
-    this->player.setTexture(&texture);
-    this->player.setTextureRect(sf::IntRect(0,0,1100,1100));
-}
 
 //get the position of the hitbox
 sf::Vector2f Entity::getHitboxPosition()const{
     return playerHitbox.getPosition();
 }
+
+//getters
 
 HitboxCollider& Entity::getHitboxCollider(){
 
@@ -99,6 +82,16 @@ HitboxCollider& Entity::getHitboxCollider(){
 
 sf::RectangleShape&  Entity::getPlayerHitbox(){
     return playerHitbox;
+}
+
+EnumDirection Entity::getDirection()
+{
+    return playerDirection;
+}
+
+std::vector<Hitbox*> Entity::getAllHitboxes()
+{
+    return hitboxCollider.getAllHitboxes();
 }
 
 
