@@ -1,8 +1,9 @@
 #include "HitboxCollider.h"
 
-HitboxCollider::HitboxCollider()
+HitboxCollider::HitboxCollider(ViewController* viewController)
 {
-        this->hitboxInitialiser= new HitboxInitialiser();
+    this->viewController=viewController;
+    this->hitboxInitialiser= new HitboxInitialiser();
 }
 
 HitboxCollider::~HitboxCollider()
@@ -46,6 +47,7 @@ void HitboxCollider::collide(sf::RectangleShape& playerHitbox){
                 collision->collide(playerHitbox);
                 //remove enemy from the map when collide
                 if(dynamic_cast<Enemy*>(collision) != nullptr){
+                        viewController->setViewId(1);
                         Hitbox* tmp=*(listHitboxes->begin()+counter);
                         hitboxInitialiser->getHitboxes()->erase(listHitboxes->begin() +counter);
                         delete tmp;

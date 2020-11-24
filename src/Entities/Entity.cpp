@@ -4,8 +4,12 @@
 #include <string>
 using std::cout;
 using std::to_string;
-Entity::Entity()
+Entity::Entity(ViewController* viewController)
 {
+    this->hitboxCollider= new HitboxCollider(viewController);
+
+    this->viewController=viewController;
+
     this->playerHitbox.setSize(sf::Vector2f(PLAYERHITBOX_WIDTH,PLAYERHITBOX_HEIGHT));//the player's hitbox
 
     this->playerHitbox.setPosition(0,0);
@@ -18,6 +22,7 @@ Entity::Entity()
 
 Entity::~Entity()
 {
+    delete viewController;
 }
 
 //check if a key is pushed and move the player
@@ -64,7 +69,7 @@ void Entity::move(const float& dt,const float x,const float y)
     cout<<playerHitbox.getPosition().x<<" "<<playerHitbox.getPosition().y<<" "<<"\n";
 
     //check if the playerHitbox hits a hitbox
-    hitboxCollider.collide(playerHitbox);
+    hitboxCollider->collide(playerHitbox);
 }
 
 
@@ -77,7 +82,7 @@ sf::Vector2f Entity::getHitboxPosition()const{
 
 HitboxCollider& Entity::getHitboxCollider(){
 
-    return hitboxCollider;
+    return *hitboxCollider;
 }
 
 sf::RectangleShape&  Entity::getPlayerHitbox(){
@@ -91,7 +96,7 @@ EnumDirection Entity::getDirection()
 
 std::vector<Hitbox*>* Entity::getAllHitboxes()
 {
-    return hitboxCollider.getAllHitboxes();
+    return hitboxCollider->getAllHitboxes();
 }
 
 

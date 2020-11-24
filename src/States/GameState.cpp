@@ -2,10 +2,12 @@
 
 #include <iostream>
 using std::cout;
-GameState::GameState(sf::RenderWindow* window):State(window)
+GameState::GameState(sf::RenderWindow* window,ViewController* viewController):State(window)
 {
-    gameModel = new GameModel();
-    gameView = new GameView(window);
+    this->gameModel = new GameModel();
+    this->gameView = viewController->getGameView();
+    this->viewController=viewController;
+    this->player= new Entity(viewController);
 
     //debug = false -> dont show the hitbox on the map
     //debug = true -> show the hitbox on the map
@@ -14,29 +16,30 @@ GameState::GameState(sf::RenderWindow* window):State(window)
 
 GameState::~GameState()
 {
-    //dtor
+    delete gameModel;
+    delete player;
 }
 
 void GameState::update(const float& dt)
 {
    this->updateKeybinds();  //check if the player pressed a specific key
 
-   this->player.update(dt); //update and move the player
+   this->player->update(dt); //update and move the player
 }
 
 void GameState::render()
 {
     //draw the background
-    this->gameView->drawBackground(this->player.getHitboxPosition());
+    this->gameView->drawBackground(this->player->getHitboxPosition());
     //draw the player
-    this->gameView->drawPlayer(this->player.getDirection());
+    this->gameView->drawPlayer(this->player->getDirection());
 
     //draw enemies
-    this->gameView->drawEnemies(*this->player.getAllHitboxes(),this->player.getPlayerHitbox());
+    this->gameView->drawEnemies(*this->player->getAllHitboxes(),this->player->getPlayerHitbox());
 
     // show all the hitboxes, so we can debug
     if(debug){
-       this->gameView->drawHitboxes(*this->player.getAllHitboxes(),this->player.getPlayerHitbox());
+       this->gameView->drawHitboxes(*this->player->getAllHitboxes(),this->player->getPlayerHitbox());
     }
 }
 

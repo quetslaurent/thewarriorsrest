@@ -1,16 +1,16 @@
 #include "BattleState.h"
 
-BattleState::BattleState(sf::RenderWindow* window):State(window)
+BattleState::BattleState(sf::RenderWindow* window,ViewController* viewController):State(window)
 {
     this->ableToFight = true;
     battleModel = new BattleModel();
-    battleView = new BattleView(window);
+    this->battleView = viewController->getBattleView();
+    this->viewController=viewController;
 }
 
 BattleState::~BattleState()
 {
     delete battleModel;
-    delete battleView;
 }
 
 
@@ -76,7 +76,7 @@ void BattleState::makeRound(){
             battleView->setBattleText("Start Battle !");
             battleView->resetEnemyTexture();
             battleView->resetPlayerTexture();
-            StateManager::stateId = 0;//change view to BattleState
+            viewController->setViewId(0);//change view to BattleState
         }else{
             //the enemy attacks the player
             AttackStrategy* strategy = battleModel->enemyAttacksPlayer();
@@ -115,7 +115,7 @@ void BattleState::makeRound(){
             battleView->setBattleText("Start Battle !");
             battleView->resetEnemyTexture();
             battleView->resetPlayerTexture();
-            StateManager::stateId = 0; //change view to BattleState
+            viewController->setViewId(0); //change view to BattleState
         }
 
        //set the possibility to choose a new attack to 'true'

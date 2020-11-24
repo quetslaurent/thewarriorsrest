@@ -3,13 +3,15 @@
 #include "HitboxInitialiser.h"
 #include <SFML/Graphics.hpp>
 #include "IDimensions.h"
+#include "ViewController.h"
 
 class HitboxCollider : public IDimensions
 {
     private:
         HitboxInitialiser *hitboxInitialiser;   //all hitboxes on the map
+        ViewController* viewController;
     public:
-        HitboxCollider();
+        HitboxCollider(ViewController* viewController);
         virtual ~HitboxCollider();
         HitboxCollider(const HitboxCollider& other);
         HitboxCollider& operator=(const HitboxCollider& other);

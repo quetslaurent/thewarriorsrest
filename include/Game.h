@@ -6,7 +6,7 @@
 #include "IDimensions.h"
 #include "IStateId.h"
 #include "StateManager.h"
-
+#include "ViewController.h"
 #include <iostream>
 using std::cout;
 
@@ -21,11 +21,13 @@ class Game : public IDimensions,IStateId
         float dt;   //delta time
 
         //views
+        ViewController* viewController;
         std::vector<State*> states;
 
         //initialization
         void initWindow();
         void initStates();
+        void initViewController();
 
     public:
         Game();

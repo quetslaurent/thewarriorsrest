@@ -3,20 +3,21 @@
 
 #include "State.h"
 #include "Entity.h"
-#include "GameView.h"
 #include "GameModel.h"
+#include "ViewController.h"
 
 class GameState :public State
 {
     private:
-        Entity player;
+        Entity* player;
         bool debug; // set to know if we show the hitboxes or not
 
         GameView* gameView;
         GameModel* gameModel;
+        ViewController* viewController;
 
     public:
-        GameState(sf::RenderWindow* window);
+        GameState(sf::RenderWindow* window,ViewController* viewController);
         virtual ~GameState();
 
         //functions

@@ -8,20 +8,23 @@
 #include "IDimensions.h"
 #include "HitboxCollider.h"
 #include "EnumDirection.h"
+#include "ViewController.h"
 
 class Entity : public IDimensions
 {
     private:
         sf::RectangleShape playerHitbox; //player hitbox
 
-        HitboxCollider hitboxCollider;
+        HitboxCollider* hitboxCollider;
 
         float movementSpeed;
 
         EnumDirection playerDirection;
 
+        ViewController* viewController;
+
     public:
-        Entity();
+        Entity(ViewController* viewController);
         virtual ~Entity();
 
         //functions

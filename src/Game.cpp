@@ -3,12 +3,16 @@
 Game::Game()
 {
     this->initWindow();     //call the function to set up the window
+
+    this->initViewController();
+
     this->initStates();
 }
 
 Game::~Game()
 {
     delete this->wGame;
+    delete viewController;
 
     //remove all the states
     for(State* s : states){
@@ -37,8 +41,12 @@ void Game::initWindow(){
 }
 
 void Game::initStates(){
-    this->states.push_back(new GameState(this->wGame));
-    this->states.push_back(new BattleState(this->wGame));
+    this->states.push_back(new GameState(this->wGame,viewController));
+    this->states.push_back(new BattleState(this->wGame,viewController));
+}
+
+void Game::initViewController(){
+    this->viewController= new ViewController(this->wGame);
 }
 
 //fonctions
@@ -59,14 +67,14 @@ void Game::update(){
     //update states
     if(this->states.size() >0){
 
-        this->states[StateManager::stateId]->update(this->dt);
+        this->states[viewController->getViewId()]->update(this->dt);
 
         //when we quit the game
-        if(this->states[StateManager::stateId]->getQuit())
+        if(this->states[viewController->getViewId()]->getQuit())
         {
             //when we press esc button
-            this->states[StateManager::stateId]->endState();
-            delete this->states[StateManager::stateId];
+            this->states[viewController->getViewId()]->endState();
+            delete this->states[viewController->getViewId()];
         }
     }
     //en of the Application
@@ -87,7 +95,7 @@ void Game::render(){
 
     //render items
     if(this->states.size() >0){
-        this->states[StateManager::stateId]->render();
+        this->states[viewController->getViewId()]->render();
     }
 
     // Update the window
