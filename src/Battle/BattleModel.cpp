@@ -1,7 +1,8 @@
 #include "BattleModel.h"
 
-BattleModel::BattleModel()
+BattleModel::BattleModel(std::vector<Hitbox*>* hitboxes)
 {
+   this->hitboxes=hitboxes;
    initFighters();
 }
 
@@ -52,6 +53,18 @@ void BattleModel::initFighters()
     this->player = new Player(100);
     this->enemy = new EnemyBattle(100);
 }
+
+bool BattleModel::isWin()
+{
+    std::vector<Hitbox*> listHitbox = *hitboxes;
+    for(int i=0;i<(int)listHitbox.size();i++){
+        if(dynamic_cast<Enemy*>(listHitbox[i]) != nullptr){
+            return false;
+        }
+    }
+    return true;
+}
+
 
 
 

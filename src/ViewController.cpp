@@ -5,6 +5,7 @@ ViewController::ViewController(sf::RenderWindow* window)
     gameView = new GameView(window);
     battleView = new BattleView(window);
     looseView = new LooseView(window);
+    winView = new WinView(window);
     this->viewId=0;
 }
 
@@ -13,6 +14,7 @@ ViewController::~ViewController()
     delete gameView;
     delete battleView;
     delete looseView;
+    delete winView;
 }
 
 GameView* ViewController::getGameView(){
@@ -25,6 +27,10 @@ BattleView* ViewController::getBattleView(){
 
 LooseView* ViewController::getLooseView(){
     return looseView;
+}
+
+WinView* ViewController::getWinView(){
+    return winView;
 }
 
 int ViewController::getViewId()const{

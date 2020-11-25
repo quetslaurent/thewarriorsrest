@@ -20,6 +20,7 @@ class HitboxInitialiser
     //getter
     std::vector<Hitbox*>* getHitboxes();
 
+
 };
 
 #endif // HITBOXINITIALISER_H

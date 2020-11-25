@@ -4,6 +4,7 @@
 #include "BattleView.h"
 #include "GameView.h"
 #include "LooseView.h"
+#include "WinView.h"
 
 class ViewController
 {
@@ -11,6 +12,7 @@ class ViewController
         GameView* gameView; //id 0
         BattleView* battleView; // id 1
         LooseView* looseView; //id 2
+        WinView* winView; //id 3
         int viewId;
 
     public:
@@ -21,6 +23,7 @@ class ViewController
         GameView* getGameView();
         BattleView* getBattleView();
         LooseView* getLooseView();
+        WinView* getWinView();
 
         //get the enum value
         int getViewId()const;

@@ -41,9 +41,11 @@ void Game::initWindow(){
 }
 
 void Game::initStates(){
-    this->states.push_back(new GameState(this->wGame,viewController));
-    this->states.push_back(new BattleState(this->wGame,viewController));
+    GameState* gameState=new GameState(this->wGame,viewController);
+    this->states.push_back(gameState);
+    this->states.push_back(new BattleState(this->wGame,viewController,gameState->getHitboxes()));
     this->states.push_back(new LooseState(this->wGame,viewController));
+    this->states.push_back(new WinState(this->wGame,viewController));
 }
 
 void Game::initViewController(){
@@ -78,7 +80,7 @@ void Game::update(){
             delete this->states[viewController->getViewId()];
         }
     }
-    //en of the Application
+    //end of the Application
     else
     {
         //call the end function

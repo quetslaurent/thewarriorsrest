@@ -67,7 +67,7 @@ void GameView::drawEnemies(std::vector<Hitbox*> listHitboxes,sf::RectangleShape&
              hitboxdisplay.setSize(sf::Vector2f(120.f,120.f));//the enemy texture
 
              //modify the position , so the hitbox is at the good place on the screen
-             hitboxdisplay.setPosition(hitboxdisplay.getPosition().x- (hitboxdisplay.getPosition().x*2),hitboxdisplay.getPosition().y- (hitboxdisplay.getPosition().y*2));
+             hitboxdisplay.setPosition(hitboxdisplay.getPosition().x- (hitboxdisplay.getPosition().x*2)+17,hitboxdisplay.getPosition().y- (hitboxdisplay.getPosition().y*2));
 
              hitboxdisplay.move((WINDOW_WIDTH/2)-PLAYERHITBOX_WIDTH/2 +playerHitbox.getPosition().x +PLAYERHITBOX_WIDTH+40, (WINDOW_HEIGHT/2)-PLAYERHITBOX_HEIGHT/2+playerHitbox.getPosition().y +PLAYERHITBOX_HEIGHT+30);
 
@@ -134,3 +134,5 @@ void GameView::initEnemyTexture()
 {
      this->enemyTexture.loadFromFile("./image/enemyAnimation.png");
 }
+
+

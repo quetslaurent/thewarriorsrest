@@ -70,3 +70,4 @@ std::vector<Hitbox*>* HitboxCollider::getAllHitboxes()
     return getHitboxInitialiser()->getHitboxes();
 }
 
+

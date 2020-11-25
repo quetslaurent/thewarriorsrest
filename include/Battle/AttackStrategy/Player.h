@@ -15,7 +15,6 @@ class Player : public Character
 
         void render(sf::RenderWindow* window);
 
-        //sf::Sprite& getSprite();
 };
 
 #endif // PLAYER_H

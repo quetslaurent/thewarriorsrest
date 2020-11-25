@@ -1,11 +1,12 @@
 #include "BattleState.h"
 
-BattleState::BattleState(sf::RenderWindow* window,ViewController* viewController):State(window)
+BattleState::BattleState(sf::RenderWindow* window,ViewController* viewController,std::vector<Hitbox*>* hitboxes):State(window)
 {
     this->ableToFight = true;
-    battleModel = new BattleModel();
+    this->battleModel = new BattleModel(hitboxes);
     this->battleView = viewController->getBattleView();
     this->viewController=viewController;
+
 }
 
 BattleState::~BattleState()
@@ -76,7 +77,14 @@ void BattleState::makeRound(){
             battleView->setBattleText("Start Battle !");
             battleView->resetEnemyTexture();
             battleView->resetPlayerTexture();
-            viewController->setViewId(0);//change view to BattleState
+
+            if(battleModel->isWin()){
+                viewController->setViewId(3);//change view to WinState
+            }else{
+                viewController->setViewId(0);//change view to BattleState
+            }
+
+
         }else{
             //the enemy attacks the player
             AttackStrategy* strategy = battleModel->enemyAttacksPlayer();

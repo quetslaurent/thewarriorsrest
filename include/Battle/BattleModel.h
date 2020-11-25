@@ -2,15 +2,19 @@
 #define BATTLEMODEL_H
 #include "Player.h"
 #include "EnemyBattle.h"
+#include "Hitbox.h"
+#include <vector>
+#include "Enemy.h"
 
 class BattleModel
 {
     private:
         Player* player;
         EnemyBattle* enemy;
+        std::vector<Hitbox*>* hitboxes;
 
     public:
-        BattleModel();
+        BattleModel(std::vector<Hitbox*>* hitboxes);
         virtual ~BattleModel();
 
     //set strategy
@@ -30,6 +34,10 @@ class BattleModel
 
     //init
     void initFighters();
+
+    //check if its win
+    bool isWin();
+
 };
 
 #endif // BATTLEMODEL_H

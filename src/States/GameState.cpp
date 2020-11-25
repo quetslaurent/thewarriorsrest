@@ -25,6 +25,7 @@ void GameState::update(const float& dt)
    this->updateKeybinds();  //check if the player pressed a specific key
 
    this->player->update(dt); //update and move the player
+
 }
 
 void GameState::render()
@@ -45,13 +46,27 @@ void GameState::render()
 
 void GameState::updateKeybinds()
 {
+    this->checkForDebug(); //set debug to true or false
     this->checkForQuit();   //check if the user pressed the "esc" key
 }
 
+//set debug to true or false
+void GameState::checkForDebug()
+{
+    if(sf::Keyboard::isKeyPressed(sf::Keyboard::B))
+    {
+        debug=!debug;
+        std::this_thread::sleep_for(100ms);
+    }
+}
 
 //end of gameState
 void GameState::endState()
 {
     std::cout<<"END of gameState"<<"\n";
+}
+
+std::vector<Hitbox*>* GameState::getHitboxes(){
+    return player->getAllHitboxes();
 }
 

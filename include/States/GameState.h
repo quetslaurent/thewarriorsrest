@@ -4,6 +4,8 @@
 #include "State.h"
 #include "Entity.h"
 #include "GameModel.h"
+#include <chrono>
+#include <thread>
 
 class GameState :public State
 {
@@ -25,6 +27,10 @@ class GameState :public State
         void update(const float& dt);
         void render();
         void endState();
+
+        void checkForDebug();//set debug to true or false
+
+        std::vector<Hitbox*>* getHitboxes();
 
 };
 

@@ -54,3 +54,4 @@ void HitboxInitialiser::initHitboxes(){
 std::vector<Hitbox*>* HitboxInitialiser::getHitboxes() {
         return &this->hitboxes;
 }
+

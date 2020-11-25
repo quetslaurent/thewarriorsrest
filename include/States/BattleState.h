@@ -18,7 +18,7 @@ class BattleState:public State
         bool ableToFight; //if the player can attack
 
     public:
-        BattleState(sf::RenderWindow* window,ViewController* ViewController);
+        BattleState(sf::RenderWindow* window,ViewController* ViewController,std::vector<Hitbox*>* hitboxes);
         virtual ~BattleState();
 
         //functions

@@ -100,3 +100,4 @@ std::vector<Hitbox*>* Entity::getAllHitboxes()
 }
 
 
+

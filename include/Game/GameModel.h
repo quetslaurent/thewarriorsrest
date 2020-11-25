@@ -1,16 +1,15 @@
 #ifndef GAMEMODEL_H
 #define GAMEMODEL_H
-
+#include "Entity.h"
 
 class GameModel
 {
+    private:
+
     public:
         GameModel();
         virtual ~GameModel();
 
-    protected:
-
-    private:
 };
 
 #endif // GAMEMODEL_H
