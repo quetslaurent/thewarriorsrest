@@ -43,6 +43,7 @@ void Game::initWindow(){
 void Game::initStates(){
     this->states.push_back(new GameState(this->wGame,viewController));
     this->states.push_back(new BattleState(this->wGame,viewController));
+    this->states.push_back(new LooseState(this->wGame,viewController));
 }
 
 void Game::initViewController(){

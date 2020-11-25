@@ -6,7 +6,7 @@
 #include <thread>
 #include "StateManager.h"
 #include "BattleModel.h"
-#include "ViewController.h"
+
 
 class BattleState:public State
 {

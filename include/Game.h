@@ -3,6 +3,7 @@
 
 #include "BattleState.h"
 #include "GameState.h"
+#include "LooseState.h"
 #include "IDimensions.h"
 #include "IStateId.h"
 #include "StateManager.h"

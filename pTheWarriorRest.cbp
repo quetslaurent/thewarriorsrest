@@ -87,9 +87,11 @@
 		<Unit filename="include/Game.h" />
 		<Unit filename="include/Game/GameModel.h" />
 		<Unit filename="include/Game/GameView.h" />
+		<Unit filename="include/Game/LooseView.h" />
 		<Unit filename="include/State.h" />
 		<Unit filename="include/States/BattleState.h" />
 		<Unit filename="include/States/GameState.h" />
+		<Unit filename="include/States/LooseState.h" />
 		<Unit filename="include/ViewController.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="src/Battle/AttackStrategy/AttackStrategy.cpp" />
@@ -116,9 +118,11 @@
 		<Unit filename="src/Game.cpp" />
 		<Unit filename="src/Game/GameModel.cpp" />
 		<Unit filename="src/Game/GameView.cpp" />
+		<Unit filename="src/Game/LooseView.cpp" />
 		<Unit filename="src/State.cpp" />
 		<Unit filename="src/States/BattleState.cpp" />
 		<Unit filename="src/States/GameState.cpp" />
+		<Unit filename="src/States/LooseState.cpp" />
 		<Unit filename="src/ViewController.cpp" />
 		<Extensions />
 	</Project>

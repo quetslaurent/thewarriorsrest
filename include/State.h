@@ -3,7 +3,7 @@
 
 #include <SFML/Graphics.hpp>
 #include "IDimensions.h"
-
+#include "ViewController.h"
 #include <iostream>
 using std::cout;
 //manage the resources

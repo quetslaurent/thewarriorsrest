@@ -4,7 +4,6 @@
 #include "State.h"
 #include "Entity.h"
 #include "GameModel.h"
-#include "ViewController.h"
 
 class GameState :public State
 {

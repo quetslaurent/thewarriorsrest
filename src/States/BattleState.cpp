@@ -115,7 +115,7 @@ void BattleState::makeRound(){
             battleView->setBattleText("Start Battle !");
             battleView->resetEnemyTexture();
             battleView->resetPlayerTexture();
-            viewController->setViewId(0); //change view to BattleState
+            viewController->setViewId(2); //change view to LooseState
         }
 
        //set the possibility to choose a new attack to 'true'

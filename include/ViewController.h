@@ -3,13 +3,14 @@
 #include <SFML/Graphics.hpp>
 #include "BattleView.h"
 #include "GameView.h"
-
+#include "LooseView.h"
 
 class ViewController
 {
     private:
-        GameView* gameView; //id 1
-        BattleView* battleView; // id 2
+        GameView* gameView; //id 0
+        BattleView* battleView; // id 1
+        LooseView* looseView; //id 2
         int viewId;
 
     public:
@@ -19,6 +20,7 @@ class ViewController
         //get views
         GameView* getGameView();
         BattleView* getBattleView();
+        LooseView* getLooseView();
 
         //get the enum value
         int getViewId()const;

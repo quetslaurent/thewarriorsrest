@@ -19,35 +19,35 @@
 	<SFML/Window.hpp>
 	<vector>
 
-1604854226 source:/home/joey/Bureau/pTheWarriorRest/main.cpp
+1606233603 source:/home/joey/Bureau/pTheWarriorRest/main.cpp
 	"Game.h"
-	"StateManager.h"
 	<ctime>
 
-1606231262 /home/joey/Bureau/pTheWarriorRest/include/Game.h
+1606305916 /home/joey/Bureau/pTheWarriorRest/include/Game.h
 	"BattleState.h"
 	"GameState.h"
+	"LooseState.h"
 	"IDimensions.h"
 	"IStateId.h"
 	"StateManager.h"
 	"ViewController.h"
 	<iostream>
 
-1606233041 /home/joey/Bureau/pTheWarriorRest/include/States/GameState.h
+1606305392 /home/joey/Bureau/pTheWarriorRest/include/States/GameState.h
 	"State.h"
 	"Entity.h"
 	"GameModel.h"
-	"ViewController.h"
 
-1604829893 /home/joey/Bureau/pTheWarriorRest/include/State.h
+1606305368 /home/joey/Bureau/pTheWarriorRest/include/State.h
 	<SFML/Graphics.hpp>
 	"IDimensions.h"
+	"ViewController.h"
 	<iostream>
 
 1604829893 source:/home/joey/Bureau/pTheWarriorRest/src/State.cpp
 	"State.h"
 
-1606232895 source:/home/joey/Bureau/pTheWarriorRest/src/Game.cpp
+1606305880 source:/home/joey/Bureau/pTheWarriorRest/src/Game.cpp
 	"Game.h"
 
 1606233432 source:/home/joey/Bureau/pTheWarriorRest/src/States/GameState.cpp
@@ -62,7 +62,7 @@
 	"EnumDirection.h"
 	"ViewController.h"
 
-1606071305 source:/home/joey/Bureau/pTheWarriorRest/src/Entities/Entity.cpp
+1606233563 source:/home/joey/Bureau/pTheWarriorRest/src/Entities/Entity.cpp
 	"Entity.h"
 	<iostream>
 	<string>
@@ -78,7 +78,7 @@
 1604837822 source:/home/joey/Bureau/pTheWarriorRest/src/CollidableObject/Hitbox.cpp
 	"Hitbox.h"
 
-1604840464 source:/home/joey/Bureau/pTheWarriorRest/src/CollidableObject/Enemy.cpp
+1606305521 source:/home/joey/Bureau/pTheWarriorRest/src/CollidableObject/Enemy.cpp
 	"Enemy.h"
 
 1604839040 /home/joey/Bureau/pTheWarriorRest/include/CollidableObject/Enemy.h
@@ -123,16 +123,15 @@
 1606233301 source:/home/joey/Bureau/pTheWarriorRest/src/CollidableObject/HitboxCollider.cpp
 	"HitboxCollider.h"
 
-1606233197 source:/home/joey/Bureau/pTheWarriorRest/src/States/BattleState.cpp
+1606305829 source:/home/joey/Bureau/pTheWarriorRest/src/States/BattleState.cpp
 	"BattleState.h"
 
-1606233056 /home/joey/Bureau/pTheWarriorRest/include/States/BattleState.h
+1606305360 /home/joey/Bureau/pTheWarriorRest/include/States/BattleState.h
 	"State.h"
 	<chrono>
 	<thread>
 	"StateManager.h"
 	"BattleModel.h"
-	"ViewController.h"
 
 1604829893 /home/joey/Bureau/pTheWarriorRest/include/Commons/IStateId.h
 
@@ -500,11 +499,24 @@
 
 1606045115 source:/home/joey/Bureau/pTheWarriorRest/src/Entities/EnumDirection.cpp
 
-1606233149 /home/joey/Bureau/pTheWarriorRest/include/ViewController.h
+1606305692 /home/joey/Bureau/pTheWarriorRest/include/ViewController.h
 	<SFML/Graphics.hpp>
 	"BattleView.h"
 	"GameView.h"
+	"LooseView.h"
 
-1606233135 source:/home/joey/Bureau/pTheWarriorRest/src/ViewController.cpp
+1606305168 source:/home/joey/Bureau/pTheWarriorRest/src/ViewController.cpp
 	"ViewController.h"
+
+1606305406 /home/joey/Bureau/pTheWarriorRest/include/Game/LooseView.h
+	<SFML/Graphics.hpp>
+
+1606305315 source:/home/joey/Bureau/pTheWarriorRest/src/Game/LooseView.cpp
+	"LooseView.h"
+
+1606305495 source:/home/joey/Bureau/pTheWarriorRest/src/States/LooseState.cpp
+	"LooseState.h"
+
+1606305445 /home/joey/Bureau/pTheWarriorRest/include/States/LooseState.h
+	"State.h"
 
