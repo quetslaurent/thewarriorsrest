@@ -14,6 +14,7 @@ class BattleState:public State
         BattleView* battleView;
         BattleModel* battleModel;
         ViewController* viewController;
+        AttackStrategy* strategy;
 
         bool ableToFight; //if the player can attack
 

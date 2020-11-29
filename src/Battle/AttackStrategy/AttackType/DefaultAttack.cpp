@@ -34,3 +34,7 @@ double DefaultAttack::howManyDamage()const{
     cout<<"damage rand : "<<to_string(damage)<<"\n";
     return damage;
 }
+
+string DefaultAttack::toString()const{
+    return "quick-attack";
+}

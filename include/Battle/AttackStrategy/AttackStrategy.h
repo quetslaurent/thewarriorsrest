@@ -18,6 +18,7 @@ class AttackStrategy
         virtual ~AttackStrategy();
         virtual double giveDamage()=0;
         virtual bool isCritical()const=0;
+        virtual string toString()const=0;
 
         //getter
         double getCriticalRate()const;

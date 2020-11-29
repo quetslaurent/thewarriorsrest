@@ -10,6 +10,7 @@ class CriticalAttack : public AttackStrategy
         double giveDamage();
         bool isCritical()const;
         double howManyDamage()const;
+        virtual string toString()const;
 };
 
 #endif // CRITICALATTACK_H

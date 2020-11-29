@@ -10,9 +10,7 @@ class UltimateAttack : public AttackStrategy
         double giveDamage();
         bool isCritical() const;
         double howManyDamage()const;
-    protected:
-
-    private:
+        virtual string toString()const;
 };
 
 #endif // ULTIMATEATTACK_H

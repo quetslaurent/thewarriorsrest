@@ -11,6 +11,7 @@ class DefaultAttack : public AttackStrategy
         double giveDamage();
         bool isCritical()const;
         double howManyDamage()const;
+        virtual string toString()const;
 };
 
 #endif // DEFAULTATTACK_H

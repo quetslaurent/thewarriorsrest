@@ -34,3 +34,8 @@ double UltimateAttack::howManyDamage()const{
     cout<<"damage rand : "<<to_string(damage)<<"\n";
     return damage;
 }
+
+string UltimateAttack::toString()const{
+    return "double-edge";
+}
+

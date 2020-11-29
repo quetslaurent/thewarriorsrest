@@ -36,3 +36,7 @@ double CriticalAttack::howManyDamage()const{
      cout<<"damage rand : "<<to_string(damage)<<"\n";
     return damage;
 }
+
+string CriticalAttack::toString()const{
+    return "dizzy-punch";
+}

@@ -11,6 +11,7 @@ BattleState::BattleState(sf::RenderWindow* window,ViewController* viewController
 
 BattleState::~BattleState()
 {
+    delete strategy;
     delete battleModel;
 }
 
@@ -18,25 +19,29 @@ BattleState::~BattleState()
 void BattleState::render()
 {
     if(ableToFight){
+
         //draw the background, the health bars,the text,the player, the enemy
         battleView->drawAll(battleModel->getEnemyHp(),battleModel->getPlayerHp());
 
        //first attack
        if(sf::Keyboard::isKeyPressed(sf::Keyboard::E)){
-            battleModel->setPlayerStrategy(new DefaultAttack);
-            battleView->setBattleText("player   launch   quick-attack  !");
+            strategy = new DefaultAttack;
+            battleModel->setPlayerStrategy(strategy);
+            battleView->setBattleText("player   launch   "+strategy->toString()+"!!");
             ableToFight = false;
        }
        //second attack
        if(sf::Keyboard::isKeyPressed(sf::Keyboard::R)){
-            battleModel->setPlayerStrategy(new CriticalAttack);
-            battleView->setBattleText("player   launch   dizzy-punch  !");
+            strategy = new CriticalAttack;
+            battleModel->setPlayerStrategy(strategy);
+            battleView->setBattleText("player   launch   "+strategy->toString()+"!!");
             ableToFight = false;
        }
        //ultimate
        if(sf::Keyboard::isKeyPressed(sf::Keyboard::T)){
-            battleModel->setPlayerStrategy(new UltimateAttack);
-            battleView->setBattleText("player   launch   double-edge  !!");
+            strategy = new UltimateAttack;
+            battleModel->setPlayerStrategy(strategy);
+            battleView->setBattleText("player   launch   "+strategy->toString()+"!!");
             ableToFight = false;
        }
 
@@ -88,21 +93,10 @@ void BattleState::makeRound(){
         }else{
             //the enemy attacks the player
             AttackStrategy* strategy = battleModel->enemyAttacksPlayer();
-
-            if(dynamic_cast<DefaultAttack*>(strategy) != nullptr){
-            battleView->setBattleText("enemy   launch   quick-attack  !");
+            //change the battle text
+            battleView->setBattleText("enemy   launch   "+strategy->toString()+"  !!");
+            //set ableToFight to False, so the player cant attack
             ableToFight = false;
-            }
-           //second attack
-           if(dynamic_cast<CriticalAttack*>(strategy) != nullptr){
-                battleView->setBattleText("enemy   launch   dizzy-punch  !");
-                ableToFight = false;
-           }
-           //ultimate
-           if(dynamic_cast<UltimateAttack*>(strategy) != nullptr){
-                battleView->setBattleText("enemy   launch   double-edge  !!");
-                ableToFight = false;
-           }
 
             battleView->enemyAttackAnimation();//enemy animation
 
