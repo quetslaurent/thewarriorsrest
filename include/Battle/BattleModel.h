@@ -13,6 +13,9 @@ class BattleModel
         EnemyBattle* enemy;
         std::vector<Hitbox*>* hitboxes;
 
+        Health* healthP;
+        Health* healthE;
+
     public:
         BattleModel(std::vector<Hitbox*>* hitboxes);
         virtual ~BattleModel();

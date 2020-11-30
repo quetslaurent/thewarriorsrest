@@ -13,17 +13,17 @@ using namespace std;
 class Character
 {
     private:
-        Health health;
+        Health* health;
         AttackStrategy* m_strategie;
 
     public:
         Character();
-        Character(Health health);
+        Character(Health* health);
         virtual ~Character();
         void attack(Character* p);
         void receiveDamage(double damage);
         void setStrategie(AttackStrategy* strategie);
-        Health getHealth()const;
+        Health* getHealth()const;
         AttackStrategy* getStrategy()const;
 
 };

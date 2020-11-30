@@ -7,7 +7,6 @@ HitboxInitialiser::HitboxInitialiser()
 
 HitboxInitialiser::~HitboxInitialiser()
 {
-
     for(int i=0;i<(int)hitboxes.size();i++){
         delete hitboxes[i];
     }

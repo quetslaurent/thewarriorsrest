@@ -4,7 +4,6 @@
 using std::cout;
 GameState::GameState(sf::RenderWindow* window,ViewController* viewController):State(window)
 {
-    this->gameModel = new GameModel();
     this->gameView = viewController->getGameView();
     this->viewController=viewController;
     this->player= new Entity(viewController);
@@ -16,7 +15,6 @@ GameState::GameState(sf::RenderWindow* window,ViewController* viewController):St
 
 GameState::~GameState()
 {
-    delete gameModel;
     delete player;
 }
 

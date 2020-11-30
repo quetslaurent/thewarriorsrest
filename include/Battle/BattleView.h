@@ -4,6 +4,7 @@
 using namespace std;
 #include <cstring>
 #include "IDimensions.h"
+#include <iostream>
 
 class BattleView : public IDimensions
 {

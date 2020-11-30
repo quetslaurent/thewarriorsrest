@@ -11,7 +11,7 @@ class EnemyBattle : public Character
 
     public:
         EnemyBattle();
-        EnemyBattle(Health health);
+        EnemyBattle(Health* health);
         virtual ~EnemyBattle();
         void attack(Character* p);
         void setStrategy();

@@ -16,6 +16,7 @@ AttackStrategy::AttackStrategy(double minAttack, double maxAttack, double critic
 
 AttackStrategy::~AttackStrategy()
 {
+
     //dtor
 }
 double AttackStrategy::getCriticalRate()const{

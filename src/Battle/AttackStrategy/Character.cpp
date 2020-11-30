@@ -2,10 +2,10 @@
 
 Character::Character()
 {
-    this->health=Health();
+    this->health= new Health();
 }
 
-Character::Character(Health health)
+Character::Character(Health* health)
 {
     this->health=health;
     //ctor
@@ -13,7 +13,7 @@ Character::Character(Health health)
 
 Character::~Character()
 {
-    delete m_strategie;
+    delete health;
 }
 void Character::setStrategie(AttackStrategy* strategy){
     m_strategie=strategy;
@@ -25,11 +25,11 @@ void Character::attack(Character* p){
 }
 
 void Character::receiveDamage(double damage){
-    this->health.receiveDamage(damage);
-    cout<<"Vie : "<<health.str()<<"\n";
+    this->health->receiveDamage(damage);
+    cout<<"Vie : "<<health->str()<<"\n";
 }
 
-Health Character::getHealth()const{
+Health* Character::getHealth()const{
     return health;
 }
 

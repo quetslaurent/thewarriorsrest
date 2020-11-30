@@ -14,7 +14,6 @@ class GameState :public State
         bool debug; // set to know if we show the hitboxes or not
 
         GameView* gameView;
-        GameModel* gameModel;
         ViewController* viewController;
 
     public:

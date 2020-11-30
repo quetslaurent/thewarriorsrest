@@ -8,6 +8,7 @@ State::State(sf::RenderWindow* window)
 
 State::~State()
 {
+
     //dtor
 }
 

@@ -10,7 +10,7 @@ class Player : public Character
 
     public:
         Player();
-        Player(Health health);
+        Player(Health* health);
         virtual ~Player();
 
         void render(sf::RenderWindow* window);

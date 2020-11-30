@@ -10,7 +10,7 @@ EnemyBattle::~EnemyBattle()
     //dtor
 }
 
-EnemyBattle::EnemyBattle(Health health):Character(health)
+EnemyBattle::EnemyBattle(Health* health):Character(health)
 {
 
 }

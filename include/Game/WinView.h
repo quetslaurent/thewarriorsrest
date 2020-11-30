@@ -1,7 +1,6 @@
 #ifndef WINVIEW_H
 #define WINVIEW_H
 #include <SFML/Graphics.hpp>
-
 class WinView
 {
     sf::RenderWindow* window;
